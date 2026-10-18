@@ -1,0 +1,7 @@
+# Runs produced by a collaborator
+
+These files were produced by a collaborator on the project on their own machines and are included with their agreement. Our own manifests do not cover them; each folder keeps the files as received (hashes in the RECEIVED.md files where one was written at the time).
+
+- `teammate-qwen9b/`: the SAS calibration of the three qwen3.5-9b cells (summary, calibration and manifest files; the SAS values of Table 5's last three rows), and summaries of the collaborator's MAS runs on airline and retail at a later benchmark commit. The trajectories of those two MAS runs are in the `collaborator` archive on Zenodo; the airline one fails the mechanical bars and is not a cell, the retail one is the replication reported in Section 4.1.
+- `teammate-qwen4b-ollama/` and `received/qwen35-4b-s1-export/`: the September 2026 SAS runs of qwen3.5-4b on airline, retail and telecom on a different serving stack (`ollama_chat`, unpinned tag, 32k context, temperature 0, a recovery call after thinking-only replies). Source of the 39.7 and 36.3 percent figures in Section 5 and of the SAS side of the Appendix B sensitivity. `received/qwen35-4b-s1-export/` holds the manifests of the export we received; the results.json files are in the `collaborator` archive.
+- `received/airline-4b-m1/`: the collaborator's airline MAS of the registered qwen3.5-4b build (Appendix B), its README, the pairing note `pairing-september-s1.md`, and the summary of the September SAS calibration that set its budget. The trajectory is in the `collaborator` archive.

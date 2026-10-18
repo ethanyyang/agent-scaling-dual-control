@@ -1,0 +1,53 @@
+[
+  {
+    "results_file": "./tau2-bench/data/simulations/calib-airline-s1-qwen35-9b-openrouter-gpt52low-3trials-seed300/results.json",
+    "results_sha256": "856e06c713a63373c591a56dbaa7e6014c7628f67c60bf0d83e6f6625043ba46",
+    "episodes": 150,
+    "agent_calls": 1906,
+    "calls_with_reasoning_details": 1893,
+    "S1_mean_completion_per_episode": 9623.7,
+    "S1_P75_completion_per_episode (B_1x)": 12263,
+    "B_0.5x": 6131,
+    "B_2x": 24526,
+    "S1_max_completion_per_episode": 35330,
+    "share_of_episodes_above_B_1x": 0.253,
+    "per_call_median": 270,
+    "per_call_P95 (c)": 3243,
+    "per_call_max": 7955,
+    "domain": "airline"
+  },
+  {
+    "results_file": "./tau2-bench/data/simulations/calib-retail-s1-qwen35-9b-openrouter-gpt52low-3trials-seed300/results.json",
+    "results_sha256": "ce1270aa0d73f7a58552fbb1565d5947a59c9fe0c7490afe1f0e7de69be94221",
+    "episodes": 150,
+    "agent_calls": 1743,
+    "calls_with_reasoning_details": 1742,
+    "S1_mean_completion_per_episode": 5366.9,
+    "S1_P75_completion_per_episode (B_1x)": 6370,
+    "B_0.5x": 3185,
+    "B_2x": 12740,
+    "S1_max_completion_per_episode": 14789,
+    "share_of_episodes_above_B_1x": 0.253,
+    "per_call_median": 224,
+    "per_call_P95 (c)": 1808,
+    "per_call_max": 6153,
+    "domain": "retail"
+  },
+  {
+    "results_file": "./tau2-bench/data/simulations/calib-telecom-s1-qwen35-9b-openrouter-gpt52low-3trials-seed300/results.json",
+    "results_sha256": "f1fbe345418fe4cf04a5b9b6a106baa94aeb0e6445b92e30fff034c605b4b3d5",
+    "episodes": 150,
+    "agent_calls": 2328,
+    "calls_with_reasoning_details": 2323,
+    "S1_mean_completion_per_episode": 4514.0,
+    "S1_P75_completion_per_episode (B_1x)": 5758,
+    "B_0.5x": 2879,
+    "B_2x": 11516,
+    "S1_max_completion_per_episode": 9732,
+    "share_of_episodes_above_B_1x": 0.253,
+    "per_call_median": 211,
+    "per_call_P95 (c)": 772,
+    "per_call_max": 2474,
+    "domain": "telecom"
+  }
+]

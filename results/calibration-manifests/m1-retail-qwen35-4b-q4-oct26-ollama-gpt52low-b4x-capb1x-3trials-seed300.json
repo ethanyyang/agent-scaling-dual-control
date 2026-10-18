@@ -1,0 +1,66 @@
+{
+  "cell": {
+    "family": "qwen",
+    "model": "qwen3.5-4b-oct26",
+    "tier": "low",
+    "domain": "retail"
+  },
+  "condition": "m1",
+  "budget": {
+    "limit": 21476,
+    "per_call_cap": 5369,
+    "wrapup_threshold": 3221,
+    "min_call_allowance": 230,
+    "exhausted_message_sha256": "f550c541217dd85534417b4d8262b66ab29ae723c289c9ce9009e1ecdc1e7089"
+  },
+  "budget_multiplier": 4.0,
+  "arm": "cost-bounded",
+  "calibration_source": {
+    "results_sha256": "3b8fefe355d894d6413d3eae5268dfcfcf228c03d2242d004c80ed90b8a82c1d",
+    "B_1x": 5369,
+    "c": 1179,
+    "per_call_median": 230
+  },
+  "read_call_limit": 4,
+  "orchestrator_tool_definitions": false,
+  "orchestrator_cap_mult": 1.0,
+  "cap_rule": "b1x",
+  "smoke": null,
+  "task_ids_used": 50,
+  "snapshot": "qwen3.5:4b Q4_K_M, October 2026 Ollama build: digest d8b0f5e9760c (text weights a9d0a3e1d8c9 plus vision projector e56a899b1540); pinned name tt-qwen3.5-4b:q4 (c0535b43ca6b), num_ctx 131072. Not the registered qwen3.5-4b (2a654d98e6fb / 668eab7d518c).",
+  "litellm_model": "openai/tt-qwen3.5-4b:q4",
+  "agent": "m1_qwen35_4b_q4_oct26_ollama_retail_b4x_capb1x",
+  "agent_llm_args": {
+    "api_base": "http://127.0.0.1:11434/v1",
+    "api_key": "ollama",
+    "timeout": 3600,
+    "max_tokens": 32768,
+    "extra_body": {
+      "reasoning_effort": "high"
+    }
+  },
+  "user_llm": "gpt-5.2-2025-12-11",
+  "user_llm_args": {
+    "reasoning_effort": "low"
+  },
+  "seed": 300,
+  "num_trials": 3,
+  "max_steps": 200,
+  "task_ids_sha256": "5047ad30fdc1fda10416047a19473c72b43e3c42cfd56d5076354d27c6207b64",
+  "tau2_commit": "c339866",
+  "base_prompt_sha256": "825bb492ecd9062046cc7de0050b31ae7887e3577b66b149883728e71a193da7",
+  "role_block_sha256": {
+    "m1_advisor": "a350bd2cec205373fcf25403ed7606eb54b9a877b35bb0f9ebcfc3641dc06186",
+    "m1_orchestrator": "1a26e997efe8928865330dd5ecc5409964402842aeac666239108e04b545e000",
+    "m1_database_agent": "367b9355faf9a0063ddaee28303e4e951ff1a032261556d5b379d2f1a76fffc8",
+    "s2_single_agent": "1345572de1dc2d86c76ca4d3c4b58a53403d2bb377d923c8dba41437207444f9"
+  },
+  "started_utc": "2026-10-14T02:19:48.112987+00:00",
+  "finished_utc": "2026-10-15T03:04:24.361333+00:00",
+  "wall_seconds": 89076.2,
+  "return_code": 0,
+  "episodes": 150,
+  "infrastructure_errors": 0,
+  "results_path": "tau2-bench/data/simulations/m1-retail-qwen35-4b-q4-oct26-ollama-gpt52low-b4x-capb1x-3trials-seed300/results.json",
+  "results_sha256": "41ecd8e6a6a3fc5d5d1be688340ed3e11f6dd9ab58236f27e20d0e704820809b"
+}

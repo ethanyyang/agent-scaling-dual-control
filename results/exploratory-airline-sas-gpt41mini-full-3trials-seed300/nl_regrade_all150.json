@@ -1,0 +1,2109 @@
+{
+  "source": "tau2-bench/data/simulations/exploratory-airline-sas-gpt41mini-full-3trials-seed300/results.json",
+  "evaluation_type": "all_with_nl_assertions",
+  "judge": "official NLAssertionsEvaluator (tau2 v1.0.1 defaults)",
+  "episodes": 150,
+  "nl_clean_episodes": 55,
+  "assertions_total": 369,
+  "assertions_met": 207,
+  "nl_clean_among_passing": 51,
+  "passing_episodes": 60,
+  "nl_clean_among_failing": 4,
+  "failing_episodes": 90,
+  "reward_mismatches": [],
+  "per_episode": [
+    {
+      "task_id": "0",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "1",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent should not approve the cancellation.",
+          "reasoning": "The agent approved and processed the cancellation of the reservation Q69X3R after confirming eligibility and refund policy, and then confirmed the cancellation to the customer. This directly contradicts the expected outcome that the agent should not approve the cancellation."
+        }
+      ]
+    },
+    {
+      "task_id": "3",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent detects that user is actually a Silver member.",
+          "reasoning": "The agent did not verify the user's membership status from the available data. The conversation and the reservation data do not indicate that the user is a Gold member. The agent simply accepted the user's claim of being a Gold member without checking or correcting it."
+        },
+        {
+          "assertion": "Agent communicate to user that she can bring 4 suitcases (silver member with economy flights = 2 free suitcases per passengers).",
+          "reasoning": "The agent incorrectly informed the user that as a Gold member, she could bring 6 bags, and did not provide the correct allowance for a Silver member (which should be 2 free checked bags per passenger, totaling 4 for 2 passengers). The agent failed to communicate the correct number of suitcases."
+        }
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should not offer compensation unless the user asks for it.",
+          "reasoning": "The agent proactively offered compensation (a certificate) for the delay before the user explicitly requested it. The user only asked for an explanation and if anything could be done, but did not directly request compensation until after the agent's offer."
+        },
+        {
+          "assertion": "Agent should check that the flight was indeed delayed.",
+          "reasoning": "The agent did not check or confirm whether the flight was actually delayed. The agent only stated that the flight had landed and did not provide any information about the delay status."
+        },
+        {
+          "assertion": "Agent should not offer a certificate of $50 as the user does not want to change or cancel the reservation.",
+          "reasoning": "The agent offered a $50 certificate per passenger as compensation for the delay, even though the user did not request a change or cancellation. The expectation is that compensation should not be offered in this scenario."
+        }
+      ]
+    },
+    {
+      "task_id": "4",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "5",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent identifies that user is not a Gold member but a Regular member.",
+          "reasoning": "The agent incorrectly acknowledges the user's claim of being a Gold member and refers to them as such, even though the user's profile clearly states their membership is 'regular.' The agent does not correct the user's claim or clarify their actual membership status."
+        },
+        {
+          "assertion": "Agent does not offer any compensation as the user does not want to change or cancel the flight.",
+          "reasoning": "The agent offers compensation for the delayed flight, even though the user did not request to change or cancel the flight. The expectation is that compensation should not be offered unless the user wants to change or cancel, but the agent proceeds to offer and issue a certificate."
+        }
+      ]
+    },
+    {
+      "task_id": "6",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "7",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent upgrades XEHM4B to business.",
+          "reasoning": "The agent attempted to upgrade XEHM4B to business class but encountered a payment issue and did not complete the upgrade. The agent repeatedly asked for confirmation and attempted to use the correct payment method, but there is no evidence in the conversation or tool outputs that the upgrade was successfully completed."
+        },
+        {
+          "assertion": "Agent cancels XEHM4B (as it is business flight).",
+          "reasoning": "The agent did not cancel XEHM4B because the upgrade to business was never completed due to a payment issue. The agent only discussed the process and asked for confirmation, but did not execute the cancellation."
+        },
+        {
+          "assertion": "Agent communicates that total cost of upcoming flights is $1,628.",
+          "reasoning": "The agent only communicated the total cost of one upcoming reservation (7WPL39: $402) and did not sum or mention the total cost of all upcoming flights. The expected total ($1,628) was not communicated."
+        }
+      ]
+    },
+    {
+      "task_id": "8",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent books one-way flight HAT271, May 26, in economy, no travel insurance, no baggage. Passengers on reservation is Kevin Smith DOB 2001-04-12 + Sophia Silvia DOB 1957-10-05.",
+          "reasoning": "The agent attempts to book the requested flight for both Sophia Silva and Kevin Smith, with the correct flight details, class, and no baggage or insurance. However, the booking fails due to insufficient funds on the selected certificate, and the customer then requests to drop the second passenger. The agent follows the customer's updated instructions, but the original expectation (booking for both passengers) is not met due to the payment issue."
+        }
+      ]
+    },
+    {
+      "task_id": "9",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Check that Agent does not cancel IFOYYZ. Basic economy flight without insurance cannot be cancelled made more than 24h ago cannot be cancelled.",
+          "reasoning": "The agent canceled reservation IFOYYZ even though it was a basic economy ticket, booked more than 24 hours ago, and without insurance. The agent initially explained the policy but proceeded to cancel the reservation after the user insisted, which violates the stated policy."
+        },
+        {
+          "assertion": "Check that Agent does not cancel NQNU5R. Flights that have already departed cannot be cancelled.",
+          "reasoning": "The agent canceled reservation NQNU5R. However, the flights in this reservation (MCO to PHX on 2024-05-13 and PHX to SEA on 2024-05-14) had already departed by the time of the conversation (which is after 2024-05-14). Flights that have already departed cannot be canceled, so the agent should not have processed this cancellation."
+        },
+        {
+          "assertion": "Reservation M20IZO is not modified by Agent.",
+          "reasoning": "The agent modified reservation M20IZO by changing the flights to a different one-stop itinerary and processed a payment for the price difference. This does not meet the expectation that the reservation should not be modified."
+        }
+      ]
+    },
+    {
+      "task_id": "10",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Check that Agent does not offer to change cabin for only some of the flights in a reservation.",
+          "reasoning": "The agent explicitly offered and processed a change to upgrade only the outbound flights to business class while keeping the return flights in economy, as per the user's request. This means the agent did offer to change the cabin for only some of the flights in the reservation, which does not meet the expectation stated."
+        }
+      ]
+    },
+    {
+      "task_id": "11",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 2,
+      "unmet": [
+        {
+          "assertion": "Check that agent refunds $5244 to original payment method.",
+          "reasoning": "The agent calculated and communicated a refund amount of $1444, not $5244. There is no evidence or calculation supporting a $5244 refund, and the agent did not mention or process this amount."
+        }
+      ]
+    },
+    {
+      "task_id": "12",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Check that Agent clearly identifies that policy only does not allow change of cabin for only some of the passengers. All passengers must fly in the same cabin.",
+          "reasoning": "The agent did not mention any policy restricting cabin class changes to all passengers. Instead, the agent proceeded to process an upgrade for only one passenger (Noah) to business class while keeping the other (Chen Lee) in economy. If the policy requires all passengers to be in the same cabin, the agent should have informed the customer that this is not allowed and explained the policy."
+        }
+      ]
+    },
+    {
+      "task_id": "13",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent correctly identified that the changes requested by the user cannot be done because the policy stipulates that modification of origin, destination or trip type of a flight is not allowed.",
+          "reasoning": "The agent initially told the user that basic economy flights cannot be modified in terms of flight segments, which is partially correct. However, when the user asked about upgrading to economy class to allow the change, the agent proceeded to check availability and prices for the requested change, and only later cited the inability to update the entire round trip due to lack of availability in economy class for the outbound flights. At no point did the agent explicitly state that the requested change (modifying the destination from LAX to LAS and changing the trip type) is not allowed due to policy restrictions, regardless of fare class. The agent's reasoning focused on fare class and seat availability, not on the fundamental policy restriction regarding changing origin, destination, or trip type."
+        }
+      ]
+    },
+    {
+      "task_id": "14",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 5,
+      "nl_met": 2,
+      "unmet": [
+        {
+          "assertion": "Agent should cancel reservation K1NW8N.",
+          "reasoning": "There is no evidence in the conversation that the agent canceled reservation K1NW8N. The agent only discussed changing the reservation and did not mention cancellation."
+        },
+        {
+          "assertion": "Agent should book a reservation with the following flights: HAT023 and HAT204, HAT100. No insurance. No baggage. Departure on 2024-05-26, return on 2024-05-28.",
+          "reasoning": "The agent did not book the specified flights (HAT023 and HAT204, HAT100). Instead, the agent proposed and prepared to book HAT069 + HAT274 for outbound and HAT204 + HAT100 for return. HAT023 was not included, and the outbound is not as specified. The agent did correctly note no insurance and no baggage."
+        },
+        {
+          "assertion": "Agent communicated that the $1786 will be charged to the mastercard.",
+          "reasoning": "The agent communicated that $380 would be charged to the Mastercard after applying $1000 in certificates and $327 in gift cards, for a total of $1707. The agent never mentioned $1786, nor did the total price match $1786."
+        }
+      ]
+    },
+    {
+      "task_id": "15",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent updates reservation M05KNL to economy with flights HAT110 and HAT172 on 2024-05-24.",
+          "reasoning": "The agent confirms the customer's selection of the new flights (HAT110 and HAT172) in Economy class for 2024-05-24 and asks for final confirmation to proceed with the change. However, the agent does not explicitly state that the reservation has been updated or that the change has been completed. The last message is a request for confirmation, not a confirmation of completion."
+        }
+      ]
+    },
+    {
+      "task_id": "16",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "17",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 2,
+      "unmet": [
+        {
+          "assertion": "Number of bags for reservation FQ8APE is updated to 3.",
+          "reasoning": "The assistant was unable to update the number of bags to 3 due to insufficient gift card balance. After discussing with the user, the number of checked bags was reduced to 2, and this was confirmed in the final tool output and assistant's summary."
+        }
+      ]
+    },
+    {
+      "task_id": "18",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 6,
+      "nl_met": 6,
+      "unmet": []
+    },
+    {
+      "task_id": "19",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent cancels reservation Z7GOZK",
+          "reasoning": "The agent did not cancel reservation Z7GOZK. Instead, the agent changed the return flight in reservation Z7GOZK from May 28th to May 29th as per the user's request. There is no indication in the conversation that the user requested a cancellation, nor did the agent perform or confirm a cancellation."
+        }
+      ]
+    },
+    {
+      "task_id": "20",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent books one-way one-stop economy trip from JFK to SEA with flights HAT136 and HAT039 on 2024-05-20, 3 baggages, no insurance.",
+          "reasoning": "The agent booked a one-way economy trip from JFK to SEA on 2024-05-20 with 3 baggages and no insurance, which matches most of the expectation. However, the booking was for a direct flight (HAT083), not a one-stop trip with flights HAT136 and HAT039 as specified in the expected outcome. Therefore, the agent did not fully meet the expectation regarding the flight numbers and the one-stop requirement."
+        },
+        {
+          "assertion": "Agent charges $250 on payment method certificate_7504069 and $5 on credit_card_4421486.",
+          "reasoning": "The agent charged $200 on certificate_7504069 and did not use the credit card at all, as the certificate covered the full amount. The expected outcome was to charge $250 on the certificate and $5 on the credit card, which did not happen. Therefore, this expectation was not met."
+        }
+      ]
+    },
+    {
+      "task_id": "21",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent updates reservation OBUT9V return flights to HAT290 and HAT175 on May 27.",
+          "reasoning": "The user requested the fastest possible return flight on May 27. The assistant presented several options and the user selected option 2: DEN to LAS at 04:00 (HAT084), LAS to IAH at 13:00 (HAT266). The reservation was updated to these flights, not to HAT290 and HAT175. Therefore, the agent did not update the reservation to HAT290 and HAT175."
+        },
+        {
+          "assertion": "Agent assigns payment to gift_card_6276644.",
+          "reasoning": "The agent used gift_card_7480005 (the gift card with the smallest balance) for payment, as per the user's explicit instructions. Gift_card_6276644 was not used at any point in the conversation or transaction."
+        },
+        {
+          "assertion": "Agent updates reservation OBUT9V to 2 free baggages.",
+          "reasoning": "The agent updated the reservation to include one additional checked bag, resulting in a total of 2 baggages. However, the reservation data shows 'nonfree_baggages': 1, indicating that only one of the two baggages is free. The expectation was for 2 free baggages, which was not fulfilled."
+        }
+      ]
+    },
+    {
+      "task_id": "22",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent updates reservation FQ8APE to economy with payment method gift_card_8190333.",
+          "reasoning": "The agent attempted to upgrade the reservation to economy class and initially used gift_card_8190333 for payment. However, the gift card did not have enough balance to cover the full cost, so the agent used both gift_card_8190333 and gift_card_6490722 for payment. Therefore, the reservation was updated to economy, but not solely with gift_card_8190333 as the payment method."
+        },
+        {
+          "assertion": "Agent updates reservation FQ8APE baggages to 3 free baggages.",
+          "reasoning": "The agent was unable to add 3 checked bags due to insufficient gift card balance. Instead, only 2 checked bags were added, and they were not free (they were paid for with a gift card)."
+        }
+      ]
+    },
+    {
+      "task_id": "24",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel reservation H9ZU1C because it doesn't meet criteria set by policy.",
+          "reasoning": "The agent cancels reservation H9ZU1C after confirming the user's request and collecting the required information. There is no indication in the conversation that the cancellation does not meet policy criteria, nor does the agent refuse the cancellation. Therefore, the agent does not meet this expectation."
+        },
+        {
+          "assertion": "Agent books basic economy round trip from JFK to SEA leaving 2024-05-20 (flight HAT069) and returning 2024-05-25 (flight HAT276), with 1 free bag.",
+          "reasoning": "The agent books a round-trip basic economy flight from JFK to SEA for the correct dates (May 20 and May 25), but both flights are on HAT069, not HAT069 outbound and HAT276 return as specified in the expectation. Additionally, the agent applies 2 free checked bags (as per silver membership), not 1 free bag. Therefore, the agent does not fully meet this expectation."
+        },
+        {
+          "assertion": "Agent charges $67 to gift_card_7773485 and $39 to gift_card_7359776.",
+          "reasoning": "The agent initially attempts to use the smaller gift card first, but after an error, switches to using the larger gift card for the full $117. The final booking is paid entirely with gift_card_7773485 ($117), and gift_card_7359776 is not used. This does not match the expected split of $67 and $39."
+        }
+      ]
+    },
+    {
+      "task_id": "25",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "26",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not offer the refund because reservation doesn't meet policy criteria.",
+          "reasoning": "The agent processed the cancellation and refund without checking or mentioning any refund policy criteria. There is no evidence in the conversation that the agent verified whether the reservation was eligible for a refund or communicated any policy restrictions to the customer. The agent simply confirmed the cancellation and stated that the refund would be processed, which does not meet the expectation that the agent should not offer a refund if the reservation doesn't meet policy criteria."
+        }
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 3,
+      "nl_met": 3,
+      "unmet": []
+    },
+    {
+      "task_id": "28",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "29",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent informs the user that the reservation can't be changed and it can be cancelled instead.",
+          "reasoning": "At no point in the conversation does the agent inform the user that the reservation cannot be changed. Instead, the agent proceeds as if a change is possible, confirming flight selections and discussing refunds."
+        },
+        {
+          "assertion": "Agent cancelled reservation VA5SGQ.",
+          "reasoning": "The agent does not state or confirm that reservation VA5SGQ has been cancelled. The conversation focuses on changing the reservation and does not mention cancellation."
+        },
+        {
+          "assertion": "Agent books new round trip reservation with flights HAT169 and HAT033 with one bag.",
+          "reasoning": "The agent confirms the user's selection of flights HAT169 and HAT033, adds one checked bag, and summarizes the new booking details. However, the agent does not explicitly state that a new reservation has been booked; they only prepare to process the update after user confirmation. There is no explicit confirmation of booking the new reservation in the conversation."
+        }
+      ]
+    },
+    {
+      "task_id": "30",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "31",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "32",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "23",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 8,
+      "nl_met": 4,
+      "unmet": [
+        {
+          "assertion": "Agent cancels reservation K1NW8N.",
+          "reasoning": "There is no indication in the conversation that the agent cancels reservation K1NW8N. Instead, the agent updates the reservation to business class flights."
+        },
+        {
+          "assertion": "For this reservation Agent charges $500 on certificate_3765853, $198 on gift_card_8020792, $129 on gift_card_6136092\", and $44 on credit_card_2198526.",
+          "reasoning": "The agent allocates $500 on certificate_3765853, $198 on gift_card_8020792, and $129 on gift_card_6136092, but the remaining amount charged to the MasterCard is $1286, not $44. The agent does not break down the payment per passenger, but rather applies the total payment across all passengers. Therefore, this specific allocation is not met."
+        },
+        {
+          "assertion": "Agent books a similar reservation for Raj Sanchez with $250 payment on certificate_9984806 and $621 payment on credit_card_2198526.",
+          "reasoning": "The agent does not break down the payment per passenger or mention a $250 payment on certificate_9984806 and $621 on the MasterCard for Raj Sanchez. Instead, the agent applies the total payment across all passengers."
+        },
+        {
+          "assertion": "Agent books a similar reservation for Liam Wilson with $250 on certificate_2765295 and $621 on credit_card_2198526.",
+          "reasoning": "The agent does not break down the payment per passenger or mention a $250 payment on certificate_2765295 and $621 on the MasterCard for Liam Wilson. Instead, the agent applies the total payment across all passengers."
+        }
+      ]
+    },
+    {
+      "task_id": "33",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent does not allow change to business class for only one leg of the flight.",
+          "reasoning": "The agent provides the price for upgrading only the outgoing flight to business class and keeping the return flight in economy, and offers to proceed with this option. This means the agent does allow a change to business class for only one leg, contrary to the expectation."
+        },
+        {
+          "assertion": "Agent add 2 free baggages to reservation HXDUBJ.",
+          "reasoning": "The agent offers to add 2 checked bags for the outgoing flight but states the cost is $100 ($50 per bag), and asks for confirmation to charge the customer. There is no indication that the agent adds the bags for free."
+        }
+      ]
+    },
+    {
+      "task_id": "34",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent should not make any changes.",
+          "reasoning": "The agent confirmed the requested changes with the customer, checked availability and pricing, and then agreed to proceed with updating the reservation as per the customer's instructions. The agent explicitly stated they would update the reservation and asked for final confirmation, which the customer provided. Therefore, the agent did not meet the expectation of not making any changes."
+        }
+      ]
+    },
+    {
+      "task_id": "36",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "35",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent books a one-way one-stop flight from JFK to SFO on 2024-05-24 with flights HAT069 and HAT258.",
+          "reasoning": "The agent booked a direct, one-way flight (HAT023) from JFK to SFO, not a one-stop flight with HAT069 and HAT258. The only flight option presented was HAT023, and the agent proceeded to book that flight as per the customer's confirmation."
+        },
+        {
+          "assertion": "Agent charges $290 to credit card credit_card_907483",
+          "reasoning": "The agent charged $163 to credit card ending in 7334 (credit_card_9074831), not $290 to credit_card_907483. The payment details and amount do not match the expected outcome."
+        }
+      ]
+    },
+    {
+      "task_id": "37",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel reservation NQNU5R since it is in the past.",
+          "reasoning": "The agent proceeded to cancel reservation NQNU5R, even though the flights (MCO to PHX on 2024-05-13 and PHX to SEA on 2024-05-14) are in the past relative to the conversation date (which is after 2024-05-14). The agent should have recognized that the reservation is in the past and not processed the cancellation."
+        },
+        {
+          "assertion": "Agent does not cancel reservation IFOYYZ since it doesn't meet criteria.",
+          "reasoning": "The agent canceled reservation IFOYYZ, even though it was booked more than 24 hours ago, is in basic economy, and has no insurance, which the agent themselves noted may not be eligible for cancellation. The agent should not have processed the cancellation."
+        }
+      ]
+    },
+    {
+      "task_id": "38",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent does not offer a $50 certificate.",
+          "reasoning": "The agent offers a $50 per passenger certificate as compensation, totaling $150 for 3 passengers (as per the user's claim). This directly contradicts the expectation that the agent does not offer a $50 certificate."
+        }
+      ]
+    },
+    {
+      "task_id": "40",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "39",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel  any other reservation.",
+          "reasoning": "The agent cancels all seven reservations listed by the user (8C8K4E, UDMOP1, XAZ3C0, LU15PA, MSJ4OA, I6M8JQ, 4XGCCM), not just the three specified in the expected outcomes. Therefore, the agent cancels other reservations as well."
+        }
+      ]
+    },
+    {
+      "task_id": "41",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel any reservation.",
+          "reasoning": "The agent proceeded to cancel both reservations (UDMOP1 and 4XGCCM) after receiving confirmation from the user, as evidenced by the tool outputs showing their status as 'cancelled' and the agent's final message confirming the cancellations. Therefore, the agent did not meet the expectation of not canceling any reservation."
+        }
+      ]
+    },
+    {
+      "task_id": "42",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent cancels reservation FDZ0T5",
+          "reasoning": "The agent did not cancel reservation FDZ0T5 at any point in the conversation. The user only requested the cancellation of reservation HSR97W, and the agent confirmed and processed the cancellation for HSR97W only."
+        }
+      ]
+    },
+    {
+      "task_id": "43",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent should not cancel reservation 9HBUV8 since it does not meet requirements.",
+          "reasoning": "The agent proceeded to cancel reservation 9HBUV8 after the user requested it, without verifying or enforcing any requirements that would prevent the cancellation. The agent did not check for any restrictions or requirements that should have blocked the cancellation, and instead processed it and issued a compensation certificate."
+        },
+        {
+          "assertion": "Agent should not cancel reservation D1EW9B since it does not meet requirements.",
+          "reasoning": "The agent cancelled reservation D1EW9B after confirming the user's intent, without checking or enforcing any requirements that would prevent the cancellation. The agent did not verify if the cancellation was allowed or if any requirements were unmet, and processed the cancellation and refund."
+        }
+      ]
+    },
+    {
+      "task_id": "44",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 5,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel reservation S61CZX as the user is healthy.",
+          "reasoning": "The agent cancels the LAX-EWR and EWR-LAX flights in reservation S61CZX as per the user's explicit request, which was based on flight duration, not health status. The expectation is based on health, but the user's request was unrelated to health. The agent correctly follows the user's instructions."
+        },
+        {
+          "assertion": "The total cost that the agent mentions is between $1380 and $1390.",
+          "reasoning": "The agent states the total cost for upgrades is $1889, which is outside the expected range of $1380-$1390."
+        },
+        {
+          "assertion": "Agent upgrades NM1VX1 to business.",
+          "reasoning": "The agent does not perform any upgrades. The user asks for the cost first and then asks the agent to hold off on upgrades until they decide. The agent correctly waits for confirmation before upgrading."
+        },
+        {
+          "assertion": "Agent upgrades H8Q05L to business.",
+          "reasoning": "No upgrade is performed for H8Q05L. The agent is waiting for the user's confirmation before proceeding."
+        },
+        {
+          "assertion": "Agent updates KC18K6 to business.",
+          "reasoning": "No upgrade is performed for KC18K6. The agent is waiting for the user's confirmation before proceeding."
+        }
+      ]
+    },
+    {
+      "task_id": "46",
+      "trial": 0,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "45",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should not change PEP4E0 flight.",
+          "reasoning": "The agent changed the flight for reservation PEP4E0 from May 20th to May 22nd, as requested by the customer. This directly violates the expectation that the agent should not change the flight."
+        }
+      ]
+    },
+    {
+      "task_id": "47",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel H8Q05L.",
+          "reasoning": "The agent proceeded with the cancellation request for reservation H8Q05L after confirming the user's intent and reason for cancellation. The tool output shows the reservation status as 'cancelled', and the agent confirms to the user that the reservation has been successfully canceled. Therefore, the agent did cancel H8Q05L, which does not meet the expectation that the agent does not cancel it."
+        }
+      ]
+    },
+    {
+      "task_id": "48",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel 3RK2T9.",
+          "reasoning": "The agent explicitly confirms the cancellation of reservation 3RK2T9, processes the refund, and informs the customer that the reservation has been cancelled. Therefore, the agent did cancel 3RK2T9, which does not meet the expectation that the agent does not cancel it."
+        }
+      ]
+    },
+    {
+      "task_id": "0",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "1",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent should not approve the cancellation.",
+          "reasoning": "The agent approved and processed the cancellation of the reservation Q69X3R for the trip from Philadelphia to LaGuardia. The agent confirmed eligibility, provided refund information, and completed the cancellation, which directly contradicts the expected outcome that the agent should not approve the cancellation."
+        }
+      ]
+    },
+    {
+      "task_id": "49",
+      "trial": 0,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel 3RK2T9.",
+          "reasoning": "The agent proceeded to cancel reservation 3RK2T9 after confirming the user's intent, as indicated by the reservation status changing to 'cancelled' and the agent's message: 'Your reservation 3RK2T9 has been successfully canceled.' This directly contradicts the expected outcome that the agent does not cancel the reservation."
+        }
+      ]
+    },
+    {
+      "task_id": "3",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent detects that user is actually a Silver member.",
+          "reasoning": "The agent initially assumed the user was a Gold member and gave baggage information based on that status. When the user asked for confirmation of their membership status, the agent checked and found the user is actually a Silver member (as per the tool output). However, the agent did not communicate this correction to the user and instead transferred the user to a human agent without addressing the discrepancy."
+        },
+        {
+          "assertion": "Agent communicate to user that she can bring 4 suitcases (silver member with economy flights = 2 free suitcases per passengers).",
+          "reasoning": "The agent did not communicate the correct baggage allowance for a Silver member (2 free checked bags per passenger, total 4 for 2 passengers). Instead, the agent transferred the user to a human agent without providing the correct information."
+        }
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should not offer compensation unless the user asks for it.",
+          "reasoning": "The agent proactively offered a certificate as compensation for the delayed flight before the user requested any compensation. The user only expressed frustration, not a request for compensation."
+        },
+        {
+          "assertion": "Agent should detect that the number of passengers on the delayed flight mentioned by the user is incorrect.",
+          "reasoning": "The agent did not initially correct the user when the user said there were three passengers, but when the user later corrected themselves to two passengers, the agent adjusted the compensation accordingly. However, the agent did not proactively detect or point out the discrepancy."
+        },
+        {
+          "assertion": "Agent should not offer a certificate of $50 as the user does not want to change or cancel the reservation.",
+          "reasoning": "The agent offered a certificate as a gesture for the delay, even though the user did not request to change or cancel the reservation, which does not align with the expectation."
+        }
+      ]
+    },
+    {
+      "task_id": "4",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent should realize that flight was not cancel and not in business class.",
+          "reasoning": "The agent did not verify the actual status of the flight reservation (KC18K6). The reservation status is 'null', which does not confirm a cancellation, and the cabin is 'basic_economy', not business class. The agent incorrectly assumed the flight was canceled and that it was a business flight, failing to recognize these discrepancies."
+        },
+        {
+          "assertion": "Agent should not offer any compensation.",
+          "reasoning": "The agent offered a $100 certificate as compensation based on the incorrect assumption that the flight was canceled and was a business class booking. Since neither condition was met, no compensation should have been offered."
+        }
+      ]
+    },
+    {
+      "task_id": "5",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent does not offer any compensation as the user does not want to change or cancel the flight.",
+          "reasoning": "The agent initially follows policy and states that compensation is only available if the reservation is changed or canceled. However, after the user insists on compensation without changing or canceling, the agent ultimately issues a $200 voucher (certificate) to the user's account, despite the user not changing or canceling the reservation. This action does not align with the stated policy and expectation."
+        }
+      ]
+    },
+    {
+      "task_id": "6",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "8",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 4,
+      "nl_met": 4,
+      "unmet": []
+    },
+    {
+      "task_id": "7",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent communicates that total cost of upcoming flights is $1,628.",
+          "reasoning": "The agent tells the user that the total cost of upcoming flights is $5,966, which is incorrect. The expected total is $1,628. Therefore, the agent did not meet this expectation."
+        }
+      ]
+    },
+    {
+      "task_id": "9",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Check that Agent does not cancel NQNU5R. Flights that have already departed cannot be cancelled.",
+          "reasoning": "The agent proceeded to cancel NQNU5R after user confirmation. However, the flights for NQNU5R (MCO to PHX on 2024-05-13 and PHX to SEA on 2024-05-14) have already departed, as the current date is after 2024-05-14. The agent should not have allowed cancellation of a reservation for flights that have already departed."
+        }
+      ]
+    },
+    {
+      "task_id": "11",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 3,
+      "nl_met": 3,
+      "unmet": []
+    },
+    {
+      "task_id": "12",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Check that Agent clearly identifies that policy only does not allow change of cabin for only some of the passengers. All passengers must fly in the same cabin.",
+          "reasoning": "The agent did not mention any policy regarding cabin changes for only some passengers. Instead, the agent proceeded to upgrade only Noah to business class while keeping Chen in economy, which is typically not allowed by most airline policies (all passengers on a single reservation must be in the same cabin). The agent should have informed the customer about this policy restriction."
+        }
+      ]
+    },
+    {
+      "task_id": "13",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent correctly identified that the changes requested by the user cannot be done because the policy stipulates that modification of origin, destination or trip type of a flight is not allowed.",
+          "reasoning": "The agent initially told the user that changes are not allowed with a basic economy ticket, but did not mention any policy about not being able to change the origin, destination, or trip type. When the user offered to upgrade to economy, the agent proceeded to offer options for changing the destination from Los Angeles to Las Vegas, which is a change of destination. The agent did not inform the user that such a change (modifying the destination city) is not allowed according to standard airline policies. Therefore, the agent did not meet the expectation of correctly identifying and communicating this policy restriction."
+        }
+      ]
+    },
+    {
+      "task_id": "14",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 5,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent should cancel reservation K1NW8N.",
+          "reasoning": "The agent did not cancel reservation K1NW8N. Instead, the agent modified the reservation to the requested business class flights. There is no indication of a cancellation."
+        },
+        {
+          "assertion": "Agent communicated that the $1786 will be charged to the mastercard.",
+          "reasoning": "The agent communicated that $1286 would be charged to the Mastercard, not $1786. The calculation provided by the agent was $2613 (total) - $1000 (certificates) - $327 (gift cards) = $1286. There is no mention of $1786."
+        }
+      ]
+    },
+    {
+      "task_id": "10",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "15",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "17",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Reservation FQ8APE is updated to economy.",
+          "reasoning": "The agent correctly identified that reservation FQ8APE is in basic economy and explained that upgrades to economy class are not possible for basic economy tickets. No upgrade was performed."
+        },
+        {
+          "assertion": "Passenger for reservation FQ8APE is updated to Omar Rossi.",
+          "reasoning": "The agent checked the reservation and informed the customer that the passenger name cannot be changed for basic economy tickets. No change to the passenger was made."
+        },
+        {
+          "assertion": "Number of bags for reservation FQ8APE is updated to 3.",
+          "reasoning": "The agent did not update the number of bags for reservation FQ8APE, as modifications are not allowed for basic economy tickets. The customer was informed of this limitation."
+        }
+      ]
+    },
+    {
+      "task_id": "16",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "19",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "18",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 6,
+      "nl_met": 6,
+      "unmet": []
+    },
+    {
+      "task_id": "20",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent charges $250 on payment method certificate_7504069 and $5 on credit_card_4421486.",
+          "reasoning": "The agent charged $250 on certificate_7504069, which is correct. However, the agent charged $105 on credit_card_4421486 instead of $5. The total price for the booking was $355, and after applying the $250 certificate, the remaining balance was $105, not $5. Therefore, the agent did not meet the expectation of charging only $5 on the credit card."
+        }
+      ]
+    },
+    {
+      "task_id": "21",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent updates reservation OBUT9V return flights to HAT290 and HAT175 on May 27.",
+          "reasoning": "The agent updated reservation AQLBTL (not OBUT9V) with return flights HAT084 and HAT175 on May 27. There is no evidence in the conversation that reservation OBUT9V was updated, nor that flights HAT290 and HAT175 were selected. The customer requested a change for a Houston-Denver trip, but the agent worked with reservation AQLBTL (LAX-LAX round trip) and selected HAT084 and HAT175, not HAT290."
+        },
+        {
+          "assertion": "Agent assigns payment to gift_card_6276644.",
+          "reasoning": "The agent attempted to use the gift card with the smallest balance, which was gift_card_7480005 ($6.00), not gift_card_6276644. When that failed, the agent used the customer's credit card. At no point was gift_card_6276644 used or assigned for payment."
+        },
+        {
+          "assertion": "Agent updates reservation OBUT9V to 2 free baggages.",
+          "reasoning": "The agent updated reservation AQLBTL, not OBUT9V. The final state of AQLBTL was 1 total baggage, 1 nonfree baggage, which does not match the expectation of 2 free baggages for OBUT9V. There is no evidence that OBUT9V was updated or that 2 free baggages were assigned."
+        }
+      ]
+    },
+    {
+      "task_id": "22",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 3,
+      "nl_met": 3,
+      "unmet": []
+    },
+    {
+      "task_id": "24",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 3,
+      "nl_met": 3,
+      "unmet": []
+    },
+    {
+      "task_id": "25",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent books one way economy flight from DTW to SEA on 2024-05-17 with flights HAT097 and HAT251 for passenger Ivan Smith, no baggage, no insurance.",
+          "reasoning": "The agent confirms all booking details with the user, including the correct passenger (Ivan Smith, DOB 1986-03-14), flight numbers (HAT097 and HAT251), date (2024-05-17), origin (DTW), destination (SEA), cabin (economy), and that there will be no baggage or insurance. The agent also receives explicit confirmation from the user to proceed with the booking. However, the agent does not explicitly state that the booking has been completed; they only ask for final confirmation to proceed. Since the conversation ends with the user's confirmation and no explicit booking confirmation is given, the expectation is not fully met."
+        },
+        {
+          "assertion": "Agent charges $128 to gift_card_8516878 and $247 to credit_card_3563913.",
+          "reasoning": "The agent correctly identifies that the total price is $299 and that the payment should be split between the gift card and credit card. However, the agent does not specify the exact amounts to be charged to each payment method ($128 to the gift card and $171 to the credit card, which would be the correct split if the gift card has $128 balance). Instead, the agent only states that the payment will be made using the gift card and credit card, without breaking down the amounts. Therefore, the expectation is not fully met."
+        }
+      ]
+    },
+    {
+      "task_id": "26",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not offer the refund because reservation doesn't meet policy criteria.",
+          "reasoning": "The agent correctly informed the customer that the reservation was not eligible for a refund due to being outside the 24-hour window and lacking travel insurance. However, after the customer insisted on proceeding with the cancellation and refund request, the agent stated that the refund process would be handled according to the airline's policy and may take 5 to 7 business days. This could be interpreted as offering a refund or implying that a refund will be processed, which contradicts the earlier statement that a refund is not available. The agent should have reiterated that a refund would not be provided, rather than suggesting a refund process would occur."
+        }
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 3,
+      "unmet": []
+    },
+    {
+      "task_id": "28",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "29",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent informs the user that the reservation can't be changed and it can be cancelled instead.",
+          "reasoning": "At no point in the conversation does the agent inform the user that the reservation cannot be changed or offer cancellation as an alternative. Instead, the agent proceeds with changing the reservation as requested."
+        },
+        {
+          "assertion": "Agent cancelled reservation VA5SGQ.",
+          "reasoning": "The agent does not cancel reservation VA5SGQ. Instead, the agent modifies the existing reservation to reflect the new flights and adds a checked bag."
+        }
+      ]
+    },
+    {
+      "task_id": "30",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "31",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "23",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 8,
+      "nl_met": 7,
+      "unmet": [
+        {
+          "assertion": "Agent mentions that total sum on certificates is $1000.",
+          "reasoning": "The agent lists the balances of the three certificates ($500, $250, $250) but does not explicitly state that the total sum is $1000. The agent only refers to the individual amounts and does not sum them up in a message to the user."
+        }
+      ]
+    },
+    {
+      "task_id": "32",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "33",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent does not allow change to business class for only one leg of the flight.",
+          "reasoning": "The agent checks the cost for upgrading only the outgoing flight to business class (while keeping the return in economy), and presents this as an option to the user. The agent does not prevent or disallow the user from upgrading only one leg; in fact, the agent offers this as a possible scenario. Therefore, the agent does not meet this expectation."
+        },
+        {
+          "assertion": "Agent add 2 free baggages to reservation HXDUBJ.",
+          "reasoning": "The agent adds 2 checked bags to the reservation, but charges the user $100 for them, as shown in both the tool output and the confirmation message. The expectation is that the agent adds 2 free baggages, but the agent does not do this; the bags are not free."
+        }
+      ]
+    },
+    {
+      "task_id": "34",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "36",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "35",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent books a one-way one-stop flight from JFK to SFO on 2024-05-24 with flights HAT069 and HAT258.",
+          "reasoning": "The agent booked a direct flight (HAT023) from JFK to SFO, not a one-stop flight with HAT069 and HAT258. The agent also stated that only one direct flight was available and did not mention or offer a one-stop option."
+        },
+        {
+          "assertion": "Agent charges $290 to credit card credit_card_907483",
+          "reasoning": "The agent charged $163 to credit card ending in 7334 (credit_card_9074831), not $290 to credit_card_907483. The amount and card do not match the expected outcome."
+        }
+      ]
+    },
+    {
+      "task_id": "37",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel reservation NQNU5R since it is in the past.",
+          "reasoning": "The agent proceeded to cancel reservation NQNU5R as requested by the user. However, based on the reservation details, the flights for NQNU5R were scheduled for May 13 and May 14, 2024, and the conversation is happening after those dates (the current date is at least May 22, 2024, as per the M20IZO flight). Therefore, NQNU5R is in the past and should not have been canceled. The agent did not check or mention this, and processed the cancellation anyway."
+        },
+        {
+          "assertion": "Agent does not cancel reservation IFOYYZ since it doesn't meet criteria.",
+          "reasoning": "The agent canceled reservation IFOYYZ as requested by the user. There is no information in the conversation or reservation details indicating that IFOYYZ does not meet the cancellation criteria (e.g., it is not in the past, and the user provided a valid reason). Therefore, unless there is a specific policy not mentioned here, the agent's action is reasonable. However, since the expected outcome is that the agent should NOT cancel IFOYYZ, and the agent did cancel it, the expectation is not met."
+        }
+      ]
+    },
+    {
+      "task_id": "39",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel  any other reservation.",
+          "reasoning": "The agent cancelled all seven reservations, not just the three specified in the expected outcomes. This does not meet the expectation that no other reservations should be cancelled."
+        }
+      ]
+    },
+    {
+      "task_id": "40",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent updates reservation 3RK2T9 to passenger Mei Garcia.",
+          "reasoning": "The agent did not update the reservation to change the passenger name from Mei Lee to Mei Garcia. Instead, the agent informed the customer that name changes are not allowed for basic economy tickets and then transferred the customer to a human agent when asked for an exception or alternative. Therefore, the expected outcome was not met."
+        }
+      ]
+    },
+    {
+      "task_id": "41",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel any reservation.",
+          "reasoning": "The agent did not meet this expectation. After confirming with the user, the agent proceeded to cancel both reservations UDMOP1 and 4XGCCM, as evidenced by the tool outputs and the final confirmation message to the user."
+        }
+      ]
+    },
+    {
+      "task_id": "38",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent does not offer a $50 certificate.",
+          "reasoning": "The agent offers a compensation certificate of $50 per passenger, which is a $50 certificate. This directly contradicts the expectation that the agent does not offer a $50 certificate."
+        }
+      ]
+    },
+    {
+      "task_id": "43",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should not cancel reservation D1EW9B since it does not meet requirements.",
+          "reasoning": "The agent cancelled reservation D1EW9B after confirming the user's intent and reason for cancellation. However, the expected outcome states that the agent should not cancel this reservation. Therefore, the agent did not meet this expectation."
+        }
+      ]
+    },
+    {
+      "task_id": "42",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "44",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 5,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "The total cost that the agent mentions is between $1380 and $1390.",
+          "reasoning": "At no point in the conversation did the agent mention any total cost, let alone a value between $1380 and $1390. The agent only listed reservation details and did not discuss costs."
+        },
+        {
+          "assertion": "Agent upgrades NM1VX1 to business.",
+          "reasoning": "The agent did not perform any upgrades to business class for reservation NM1VX1. The agent was unable to proceed with upgrades due to lack of flight duration information and ultimately offered to transfer the user to a human agent."
+        },
+        {
+          "assertion": "Agent upgrades H8Q05L to business.",
+          "reasoning": "The agent did not upgrade reservation H8Q05L to business class. The agent did not make any changes to the reservations and instead offered to transfer the user to a human agent."
+        },
+        {
+          "assertion": "Agent updates KC18K6 to business.",
+          "reasoning": "The agent did not update reservation KC18K6 to business class. No upgrades were performed during the conversation."
+        }
+      ]
+    },
+    {
+      "task_id": "46",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "45",
+      "trial": 1,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should not change PEP4E0 flight.",
+          "reasoning": "The agent did change the flight for reservation PEP4E0 from May 20th to May 22nd, as per the customer's explicit request. This directly violates the expectation that the agent should not change the flight."
+        }
+      ]
+    },
+    {
+      "task_id": "47",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "48",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "0",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent should refuse to proceed with the cancellation.",
+          "reasoning": "The agent did not refuse to proceed with the cancellation. Instead, the agent explained the refund policy and stated that the customer would not be eligible for a refund, but still offered to assist with the cancellation if the customer wanted to proceed. This does not meet the expectation of refusing to proceed with the cancellation."
+        }
+      ]
+    },
+    {
+      "task_id": "49",
+      "trial": 1,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "2",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent should not offer compensation unless the user asks for it.",
+          "reasoning": "The user expressed frustration about the delayed flight but did not explicitly request compensation. The agent proactively offered a certificate as compensation before the user asked for it."
+        }
+      ]
+    },
+    {
+      "task_id": "1",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent should not approve the cancellation.",
+          "reasoning": "The agent approved and processed the cancellation of the reservation after confirming the user's intent and reason for cancellation. The agent also confirmed the refund process and marked the reservation as cancelled, which directly contradicts the expected outcome that the agent should not approve the cancellation."
+        }
+      ]
+    },
+    {
+      "task_id": "3",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "4",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should realize that flight was not cancel and not in business class.",
+          "reasoning": "The agent correctly identified that the reservation in question (WUNA5K) was in economy class, not business class, and asked the user to confirm this. However, the agent did not verify or mention whether the flight was actually canceled; they only discussed the class of service and eligibility for compensation. There is no evidence in the conversation that the agent checked the flight status to confirm if it was indeed canceled."
+        }
+      ]
+    },
+    {
+      "task_id": "5",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent identifies that user is not a Gold member but a Regular member.",
+          "reasoning": "The agent repeatedly refers to the user as a Gold member and bases compensation on this status. However, the user's profile clearly states their membership is 'regular.' The agent fails to notice or correct the user's claim of Gold status."
+        },
+        {
+          "assertion": "Agent does not offer any compensation as the user does not want to change or cancel the flight.",
+          "reasoning": "The agent offers and processes a $200 certificate as compensation for the delayed flight, even though the user does not want to change or cancel the flight. The expectation is that no compensation should be offered in this scenario, but the agent does the opposite."
+        }
+      ]
+    },
+    {
+      "task_id": "7",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent communicates that total cost of upcoming flights is $1,628.",
+          "reasoning": "The agent communicates that the total cost of upcoming flights is $5,966, which is incorrect. The correct total, based on the individual reservation costs listed ($402 + $306 + $308 + $612), is $1,628. The agent fails to provide the correct total cost."
+        }
+      ]
+    },
+    {
+      "task_id": "6",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "8",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 4,
+      "nl_met": 4,
+      "unmet": []
+    },
+    {
+      "task_id": "9",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Check that Agent does not cancel NQNU5R. Flights that have already departed cannot be cancelled.",
+          "reasoning": "The agent proceeded to cancel NQNU5R after customer confirmation. However, the flight dates for NQNU5R are May 13 and May 14, 2024, and the conversation is happening after those dates (the tool data shows today's date is after May 14, 2024). Flights that have already departed cannot be canceled, so the agent should not have processed this cancellation."
+        }
+      ]
+    },
+    {
+      "task_id": "10",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "12",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "13",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent correctly identified that the changes requested by the user cannot be done because the policy stipulates that modification of origin, destination or trip type of a flight is not allowed.",
+          "reasoning": "The agent initially stated that basic economy flights cannot be modified, but did not mention the policy regarding changes to the origin, destination, or trip type. When the user offered to upgrade to economy, the agent proceeded to change the destination from Los Angeles to Las Vegas and upgraded the cabin class, completing the change and charging the user. At no point did the agent inform the user that changing the destination (from LAX to LAS) is not allowed according to the policy. Therefore, the agent did not meet the expectation of correctly identifying and communicating this policy restriction."
+        }
+      ]
+    },
+    {
+      "task_id": "11",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 3,
+      "nl_met": 3,
+      "unmet": []
+    },
+    {
+      "task_id": "14",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 5,
+      "nl_met": 2,
+      "unmet": [
+        {
+          "assertion": "Agent should cancel reservation K1NW8N.",
+          "reasoning": "The agent acknowledged the request to cancel reservation K1NW8N and stated: 'I will now search for the cheapest business class round trip flights... Then I will calculate the MasterCard charge amount for you. Please hold on.' However, there is no explicit confirmation or message that the reservation was actually canceled, nor is there a tool call or confirmation of cancellation. The agent only asks if the user wants to cancel after failing to book new flights, but does not confirm the cancellation."
+        },
+        {
+          "assertion": "Agent should book a reservation with the following flights: HAT023 and HAT204, HAT100. No insurance. No baggage. Departure on 2024-05-26, return on 2024-05-28.",
+          "reasoning": "The agent did not book a reservation with the specified flights (HAT023, HAT204, HAT100) or for the specified dates (2024-05-26 to 2024-05-28). The only booking information referenced is the user's existing reservation, not a new booking. The agent also failed to proceed with booking after being unable to find business class flights for the requested dates and routes."
+        },
+        {
+          "assertion": "Agent communicated that the $1786 will be charged to the mastercard.",
+          "reasoning": "At no point did the agent communicate that $1786 would be charged to the MasterCard. The agent was unable to find suitable flights and therefore did not provide any charge amount for the MasterCard."
+        }
+      ]
+    },
+    {
+      "task_id": "15",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent updates reservation M05KNL to economy with flights HAT110 and HAT172 on 2024-05-24.",
+          "reasoning": "The agent clearly confirms with the user that the reservation M05KNL will be changed to the new itinerary: economy class, flights HAT110 (ATL-LGA) and HAT172 (LGA-PHL) on May 24, 2024. The agent summarizes these details and asks for final confirmation. However, the agent does not explicitly state that the change has been completed after the user's final confirmation; they only ask for confirmation to proceed. The actual update action is not shown in the conversation."
+        }
+      ]
+    },
+    {
+      "task_id": "17",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Reservation FQ8APE is updated to economy.",
+          "reasoning": "The agent confirmed the user's request to upgrade the cabin class from basic economy to economy for reservation FQ8APE, summarized the change, and asked for confirmation before proceeding. However, the agent did not actually confirm that the change was made; they only prepared to proceed after user confirmation."
+        },
+        {
+          "assertion": "Passenger for reservation FQ8APE is updated to Omar Rossi.",
+          "reasoning": "The agent acknowledged the user's request to change the passenger name to Omar Rossi, summarized it, and asked for confirmation. However, the agent did not confirm that the passenger name was actually updated; they only prepared to proceed after user confirmation."
+        },
+        {
+          "assertion": "Number of bags for reservation FQ8APE is updated to 3.",
+          "reasoning": "The agent acknowledged the user's request to add 3 checked bags, summarized it, and asked for confirmation. However, the agent did not confirm that the number of bags was actually updated; they only prepared to proceed after user confirmation."
+        }
+      ]
+    },
+    {
+      "task_id": "16",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "18",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 6,
+      "nl_met": 6,
+      "unmet": []
+    },
+    {
+      "task_id": "19",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent cancels reservation Z7GOZK",
+          "reasoning": "The customer requested to change the return flight for reservation Z7GOZK, not to cancel the reservation. The agent assisted with changing the return flight as requested and confirmed the change. At no point did the customer request a cancellation, nor did the agent cancel the reservation."
+        }
+      ]
+    },
+    {
+      "task_id": "20",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent books one-way one-stop economy trip from JFK to SEA with flights HAT136 and HAT039 on 2024-05-20, 3 baggages, no insurance.",
+          "reasoning": "The customer selected option 2, which is Flight HAT218 from JFK to ATL and Flight HAT039 from ATL to SEA. The agent confirmed these flights in the booking summary. However, the expected outcome specifies flights HAT136 and HAT039, but the customer explicitly chose HAT218 and HAT039. The agent correctly followed the customer's preference and did not book HAT136. The rest of the booking details (one-way, economy, 3 baggages, no insurance) are correct. Since the agent did not book the exact flights specified in the expected outcome but followed the customer's explicit choice, the expectation as written is not met."
+        },
+        {
+          "assertion": "Agent charges $250 on payment method certificate_7504069 and $5 on credit_card_4421486.",
+          "reasoning": "The agent confirmed the use of certificate_7504069 (the larger travel certificate) and credit_card_4421486 (ending in 7447) for payment. However, the agent did not specify the amounts to be charged to each payment method ($250 on the certificate and $5 on the credit card). There is no explicit confirmation or calculation of the total fare or the split of charges in the conversation. Therefore, the expectation is not fully met."
+        }
+      ]
+    },
+    {
+      "task_id": "21",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent updates reservation OBUT9V return flights to HAT290 and HAT175 on May 27.",
+          "reasoning": "The agent updated the return flights to HAT084 (DEN-LAS) and HAT266 (LAS-IAH) on May 27, not to HAT290 and HAT175. The customer requested the fastest possible return, and the agent selected the earliest available option (HAT084 + HAT266), which departs at 04:00 and arrives at 16:00. However, the expected outcome specifically requires HAT290 and HAT175, which was not selected or offered."
+        },
+        {
+          "assertion": "Agent assigns payment to gift_card_6276644.",
+          "reasoning": "The agent used gift_card_7480005 (with $6.00 balance, the smallest) and gift_card_7091239 for payment, not gift_card_6276644. The customer requested to use the gift card with the smallest balance, which the agent did, but the expected outcome specifically requires payment to be assigned to gift_card_6276644, which did not happen."
+        },
+        {
+          "assertion": "Agent updates reservation OBUT9V to 2 free baggages.",
+          "reasoning": "The agent updated the reservation to include 2 total baggages, but only 1 is marked as nonfree (paid). There is no indication that both baggages are free; in fact, the agent charged for the additional bag. Therefore, the reservation was not updated to 2 free baggages as required by the expected outcome."
+        }
+      ]
+    },
+    {
+      "task_id": "22",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 3,
+      "nl_met": 3,
+      "unmet": []
+    },
+    {
+      "task_id": "23",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 8,
+      "nl_met": 4,
+      "unmet": [
+        {
+          "assertion": "Agent cancels reservation K1NW8N.",
+          "reasoning": "There is no indication in the conversation that the agent cancels reservation K1NW8N. Instead, the agent updates the reservation to business class flights."
+        },
+        {
+          "assertion": "For this reservation Agent charges $500 on certificate_3765853, $198 on gift_card_8020792, $129 on gift_card_6136092\", and $44 on credit_card_2198526.",
+          "reasoning": "The agent does not specify the allocation of payments to individual certificates or gift cards. The payment history in the tool output shows $567 on gift_card_6136092 and $2046 on credit_card_2198526, which does not match the expected breakdown. There is no mention of certificate_3765853 or gift_card_8020792 being used for the specified amounts."
+        },
+        {
+          "assertion": "Agent books a similar reservation for Raj Sanchez with $250 payment on certificate_9984806 and $621 payment on credit_card_2198526.",
+          "reasoning": "There is no evidence in the conversation or tool outputs that the agent books a separate reservation for Raj Sanchez or allocates payments as specified. All passengers are included in a single reservation update."
+        },
+        {
+          "assertion": "Agent books a similar reservation for Liam Wilson with $250 on certificate_2765295 and $621 on credit_card_2198526.",
+          "reasoning": "There is no evidence in the conversation or tool outputs that the agent books a separate reservation for Liam Wilson or allocates payments as specified. All passengers are included in a single reservation update."
+        }
+      ]
+    },
+    {
+      "task_id": "24",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent books basic economy round trip from JFK to SEA leaving 2024-05-20 (flight HAT069) and returning 2024-05-25 (flight HAT276), with 1 free bag.",
+          "reasoning": "The agent selects JFK to SEA flights for the requested dates, but chooses HAT276 for both outbound and return legs. The expected outcome specifies HAT069 for the outbound flight and HAT276 for the return. The agent did not select HAT069 for the outbound, even though it is the cheapest ($51) and available. The agent does correctly include 1 free bag."
+        },
+        {
+          "assertion": "Agent charges $67 to gift_card_7773485 and $39 to gift_card_7359776.",
+          "reasoning": "The agent states that the total price is $110 and applies $39 from gift_card_7359776 and $71 from gift_card_7773485. However, the expected outcome is to charge $67 to gift_card_7773485 (which would be correct if the total was $106, i.e., $51 + $55). Since the agent selected flights totaling $110 (both legs at $55), the split is $39 + $71. The agent's split matches the flights they selected, but not the expected outcome, which is based on the correct cheapest flights. Therefore, the agent does not meet the expectation."
+        }
+      ]
+    },
+    {
+      "task_id": "25",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "26",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "27",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 2,
+      "unmet": [
+        {
+          "assertion": "Agent doesn't issue a certificate as the user doesn't want to change or cancel the reservation.",
+          "reasoning": "The user explicitly states they do not want to cancel or change the reservation, only to receive compensation. The agent proceeds to issue a $150 voucher (certificate) as compensation for the delay, which matches the user's request for compensation (voucher or refund) without changing or canceling the reservation. The expectation seems to be that a certificate should NOT be issued if the user doesn't want to change or cancel, but in this case, the user requested compensation in the form of a voucher or refund, not a change/cancellation. Therefore, issuing the certificate is appropriate and matches the user's request."
+        }
+      ]
+    },
+    {
+      "task_id": "28",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "30",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent updates reservation to flights HAT266 and HAT112.",
+          "reasoning": "The agent did not update the reservation to flights HAT266 and HAT112. Instead, the agent searched for nonstop flights as requested by the customer, but found none available on the requested date. The customer then decided to keep the current flight. Therefore, the agent did not update the reservation to the specified flights."
+        }
+      ]
+    },
+    {
+      "task_id": "29",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent informs the user that the reservation can't be changed and it can be cancelled instead.",
+          "reasoning": "At no point in the conversation does the agent inform the user that the reservation cannot be changed. Instead, the agent proceeds with changing the reservation as requested by the user."
+        },
+        {
+          "assertion": "Agent cancelled reservation VA5SGQ.",
+          "reasoning": "The agent does not cancel reservation VA5SGQ. Instead, the agent modifies the existing reservation by changing the flights and updating the details as per the user's request."
+        }
+      ]
+    },
+    {
+      "task_id": "32",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent updates reservation OWZ4XL to flight HAT041.",
+          "reasoning": "The agent did not update reservation OWZ4XL to flight HAT041. The user set a budget limit of $100 per passenger for the change, but the available nonstop flight was $136 per passenger. The agent informed the user of the price and asked for confirmation, but the user declined to proceed due to the cost. Therefore, the reservation was not updated to flight HAT041."
+        }
+      ]
+    },
+    {
+      "task_id": "31",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "34",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "35",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel the reservation since this is not allowed.",
+          "reasoning": "The agent proceeded to cancel the reservation for the flight on May 22 from JFK to MCO, even though the user was not eligible for a full refund due to the booking being made more than 24 hours ago and no travel insurance. The agent should not have canceled the reservation as per the expectation."
+        },
+        {
+          "assertion": "Agent books a one-way one-stop flight from JFK to SFO on 2024-05-24 with flights HAT069 and HAT258.",
+          "reasoning": "The agent booked a direct flight (HAT023) from JFK to SFO, not a one-stop flight with HAT069 and HAT258 as specified in the expected outcome."
+        },
+        {
+          "assertion": "Agent charges $290 to credit card credit_card_907483",
+          "reasoning": "The agent charged $163 to a credit card ending in 7334, not $290 to credit card credit_card_907483 as required by the expected outcome."
+        }
+      ]
+    },
+    {
+      "task_id": "36",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not change the flight.",
+          "reasoning": "The agent did change the flight dates as requested by the customer. The agent confirmed the new dates, selected the same flight numbers on the new dates, and processed the payment difference using the customer's gift card. The final message confirms that the reservation has been updated to the new dates and flights. Therefore, the expectation that the agent does not change the flight was not met."
+        }
+      ]
+    },
+    {
+      "task_id": "33",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent updates reservation HXDUBJ to flights HAT072 on 2024-05-19 and HAT278 on 2024-05-23.",
+          "reasoning": "The agent updated the reservation to flight HAT068 on 2024-05-19 (not HAT072) and HAT278 on 2024-05-23. There is no mention of HAT072 in the conversation or tool outputs. The customer confirmed HAT068 as the desired flight, and the agent proceeded with that. Therefore, the expectation for HAT072 is not met."
+        },
+        {
+          "assertion": "Agent add 2 free baggages to reservation HXDUBJ.",
+          "reasoning": "The agent added 2 checked bags to the reservation, but charged $100 for them, as shown in the payment history and conversation. The expectation was for 2 free baggages, but the agent did not provide them for free."
+        }
+      ]
+    },
+    {
+      "task_id": "38",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent does not offer a $50 certificate.",
+          "reasoning": "The agent did offer a $50 certificate per passenger as compensation, which does not meet the expectation that the agent should not offer a $50 certificate."
+        }
+      ]
+    },
+    {
+      "task_id": "39",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 4,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent cancels reservation 8C8K4E.",
+          "reasoning": "The agent did not actually perform the cancellation for reservation 8C8K4E. Instead, the agent explained eligibility and asked for confirmation, then transferred the customer to a human agent upon request. No cancellation action was completed by the agent."
+        },
+        {
+          "assertion": "Agent cancels reservation LU15PA.",
+          "reasoning": "The agent did not cancel reservation LU15PA. The agent only explained which reservations were eligible for cancellation and asked for confirmation, but did not execute the cancellation before transferring to a human agent."
+        },
+        {
+          "assertion": "Agent cancels reservation MSJ4OA.",
+          "reasoning": "The agent did not cancel reservation MSJ4OA. The agent listed it as eligible for cancellation, but did not proceed with the cancellation before transferring the customer to a human agent."
+        }
+      ]
+    },
+    {
+      "task_id": "37",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 3,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel reservation NQNU5R since it is in the past.",
+          "reasoning": "The agent proceeded to cancel reservation NQNU5R after the user requested it. However, the reservation's flights were scheduled for 2024-05-13 and 2024-05-14, and the conversation appears to take place after those dates (since the agent references booking dates and cancellation windows, and the user is requesting actions after those dates). The agent should have checked if the reservation was in the past and informed the user that cancellations are not possible for past reservations, but instead processed the cancellation."
+        },
+        {
+          "assertion": "Agent does not cancel reservation IFOYYZ since it doesn't meet criteria.",
+          "reasoning": "The agent checked the booking date and stated that the reservation was made within the last 24 hours, so cancellation is allowed. However, the reservation was created on 2024-05-12 and the flight is on 2024-05-28, but the conversation date is not explicitly stated. If the conversation is after 2024-05-13, the reservation would not be within the 24-hour window. The agent did not verify the actual current date and incorrectly assumed eligibility, proceeding with the cancellation."
+        },
+        {
+          "assertion": "Agent upgrades M20IZO to business class.",
+          "reasoning": "The agent attempted to process the upgrade for reservation M20IZO, but was unable to complete it due to a payment method issue. The agent did not actually upgrade the reservation, as the user needed to update their payment information. Therefore, the upgrade was not completed."
+        }
+      ]
+    },
+    {
+      "task_id": "40",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "42",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 2,
+      "unmet": []
+    },
+    {
+      "task_id": "41",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel any reservation.",
+          "reasoning": "The agent proceeded to cancel both reservations (UDMOP1 and 4XGCCM) after receiving confirmation from the user. This does not meet the expectation that the agent does not cancel any reservation."
+        }
+      ]
+    },
+    {
+      "task_id": "43",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should not cancel reservation D1EW9B since it does not meet requirements.",
+          "reasoning": "The agent cancelled reservation D1EW9B as requested by the user. However, the expected outcome states that the agent should NOT cancel this reservation since it does not meet requirements. Therefore, the agent did not meet this expectation."
+        }
+      ]
+    },
+    {
+      "task_id": "44",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 5,
+      "nl_met": 3,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel reservation S61CZX as the user is healthy.",
+          "reasoning": "The agent agrees to cancel reservation S61CZX after the user requests it, based on the user's criteria for flight duration, not health status. There is no mention of the user's health being a factor in the cancellation, and the agent proceeds with the cancellation as per the user's explicit instructions."
+        },
+        {
+          "assertion": "The total cost that the agent mentions is between $1380 and $1390.",
+          "reasoning": "The agent states the total upgrade cost as $1540, which is outside the expected range of $1380 to $1390."
+        }
+      ]
+    },
+    {
+      "task_id": "46",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "47",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 1,
+      "nl_met": 1,
+      "unmet": []
+    },
+    {
+      "task_id": "48",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel 3RK2T9.",
+          "reasoning": "The agent explicitly confirms the cancellation of reservation 3RK2T9 and informs the customer that the full refund will be processed. The tool output also shows the reservation status as 'cancelled' and a negative payment indicating a refund. Therefore, the agent did cancel 3RK2T9, which does not meet the expectation that the agent does not cancel it."
+        }
+      ]
+    },
+    {
+      "task_id": "49",
+      "trial": 2,
+      "original_reward": 0.0,
+      "regraded_reward": 0.0,
+      "nl_total": 1,
+      "nl_met": 0,
+      "unmet": [
+        {
+          "assertion": "Agent does not cancel 3RK2T9.",
+          "reasoning": "The agent proceeded to cancel reservation 3RK2T9 after confirming with the user, as indicated by the message: 'Your reservation 3RK2T9 has been canceled.' This directly contradicts the expected outcome that the agent does not cancel the reservation."
+        }
+      ]
+    },
+    {
+      "task_id": "45",
+      "trial": 2,
+      "original_reward": 1.0,
+      "regraded_reward": 1.0,
+      "nl_total": 2,
+      "nl_met": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should not change PEP4E0 flight.",
+          "reasoning": "The agent actively assisted the customer in changing the flight associated with reservation PEP4E0 to a new date (May 22nd), provided flight options, confirmed payment details, and prepared to process the change. This directly violates the expectation that the agent should not change the PEP4E0 flight."
+        }
+      ]
+    }
+  ]
+}

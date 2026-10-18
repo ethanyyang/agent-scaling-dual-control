@@ -1,0 +1,57 @@
+{
+  "cell": {
+    "family": "google",
+    "model": "gemini-3-flash",
+    "tier": "mid",
+    "domain": "retail"
+  },
+  "condition": "m1",
+  "budget": {
+    "limit": 16644,
+    "per_call_cap": 4161,
+    "wrapup_threshold": 2497,
+    "min_call_allowance": 203,
+    "exhausted_message_sha256": "f550c541217dd85534417b4d8262b66ab29ae723c289c9ce9009e1ecdc1e7089"
+  },
+  "budget_multiplier": 4.0,
+  "calibration_source": {
+    "results_sha256": "836e2a05ad11647964c344e9dfa239652b455a0dd06571d146a04a5a7b1ae450",
+    "B_1x": 4161,
+    "c": 1072,
+    "per_call_median": 203
+  },
+  "read_call_limit": 4,
+  "orchestrator_cap_mult": 1.0,
+  "cap_rule": "b1x",
+  "smoke": null,
+  "task_ids_used": 50,
+  "snapshot": "gemini-3-flash-preview",
+  "litellm_model": "gemini/gemini-3-flash-preview",
+  "agent": "m1_gemini3flash_high_retail_b4x_capb1x",
+  "agent_llm_args": {
+    "reasoning_effort": "high"
+  },
+  "user_llm": "gpt-5.2-2025-12-11",
+  "user_llm_args": {
+    "reasoning_effort": "low"
+  },
+  "seed": 300,
+  "num_trials": 3,
+  "max_steps": 200,
+  "task_ids_sha256": "5047ad30fdc1fda10416047a19473c72b43e3c42cfd56d5076354d27c6207b64",
+  "tau2_commit": "c339866",
+  "base_prompt_sha256": "825bb492ecd9062046cc7de0050b31ae7887e3577b66b149883728e71a193da7",
+  "role_block_sha256": {
+    "m1_advisor": "a350bd2cec205373fcf25403ed7606eb54b9a877b35bb0f9ebcfc3641dc06186",
+    "m1_orchestrator": "1a26e997efe8928865330dd5ecc5409964402842aeac666239108e04b545e000",
+    "m1_database_agent": "367b9355faf9a0063ddaee28303e4e951ff1a032261556d5b379d2f1a76fffc8"
+  },
+  "started_utc": "2026-09-22T00:52:00.222387+00:00",
+  "finished_utc": "2026-09-22T02:10:56.284968+00:00",
+  "wall_seconds": 4736.1,
+  "return_code": 0,
+  "episodes": 150,
+  "infrastructure_errors": 0,
+  "results_path": "tau2-bench/data/simulations/m1-retail-gemini3flash-high-gpt52low-b4x-capb1x-3trials-seed300/results.json",
+  "results_sha256": "15c77ca75c1081bcb7f57cab772efdf024e82f3307c84344728c83472fd344a8"
+}

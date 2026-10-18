@@ -1,0 +1,66 @@
+====================================================================
+RUN METADATA
+====================================================================
+  source      : ./tau2-bench/data/simulations/exploratory-airline-sas-gpt41mini-full-3trials-seed300/results.json
+  sha256      : 0e6a9bb1c33951e3ae51e0d1f32996d8f4d9adf18d9631119f244ba873ac3bd7
+  commit      : c3398666e655
+  domain      : airline
+  agent llm   : gpt-4.1-mini  args={'temperature': 0.0}
+  user  llm   : gpt-4.1-mini  args={'temperature': 0.0}
+  num_trials  : 3   seed: 300
+  tasks       : 50   simulations: 150
+
+====================================================================
+PASS RATE
+====================================================================
+  trial 1:  34.0%   (17/50)
+  trial 2:  48.0%   (24/50)
+  trial 3:  38.0%   (19/50)
+  mean    :  40.0%  (std 7.2%)
+  95% CI on pooled pass^1 (Wilson, n=150 episodes): [32.5%, 48.0%]
+  pass^1   :  40.0%   (official tau2 estimator)
+  pass^2   :  26.0%   (official tau2 estimator)
+  pass^3   :  18.0%   (official tau2 estimator)
+  flaky tasks (inconsistent across trials): 21/50  -> ['8', '10', '11', '13', '15', '19', '22', '24', '25', '26', '27', '30', '31', '32', '36'] ...
+
+====================================================================
+FAILURE STRUCTURE  (exploratory passivity-confound check)
+====================================================================
+  needs-write                pass   25/78   =  32.1%
+  no-write (refuse/inform)   pass   35/72   =  48.6%
+
+  FAILURES BY HEURISTIC TYPE (total 90):
+    wrongful write  (acted when gold has no write):   37
+    inaction        (no write when gold has write):   15
+    other/incorrect write or communication       :   38
+    wrongful-write examples: [('1', 0, 1), ('2', 0, 1), ('5', 0, 1), ('9', 0, 3), ('10', 0, 2), ('26', 0, 1), ('38', 0, 1), ('41', 0, 2)]
+    inaction examples      : [('11', 0), ('12', 0), ('14', 0), ('15', 0), ('29', 0), ('25', 1), ('40', 1), ('44', 1)]
+  Note: this is a heuristic taxonomy, not a causal failure annotation.
+
+  termination reasons: user_stop=150
+
+====================================================================
+TOKEN ACCOUNTING & COST  (per episode)
+====================================================================
+  agent input tokens :     51,352  (total 7,702,734)
+    of which cached  :     45,350  (88% hit rate)
+  agent output tokens:        851  (total 127,592)
+  agent LLM calls    :       10.5
+  agent cost         : $  0.00830  (total $1.24)
+  user  cost         : $  0.00268  (total $0.40)
+  TOTAL cost/episode : $  0.01098
+
+  >> Budget projection for 278 tasks x 3 trials x 4 systems
+       if MAS agent cost == SAS       : ~$   36.62
+       if MAS agent cost is 2x SAS    : ~$   57.38
+       if MAS agent cost is 3x SAS    : ~$   78.13
+     Assumes one SAS plus three MAS systems and fixed user-simulator cost.
+
+  per-episode CSV written to ./results/exploratory-airline-sas-gpt41mini-full-3trials-seed300/per_episode.csv
+
+====================================================================
+THRESHOLD POSITIONING (Kim et al. ~45% selection rule)
+====================================================================
+  SAS pass^1 = 40.0%  ->  BELOW the ~45% saturation threshold
+  Rule predicts generic MAS gain: possibly positive
+  Treat this run as exploratory unless model snapshots and protocol were pre-registered.

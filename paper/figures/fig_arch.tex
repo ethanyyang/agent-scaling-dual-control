@@ -1,0 +1,40 @@
+% Figure: the systems compared (schematic, no data). Compiled inline with TikZ.
+\begin{tikzpicture}[
+  font=\scriptsize,
+  agent/.style={draw, rounded corners=2pt, align=center, inner sep=2.5pt, fill=white},
+  ext/.style={draw, rounded corners=2pt, align=center, inner sep=2.5pt, fill=black!6},
+  arr/.style={{Stealth[length=1.5mm]}-{Stealth[length=1.5mm]}, thick},
+  lab/.style={font=\fontsize{5.6}{6.2}\selectfont, align=center, inner sep=1pt}
+]
+% ---------------- (a) single-agent systems: SAS and S2
+\node[anchor=west, font=\scriptsize\bfseries] at (-0.85,1.05) {(a) Single agent: SAS and S2};
+\node[ext] (c1) at (0,-0.6) {simulated\\customer};
+\node[agent] (sas) at (2.45,0.3) {\textbf{SAS}: stock $\tau^2$ agent,\\one context, uncapped;\\its episodes set $\Bx$};
+\node[agent, dashed] (s2) at (2.45,-0.95) {\textbf{S2}: one agent, one context;\\\emph{plan} $\rightarrow$ \emph{review} $\rightarrow$ act;\\same ledger as the MAS};
+\node[draw, black!45, rounded corners=3pt, fit=(sas)(s2), inner sep=2.5pt] (single) {};
+\node[ext] (e1) at (2.45,-2.45) {environment (database or device)};
+\draw[arr] (c1) -- (c1 -| single.west);
+\draw[arr] (single.south) -- node[lab, right] {tool calls} (e1.north);
+\draw[arr, dashed, thin] (c1.south) |- (e1.west);
+
+% separator
+\draw[black!30] (4.45,1.2) -- (4.45,-3.1);
+
+% ---------------- (b) multi-agent systems: MAS and M2
+\node[anchor=west, font=\scriptsize\bfseries] at (4.6,1.05) {(b) Multi-agent, centralized, same model: MAS and M2};
+\node[ext] (c2) at (5.35,0) {simulated\\customer};
+\node[agent] (orch) at (8.25,0) {\textbf{Orchestrator}\\\emph{plan}: task and progress\\ledgers, draft; \emph{act}:\\final message or order};
+\node[agent] (adv) at (8.25,-1.95) {\textbf{Policy advisor}\\MAS: advises (finding and\\quoted policy lines)\\M2: gating checker, may\\veto an order or a message};
+\node[agent] (db) at (11.6,0) {\textbf{Database agent}\\read: up to $r=4$ calls\\write: one ordered call};
+\node[ext] (e2) at (13.95,-1.95) {environment\\(database\\or device)};
+\draw[arr] (c2) -- node[lab, above] {messages} (orch);
+\draw[arr] (orch) -- node[lab, right, xshift=1pt] {question /\\finding} (adv);
+\draw[arr] (orch) -- node[lab, above] {order /\\report} (db);
+\draw[arr] (db.east) -| node[lab, pos=0.75, right] {tool\\calls} (e2.north);
+% one ledger around the agents
+\node[draw, thick, dashed, rounded corners=3pt, fit=(orch)(adv)(db), inner sep=4pt] (ledger) {};
+\node[lab, align=center] at (11.6,-1.85) {one completion-token ledger\\per episode: $B=4\Bx$,\\cap $c=\Bx$ per call};
+% dual control: the customer also acts on the environment
+\draw[arr, dashed, thin] (c2.south) -- (c2.south |- 0,-2.95) -| (e2.south);
+\node[lab, anchor=north west] at (5.4,-2.97) {telecom: the customer also acts on the device};
+\end{tikzpicture}

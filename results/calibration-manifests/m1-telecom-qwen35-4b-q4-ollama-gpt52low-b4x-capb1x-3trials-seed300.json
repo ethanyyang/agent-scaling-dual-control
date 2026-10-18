@@ -1,0 +1,63 @@
+{
+  "cell": {
+    "family": "qwen-local",
+    "model": "qwen3.5-4b",
+    "tier": "low-swap",
+    "domain": "telecom"
+  },
+  "condition": "m1",
+  "budget": {
+    "limit": 22520,
+    "per_call_cap": 5630,
+    "wrapup_threshold": 3378,
+    "min_call_allowance": 215,
+    "exhausted_message_sha256": "f550c541217dd85534417b4d8262b66ab29ae723c289c9ce9009e1ecdc1e7089"
+  },
+  "budget_multiplier": 4.0,
+  "calibration_source": {
+    "results_sha256": "37957ae5a52222a744c6363a762b43b602545ad5e0ed81f65a6e5bd42f5024c5",
+    "B_1x": 5630,
+    "c": 608,
+    "per_call_median": 215
+  },
+  "read_call_limit": 4,
+  "orchestrator_cap_mult": 1.0,
+  "cap_rule": "b1x",
+  "smoke": null,
+  "task_ids_used": 50,
+  "snapshot": "qwen3.5:4b Q4_K_M, Ollama digest 2a654d98e6fb; pinned name tt-qwen3.5-4b:q4 (668eab7d518c), num_ctx 131072",
+  "litellm_model": "openai/tt-qwen3.5-4b:q4",
+  "agent": "m1_qwen35_4b_q4_ollama_telecom_b4x_capb1x",
+  "agent_llm_args": {
+    "api_base": "http://127.0.0.1:11434/v1",
+    "api_key": "ollama",
+    "timeout": 3600,
+    "max_tokens": 32768,
+    "extra_body": {
+      "reasoning_effort": "high"
+    }
+  },
+  "user_llm": "gpt-5.2-2025-12-11",
+  "user_llm_args": {
+    "reasoning_effort": "low"
+  },
+  "seed": 300,
+  "num_trials": 3,
+  "max_steps": 200,
+  "task_ids_sha256": "f9c34039b7c81f91a58f5ad7cc63f4af74d1922fe69e0b13a05af61891418f1e",
+  "tau2_commit": "c339866",
+  "base_prompt_sha256": "825bb492ecd9062046cc7de0050b31ae7887e3577b66b149883728e71a193da7",
+  "role_block_sha256": {
+    "m1_advisor": "a350bd2cec205373fcf25403ed7606eb54b9a877b35bb0f9ebcfc3641dc06186",
+    "m1_orchestrator": "1a26e997efe8928865330dd5ecc5409964402842aeac666239108e04b545e000",
+    "m1_database_agent": "367b9355faf9a0063ddaee28303e4e951ff1a032261556d5b379d2f1a76fffc8"
+  },
+  "started_utc": "2026-09-22T05:59:03.108615+00:00",
+  "finished_utc": "2026-09-23T12:42:08.872477+00:00",
+  "wall_seconds": 110585.8,
+  "return_code": 0,
+  "episodes": 150,
+  "infrastructure_errors": 0,
+  "results_path": "tau2-bench/data/simulations/m1-telecom-qwen35-4b-q4-ollama-gpt52low-b4x-capb1x-3trials-seed300/results.json",
+  "results_sha256": "b08a6b50532877760698fa7a063d1aebc64824438c56762fdb4738a01e34a7bf"
+}

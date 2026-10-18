@@ -1,0 +1,59 @@
+{
+  "cell": {
+    "family": "google",
+    "model": "gemini-3.1-flash-lite",
+    "tier": "low",
+    "domain": "airline"
+  },
+  "condition": "m1",
+  "budget": {
+    "limit": 24636,
+    "per_call_cap": 6159,
+    "wrapup_threshold": 3695,
+    "min_call_allowance": 309,
+    "exhausted_message_sha256": "f550c541217dd85534417b4d8262b66ab29ae723c289c9ce9009e1ecdc1e7089"
+  },
+  "budget_multiplier": 4.0,
+  "arm": "cost-bounded",
+  "calibration_source": {
+    "results_sha256": "3fc369bc175940029e51faa1c42c601d0b80f92e1d6e0a38f043b76ce98afeef",
+    "B_1x": 6159,
+    "c": 1662,
+    "per_call_median": 309
+  },
+  "read_call_limit": 4,
+  "orchestrator_cap_mult": 1.0,
+  "cap_rule": "b1x",
+  "smoke": null,
+  "task_ids_used": 50,
+  "snapshot": "gemini-3.1-flash-lite",
+  "litellm_model": "gemini/gemini-3.1-flash-lite",
+  "agent": "m1_gemini31flashlite_high_airline_b4x_capb1x",
+  "agent_llm_args": {
+    "reasoning_effort": "high"
+  },
+  "user_llm": "gpt-4.1-2025-04-14",
+  "user_llm_args": {
+    "temperature": 0.0
+  },
+  "seed": 300,
+  "num_trials": 3,
+  "max_steps": 200,
+  "task_ids_sha256": null,
+  "tau2_commit": "c339866",
+  "base_prompt_sha256": "825bb492ecd9062046cc7de0050b31ae7887e3577b66b149883728e71a193da7",
+  "role_block_sha256": {
+    "m1_advisor": "a350bd2cec205373fcf25403ed7606eb54b9a877b35bb0f9ebcfc3641dc06186",
+    "m1_orchestrator": "1a26e997efe8928865330dd5ecc5409964402842aeac666239108e04b545e000",
+    "m1_database_agent": "367b9355faf9a0063ddaee28303e4e951ff1a032261556d5b379d2f1a76fffc8",
+    "s2_single_agent": "1345572de1dc2d86c76ca4d3c4b58a53403d2bb377d923c8dba41437207444f9"
+  },
+  "started_utc": "2026-09-26T03:35:29.115707+00:00",
+  "finished_utc": "2026-09-26T04:38:21.685046+00:00",
+  "wall_seconds": 3772.6,
+  "return_code": 0,
+  "episodes": 150,
+  "infrastructure_errors": 0,
+  "results_path": "tau2-bench/data/simulations/m1-airline-gemini31flashlite-high-gpt41-b4x-capb1x-3trials-seed300/results.json",
+  "results_sha256": "c36474c32a52db3cfc365494056816ea37e0532c5a7c9203090fb5a87eff0bc7"
+}

@@ -1,0 +1,145 @@
+{
+ "run": "m1-retail-qwen35-4b-q4-oct26-ollama-gpt52low-b4x-capb1x-3trials-seed300",
+ "cut_tasks": [
+  "13",
+  "53",
+  "54",
+  "59",
+  "104",
+  "108"
+ ],
+ "control_tasks": [
+  "1",
+  "75",
+  "93",
+  "101"
+ ],
+ "k": 6,
+ "hi": 4,
+ "lo": 1,
+ "first_repeat_cuts_on_cut_tasks": {
+  "t2_seed2": 5,
+  "t2_seed1": 0,
+  "t2_none": 0,
+  "t1_seed2": 1,
+  "t1_seed1": 0,
+  "t1_none": 0
+ },
+ "verdict": "seed explanation supported",
+ "table": [
+  {
+   "src": 1,
+   "seed": 361454,
+   "group": "cut",
+   "n": 12,
+   "median_tokens": 2798.5,
+   "cut": 2,
+   "empty": 2
+  },
+  {
+   "src": 1,
+   "seed": 361454,
+   "group": "control",
+   "n": 8,
+   "median_tokens": 558.5,
+   "cut": 0,
+   "empty": 0
+  },
+  {
+   "src": 1,
+   "seed": 373753,
+   "group": "cut",
+   "n": 12,
+   "median_tokens": 371.0,
+   "cut": 0,
+   "empty": 0
+  },
+  {
+   "src": 1,
+   "seed": 373753,
+   "group": "control",
+   "n": 8,
+   "median_tokens": 366.5,
+   "cut": 0,
+   "empty": 0
+  },
+  {
+   "src": 1,
+   "seed": null,
+   "group": "cut",
+   "n": 12,
+   "median_tokens": 538.0,
+   "cut": 0,
+   "empty": 0
+  },
+  {
+   "src": 1,
+   "seed": null,
+   "group": "control",
+   "n": 8,
+   "median_tokens": 384.5,
+   "cut": 0,
+   "empty": 0
+  },
+  {
+   "src": 2,
+   "seed": 361454,
+   "group": "cut",
+   "n": 12,
+   "median_tokens": 5369.0,
+   "cut": 8,
+   "empty": 7
+  },
+  {
+   "src": 2,
+   "seed": 361454,
+   "group": "control",
+   "n": 8,
+   "median_tokens": 626.5,
+   "cut": 0,
+   "empty": 0
+  },
+  {
+   "src": 2,
+   "seed": 373753,
+   "group": "cut",
+   "n": 12,
+   "median_tokens": 404.0,
+   "cut": 1,
+   "empty": 1
+  },
+  {
+   "src": 2,
+   "seed": 373753,
+   "group": "control",
+   "n": 8,
+   "median_tokens": 321.0,
+   "cut": 0,
+   "empty": 0
+  },
+  {
+   "src": 2,
+   "seed": null,
+   "group": "cut",
+   "n": 12,
+   "median_tokens": 629.0,
+   "cut": 0,
+   "empty": 0
+  },
+  {
+   "src": 2,
+   "seed": null,
+   "group": "control",
+   "n": 8,
+   "median_tokens": 644.0,
+   "cut": 0,
+   "empty": 0
+  }
+ ],
+ "determinism": {
+  "seeded_pairs": 40,
+  "identical": 35
+ },
+ "prompt_token_mismatches_vs_run": 0,
+ "calls": 120
+}

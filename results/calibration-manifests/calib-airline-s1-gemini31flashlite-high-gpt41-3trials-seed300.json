@@ -1,0 +1,35 @@
+{
+  "cell": {
+    "family": "google",
+    "model": "gemini-3.1-flash-lite",
+    "tier": "low",
+    "domain": "airline"
+  },
+  "snapshot": "gemini-3.1-flash-lite",
+  "litellm_model": "gemini/gemini-3.1-flash-lite",
+  "agent": "llm_agent",
+  "agent_llm_args": {
+    "reasoning_effort": "high"
+  },
+  "user_llm": "gpt-4.1-2025-04-14",
+  "user_llm_args": {
+    "temperature": 0.0
+  },
+  "seed": 300,
+  "num_trials": 3,
+  "max_steps": 200,
+  "task_ids_sha256": null,
+  "tau2_commit": "c339866",
+  "cells_json_sha256": "0675cb4d404cf015810f529f46c09384a71dd7eec8e94763a6f30aed383f9ffb",
+  "base_prompt_sha256": "825bb492ecd9062046cc7de0050b31ae7887e3577b66b149883728e71a193da7",
+  "command": "uv run tau2 run --domain airline --agent llm_agent --agent-llm gemini/gemini-3.1-flash-lite --agent-llm-args '{\"reasoning_effort\": \"high\"}' --user user_simulator --user-llm gpt-4.1-2025-04-14 --user-llm-args '{\"temperature\": 0.0}' --num-trials 3 --seed 300 --max-steps 200 --max-errors 10 --max-concurrency 4 --auto-resume --save-to calib-airline-s1-gemini31flashlite-high-gpt41-3trials-seed300",
+  "budget": "uncapped (S1 calibration, ANALYSIS.md \u00a74.2)",
+  "started_utc": "2026-09-26T01:02:25.187833+00:00",
+  "finished_utc": "2026-09-26T01:30:46.983163+00:00",
+  "wall_seconds": 1701.8,
+  "return_code": 0,
+  "episodes": 150,
+  "infrastructure_errors": 0,
+  "results_path": "tau2-bench/data/simulations/calib-airline-s1-gemini31flashlite-high-gpt41-3trials-seed300/results.json",
+  "results_sha256": "7ed47c1ee790371e61d1786a12f9ad56f14fdb04908afadb4a8d077556d4c89d"
+}

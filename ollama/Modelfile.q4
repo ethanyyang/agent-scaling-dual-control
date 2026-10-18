@@ -1,0 +1,4 @@
+# Pinned serving config for the threshold-transfer study. Sampling parameters are
+# NOT set here: the model keeps the defaults shipped with qwen3.5:4b.
+FROM qwen3.5:4b
+PARAMETER num_ctx 131072

@@ -1,0 +1,57 @@
+{
+  "cell": {
+    "family": "openai-gpt5",
+    "model": "gpt-5-nano",
+    "tier": "low",
+    "domain": "telecom"
+  },
+  "condition": "m1",
+  "budget": {
+    "limit": 300128,
+    "per_call_cap": 75032,
+    "wrapup_threshold": 45019,
+    "min_call_allowance": 796,
+    "exhausted_message_sha256": "f550c541217dd85534417b4d8262b66ab29ae723c289c9ce9009e1ecdc1e7089"
+  },
+  "budget_multiplier": 4.0,
+  "calibration_source": {
+    "results_sha256": "6e0502f5595df8074447ab68849dedbd75827aed41405d303e6459998651d490",
+    "B_1x": 75032,
+    "c": 6100,
+    "per_call_median": 796
+  },
+  "read_call_limit": 4,
+  "orchestrator_cap_mult": 1.0,
+  "cap_rule": "b1x",
+  "smoke": 5,
+  "task_ids_used": 5,
+  "snapshot": "gpt-5-nano-2025-08-07",
+  "litellm_model": "openai/responses/gpt-5-nano-2025-08-07",
+  "agent": "m1_gpt5nano_high_telecom_b4x_capb1x",
+  "agent_llm_args": {
+    "reasoning_effort": "high"
+  },
+  "user_llm": "gpt-5.2-2025-12-11",
+  "user_llm_args": {
+    "reasoning_effort": "low"
+  },
+  "seed": 300,
+  "num_trials": 1,
+  "max_steps": 200,
+  "task_ids_sha256": "f9c34039b7c81f91a58f5ad7cc63f4af74d1922fe69e0b13a05af61891418f1e",
+  "tau2_commit": "c339866",
+  "base_prompt_sha256": "825bb492ecd9062046cc7de0050b31ae7887e3577b66b149883728e71a193da7",
+  "role_block_sha256": {
+    "m1_advisor": "a350bd2cec205373fcf25403ed7606eb54b9a877b35bb0f9ebcfc3641dc06186",
+    "m1_orchestrator": "1a26e997efe8928865330dd5ecc5409964402842aeac666239108e04b545e000",
+    "m1_database_agent": "367b9355faf9a0063ddaee28303e4e951ff1a032261556d5b379d2f1a76fffc8"
+  },
+  "started_utc": "2026-09-22T22:38:41.383164+00:00",
+  "finished_utc": "2026-09-22T22:48:05.526753+00:00",
+  "wall_seconds": 564.1,
+  "return_code": 0,
+  "episodes": 5,
+  "infrastructure_errors": 0,
+  "results_path": "tau2-bench/data/simulations/smoke5-m1-telecom-gpt5nano-high-gpt52low-b4x-capb1x-1trials-seed300/results.json",
+  "results_sha256": "5132ec92aa629de75fd7be2adf18df991a77682d6d61c57cafa385b250411fda"
+}

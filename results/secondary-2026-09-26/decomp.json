@@ -1,0 +1,1783 @@
+[
+ {
+  "family": "OpenAI",
+  "model": "gpt-5-nano",
+  "domain": "airline",
+  "S1": 0.42666666666666664,
+  "M1": 0.4533333333333333,
+  "gain": 0.02666666666666666,
+  "gain_ci": [
+   -0.0666666666666667,
+   0.12666666666666665
+  ],
+  "util_median": 0.5005312201493265,
+  "exhausted": 0.23333333333333334,
+  "tok_S1": 40838.86666666667,
+  "tok_M1": 117676.25333333333,
+  "cost_S1": [
+   2.557795320000001,
+   2.1022168999999993
+  ],
+  "cost_M1": [
+   7.337251060000001,
+   1.8103133999999996
+  ],
+  "better": 13,
+  "same": 26,
+  "worse": 11,
+  "gain_by_task": {
+   "3": -0.6666666666666667,
+   "5": 0.0,
+   "4": 0.0,
+   "0": -0.33333333333333337,
+   "1": 0.0,
+   "7": 0,
+   "11": -0.3333333333333333,
+   "2": 0.33333333333333337,
+   "8": -0.6666666666666667,
+   "6": 1.0,
+   "12": 0,
+   "14": -0.3333333333333333,
+   "10": 0.0,
+   "13": 0.0,
+   "15": -0.3333333333333333,
+   "16": 0.0,
+   "9": 0,
+   "19": 0.0,
+   "20": 0.3333333333333333,
+   "22": 0.3333333333333333,
+   "17": 0,
+   "24": 0,
+   "25": -0.6666666666666667,
+   "26": -0.3333333333333333,
+   "21": 0,
+   "27": 0.0,
+   "28": 0.33333333333333337,
+   "29": 0,
+   "18": -0.3333333333333333,
+   "23": 0.3333333333333333,
+   "31": 0.33333333333333337,
+   "30": -0.6666666666666667,
+   "35": 0,
+   "36": 0.33333333333333337,
+   "33": 0,
+   "37": 0,
+   "40": -0.33333333333333337,
+   "34": 0.0,
+   "39": 0,
+   "32": 0,
+   "38": 0.3333333333333333,
+   "43": 0.6666666666666667,
+   "46": 0.0,
+   "41": 1.0,
+   "45": 0.3333333333333333,
+   "48": 0.0,
+   "47": 0.0,
+   "49": 0.6666666666666666,
+   "44": 0,
+   "42": 0.0
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 11,
+    "pass_M1": 0.18181818181818182,
+    "pass_S1_same_tasks": 0.0606060606060606,
+    "contribution": 0.008888888888888889,
+    "ci": [
+     -0.006666666666666669,
+     0.031111111111111103
+    ]
+   },
+   "EX_OK": {
+    "n": 24,
+    "pass_M1": 0.375,
+    "pass_S1_same_tasks": 0.3055555555555555,
+    "contribution": 0.011111111111111112,
+    "ci": [
+     -0.0044444444444444444,
+     0.031111111111111107
+    ]
+   },
+   "FIN_BAD": {
+    "n": 20,
+    "pass_M1": 0.3,
+    "pass_S1_same_tasks": 0.36666666666666664,
+    "contribution": -0.008888888888888887,
+    "ci": [
+     -0.039999999999999994,
+     0.02
+    ]
+   },
+   "FIN_OK": {
+    "n": 95,
+    "pass_M1": 0.5368421052631579,
+    "pass_S1_same_tasks": 0.5122807017543861,
+    "contribution": 0.015555555555555562,
+    "ci": [
+     -0.06444444444444443,
+     0.09555555555555556
+    ]
+   }
+  },
+  "tok_ratio": 2.881476959040652,
+  "ex": [
+   0.019999999999999997,
+   -0.002222222222222223,
+   0.04666666666666667
+  ],
+  "fin": [
+   0.006666666666666667,
+   -0.08222222222222224,
+   0.09777777777777778
+  ],
+  "bad": [
+   1.1102230246251566e-18,
+   -0.039999999999999994,
+   0.042222222222222223
+  ]
+ },
+ {
+  "family": "OpenAI",
+  "model": "gpt-5-nano",
+  "domain": "retail",
+  "S1": 0.6799999999999999,
+  "M1": 0.44666666666666666,
+  "gain": -0.23333333333333334,
+  "gain_ci": [
+   -0.3266666666666667,
+   -0.13333333333333333
+  ],
+  "util_median": 0.6337963356271061,
+  "exhausted": 0.16,
+  "tok_S1": 29783.32,
+  "tok_M1": 93823.20666666667,
+  "cost_S1": [
+   1.8770614599999988,
+   1.8676311500000005
+  ],
+  "cost_M1": [
+   5.827979219999999,
+   1.6635514000000007
+  ],
+  "better": 2,
+  "same": 23,
+  "worse": 25,
+  "gain_by_task": {
+   "8": -0.3333333333333333,
+   "13": 0.0,
+   "9": 0.0,
+   "1": 0.0,
+   "6": 0.0,
+   "17": 0.0,
+   "16": -1.0,
+   "3": -0.6666666666666667,
+   "18": 0.6666666666666667,
+   "19": -0.3333333333333333,
+   "24": 0.0,
+   "26": 0.0,
+   "21": 0.0,
+   "23": -1.0,
+   "31": 0.0,
+   "30": -0.6666666666666666,
+   "39": 0.0,
+   "44": -0.33333333333333337,
+   "38": 0,
+   "47": 0.0,
+   "36": -0.3333333333333333,
+   "51": 0.0,
+   "41": -0.3333333333333333,
+   "53": -0.6666666666666666,
+   "56": 0.0,
+   "60": 0.0,
+   "59": 0.0,
+   "54": -0.3333333333333333,
+   "63": -0.33333333333333337,
+   "69": 0.0,
+   "65": 0.0,
+   "68": -0.6666666666666667,
+   "64": -0.3333333333333333,
+   "74": -0.6666666666666666,
+   "75": -0.33333333333333337,
+   "84": -0.3333333333333333,
+   "87": -0.6666666666666667,
+   "82": 0,
+   "80": 0.0,
+   "92": 0.6666666666666667,
+   "89": -0.33333333333333337,
+   "93": -1.0,
+   "91": 0.0,
+   "101": -0.3333333333333333,
+   "94": -0.3333333333333333,
+   "106": -0.6666666666666667,
+   "108": -0.33333333333333337,
+   "109": -0.6666666666666666,
+   "104": 0,
+   "112": 0
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 4,
+    "pass_M1": 0.25,
+    "pass_S1_same_tasks": 0.3333333333333333,
+    "contribution": -0.0022222222222222222,
+    "ci": [
+     -0.02,
+     0.013333333333333332
+    ]
+   },
+   "EX_OK": {
+    "n": 20,
+    "pass_M1": 0.05,
+    "pass_S1_same_tasks": 0.5,
+    "contribution": -0.06000000000000001,
+    "ci": [
+     -0.10888888888888891,
+     -0.02
+    ]
+   },
+   "FIN_BAD": {
+    "n": 13,
+    "pass_M1": 0.38461538461538464,
+    "pass_S1_same_tasks": 0.7179487179487178,
+    "contribution": -0.028888888888888888,
+    "ci": [
+     -0.05333333333333335,
+     -0.008888888888888889
+    ]
+   },
+   "FIN_OK": {
+    "n": 113,
+    "pass_M1": 0.5309734513274337,
+    "pass_S1_same_tasks": 0.7197640117994101,
+    "contribution": -0.1422222222222222,
+    "ci": [
+     -0.2222222222222222,
+     -0.062222222222222213
+    ]
+   }
+  },
+  "tok_ratio": 3.1501930163147245,
+  "ex": [
+   -0.06222222222222224,
+   -0.11111111111111112,
+   -0.02
+  ],
+  "fin": [
+   -0.1711111111111111,
+   -0.2533333333333333,
+   -0.08888888888888888
+  ],
+  "bad": [
+   -0.03111111111111111,
+   -0.06,
+   -0.0044444444444444444
+  ]
+ },
+ {
+  "family": "OpenAI",
+  "model": "gpt-5-nano",
+  "domain": "telecom",
+  "S1": 0.32666666666666666,
+  "M1": 0.19333333333333333,
+  "gain": -0.13333333333333333,
+  "gain_ci": [
+   -0.20666666666666667,
+   -0.06000000000000001
+  ],
+  "util_median": 0.5445443277534918,
+  "exhausted": 0.15333333333333332,
+  "tok_S1": 60569.78666666667,
+  "tok_M1": 166725.84,
+  "cost_S1": [
+   4.404401260000001,
+   4.3012760000000005
+  ],
+  "cost_M1": [
+   10.790918439999997,
+   1.7741618999999997
+  ],
+  "better": 3,
+  "same": 28,
+  "worse": 19,
+  "gain_by_task": {
+   "[mobile_data_issue]data_saver_mode_on|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[mobile_data_issue]airplane_mode_on|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]": -0.3333333333333333,
+   "[mobile_data_issue]data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.3333333333333333,
+   "[mobile_data_issue]data_saver_mode_on|data_usage_exceeded[PERSONA:Easy]": 0,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on[PERSONA:Hard]": -0.3333333333333333,
+   "[mobile_data_issue]airplane_mode_on|data_mode_off[PERSONA:None]": -0.3333333333333333,
+   "[mobile_data_issue]bad_network_preference|data_saver_mode_on|data_usage_exceeded[PERSONA:Hard]": -0.3333333333333333,
+   "[mobile_data_issue]bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]": 0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:Easy]": -0.6666666666666666,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[mobile_data_issue]bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]": 0.0,
+   "[mobile_data_issue]data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Hard]": 0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]": 0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]": -0.3333333333333333,
+   "[service_issue]contract_end_suspension|unseat_sim_card[PERSONA:Hard]": 0.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[service_issue]airplane_mode_on|overdue_bill_suspension[PERSONA:None]": -0.33333333333333337,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.3333333333333333,
+   "[service_issue]contract_end_suspension|lock_sim_card_pin[PERSONA:Hard]": 0.0,
+   "[service_issue]airplane_mode_on|break_apn_settings[PERSONA:Hard]": -0.6666666666666666,
+   "[service_issue]airplane_mode_on|break_apn_settings|contract_end_suspension|lock_sim_card_pin[PERSONA:None]": 0.0,
+   "[service_issue]airplane_mode_on|break_apn_settings|lock_sim_card_pin|unseat_sim_card[PERSONA:None]": 0.0,
+   "[service_issue]airplane_mode_on|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -1.0,
+   "[service_issue]airplane_mode_on|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": 0.0,
+   "[service_issue]break_apn_settings|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -0.33333333333333337,
+   "[service_issue]break_apn_settings|lock_sim_card_pin[PERSONA:None]": 0.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:Hard]": 0,
+   "[mms_issue]break_app_sms_permission|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]": 0,
+   "[mms_issue]break_app_storage_permission|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]": 0,
+   "[mms_issue]break_app_both_permissions|data_usage_exceeded[PERSONA:Hard]": 0,
+   "[mms_issue]bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:Hard]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded[PERSONA:None]": 0,
+   "[mms_issue]bad_network_preference|break_app_both_permissions[PERSONA:Easy]": -0.3333333333333333,
+   "[mms_issue]bad_wifi_calling|break_apn_mms_setting|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:None]": 0,
+   "[mms_issue]bad_wifi_calling|break_apn_mms_setting|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.3333333333333333,
+   "[mms_issue]bad_network_preference|break_app_sms_permission|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|data_usage_exceeded[PERSONA:Hard]": -0.3333333333333333,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]": -0.3333333333333333,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:None]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_mode_off|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:None]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Easy]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]": -0.3333333333333333,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:None]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]": 0
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 18,
+    "pass_M1": 0.16666666666666666,
+    "pass_S1_same_tasks": 0.3333333333333333,
+    "contribution": -0.02,
+    "ci": [
+     -0.04000000000000001,
+     -0.0022222222222222222
+    ]
+   },
+   "EX_OK": {
+    "n": 5,
+    "pass_M1": 0.0,
+    "pass_S1_same_tasks": 0.4666666666666666,
+    "contribution": -0.015555555555555555,
+    "ci": [
+     -0.04,
+     0.0
+    ]
+   },
+   "FIN_BAD": {
+    "n": 41,
+    "pass_M1": 0.34146341463414637,
+    "pass_S1_same_tasks": 0.38211382113821135,
+    "contribution": -0.01111111111111111,
+    "ci": [
+     -0.042222222222222223,
+     0.020000000000000004
+    ]
+   },
+   "FIN_OK": {
+    "n": 86,
+    "pass_M1": 0.13953488372093023,
+    "pass_S1_same_tasks": 0.29069767441860456,
+    "contribution": -0.08666666666666666,
+    "ci": [
+     -0.13555555555555554,
+     -0.04444444444444444
+    ]
+   }
+  },
+  "tok_ratio": 2.752623860432946,
+  "ex": [
+   -0.035555555555555556,
+   -0.06444444444444444,
+   -0.013333333333333332
+  ],
+  "fin": [
+   -0.09777777777777777,
+   -0.1688888888888888,
+   -0.03555555555555554
+  ],
+  "bad": [
+   -0.031111111111111107,
+   -0.07111111111111111,
+   0.006666666666666667
+  ]
+ },
+ {
+  "family": "OpenAI",
+  "model": "gpt-5-mini",
+  "domain": "airline",
+  "S1": 0.7466666666666667,
+  "M1": 0.58,
+  "gain": -0.16666666666666666,
+  "gain_ci": [
+   -0.2733333333333333,
+   -0.06666666666666667
+  ],
+  "util_median": 0.8335425992648398,
+  "exhausted": 0.34,
+  "tok_S1": 20808.286666666667,
+  "tok_M1": 80290.84666666666,
+  "cost_S1": [
+   6.650809250000001,
+   2.122536849999999
+  ],
+  "cost_M1": [
+   25.824304149999996,
+   1.7148236
+  ],
+  "better": 6,
+  "same": 27,
+  "worse": 17,
+  "gain_by_task": {
+   "1": 0.0,
+   "0": 0.0,
+   "3": 0.0,
+   "4": 0.0,
+   "5": 0.0,
+   "8": -0.33333333333333337,
+   "11": 0,
+   "2": 0.33333333333333337,
+   "9": 0.0,
+   "7": 0,
+   "13": 0.0,
+   "6": 0.33333333333333337,
+   "15": -0.3333333333333333,
+   "17": -1.0,
+   "16": -0.6666666666666667,
+   "12": -0.6666666666666666,
+   "14": -0.3333333333333333,
+   "10": 0.0,
+   "20": -0.6666666666666667,
+   "19": 0.0,
+   "21": -1.0,
+   "18": -1.0,
+   "26": 0.0,
+   "25": -1.0,
+   "22": -0.6666666666666667,
+   "24": 0.0,
+   "28": 0.0,
+   "27": 0.0,
+   "31": 0.0,
+   "30": -0.33333333333333337,
+   "23": -0.3333333333333333,
+   "29": 0,
+   "36": 0.0,
+   "34": 0.0,
+   "37": -0.3333333333333333,
+   "38": 0.0,
+   "40": 0.0,
+   "33": -1.0,
+   "32": 0,
+   "35": -0.3333333333333333,
+   "43": 0.0,
+   "39": 0.3333333333333333,
+   "41": 0.0,
+   "42": -0.3333333333333333,
+   "47": 0.0,
+   "49": 0.33333333333333337,
+   "48": 0.33333333333333337,
+   "44": 0,
+   "45": 0.0,
+   "46": 0.33333333333333337
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 30,
+    "pass_M1": 0.23333333333333334,
+    "pass_S1_same_tasks": 0.7,
+    "contribution": -0.09333333333333332,
+    "ci": [
+     -0.15333333333333335,
+     -0.04
+    ]
+   },
+   "EX_OK": {
+    "n": 21,
+    "pass_M1": 0.6190476190476191,
+    "pass_S1_same_tasks": 0.7936507936507935,
+    "contribution": -0.024444444444444442,
+    "ci": [
+     -0.057777777777777775,
+     0.004444444444444446
+    ]
+   },
+   "FIN_BAD": {
+    "n": 80,
+    "pass_M1": 0.7,
+    "pass_S1_same_tasks": 0.7541666666666667,
+    "contribution": -0.028888888888888874,
+    "ci": [
+     -0.08222222222222221,
+     0.017777777777777778
+    ]
+   },
+   "FIN_OK": {
+    "n": 19,
+    "pass_M1": 0.5789473684210527,
+    "pass_S1_same_tasks": 0.7368421052631579,
+    "contribution": -0.02,
+    "ci": [
+     -0.04444444444444444,
+     0.0
+    ]
+   }
+  },
+  "tok_ratio": 3.858599602786454,
+  "ex": [
+   -0.11777777777777775,
+   -0.19555555555555554,
+   -0.04888888888888889
+  ],
+  "fin": [
+   -0.048888888888888885,
+   -0.10888888888888887,
+   0.004444444444444449
+  ],
+  "bad": [
+   -0.12222222222222222,
+   -0.21555555555555553,
+   -0.039999999999999994
+  ]
+ },
+ {
+  "family": "OpenAI",
+  "model": "gpt-5-mini",
+  "domain": "retail",
+  "S1": 0.76,
+  "M1": 0.48,
+  "gain": -0.28,
+  "gain_ci": [
+   -0.39999999999999986,
+   -0.1733333333333333
+  ],
+  "util_median": 0.8962364709740899,
+  "exhausted": 0.43333333333333335,
+  "tok_S1": 14431.546666666667,
+  "tok_M1": 59291.14666666667,
+  "cost_S1": [
+   4.785391849999998,
+   2.038290800000001
+  ],
+  "cost_M1": [
+   19.140871950000005,
+   1.6846668999999994
+  ],
+  "better": 5,
+  "same": 19,
+  "worse": 26,
+  "gain_by_task": {
+   "1": 0.33333333333333337,
+   "6": -1.0,
+   "9": -0.33333333333333337,
+   "17": 0.0,
+   "16": -0.6666666666666667,
+   "8": 0.0,
+   "13": 0.33333333333333337,
+   "18": 0.0,
+   "3": -1.0,
+   "24": 0.0,
+   "26": 0.0,
+   "23": -1.0,
+   "30": -0.6666666666666666,
+   "19": -1.0,
+   "21": -0.6666666666666666,
+   "38": 0,
+   "36": -0.6666666666666666,
+   "31": 0,
+   "44": -0.33333333333333337,
+   "39": -0.33333333333333337,
+   "51": 0.0,
+   "41": 0,
+   "47": -0.33333333333333337,
+   "53": -0.33333333333333337,
+   "56": -0.3333333333333333,
+   "54": -1.0,
+   "60": -0.33333333333333337,
+   "63": -0.3333333333333333,
+   "59": 0.0,
+   "68": -0.33333333333333337,
+   "69": 0.0,
+   "64": 0.0,
+   "75": 0.0,
+   "65": 0.0,
+   "80": 0.0,
+   "74": -1.0,
+   "84": 0.33333333333333337,
+   "87": -0.33333333333333337,
+   "82": 0.3333333333333333,
+   "89": 0.0,
+   "92": -0.6666666666666666,
+   "94": 0.0,
+   "93": -0.6666666666666667,
+   "91": 0.0,
+   "106": 0.33333333333333337,
+   "108": -0.33333333333333337,
+   "101": -1.0,
+   "109": 0,
+   "104": -0.6666666666666666,
+   "112": -0.3333333333333333
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 55,
+    "pass_M1": 0.21818181818181817,
+    "pass_S1_same_tasks": 0.7575757575757576,
+    "contribution": -0.19777777777777775,
+    "ci": [
+     -0.2866666666666667,
+     -0.11333333333333334
+    ]
+   },
+   "EX_OK": {
+    "n": 10,
+    "pass_M1": 0.2,
+    "pass_S1_same_tasks": 0.6666666666666667,
+    "contribution": -0.031111111111111117,
+    "ci": [
+     -0.06444444444444444,
+     -0.006666666666666666
+    ]
+   },
+   "FIN_BAD": {
+    "n": 69,
+    "pass_M1": 0.7536231884057971,
+    "pass_S1_same_tasks": 0.7729468599033815,
+    "contribution": -0.008888888888888877,
+    "ci": [
+     -0.055555555555555546,
+     0.03555555555555558
+    ]
+   },
+   "FIN_OK": {
+    "n": 16,
+    "pass_M1": 0.375,
+    "pass_S1_same_tasks": 0.7708333333333334,
+    "contribution": -0.042222222222222223,
+    "ci": [
+     -0.08,
+     -0.011111111111111112
+    ]
+   }
+  },
+  "tok_ratio": 4.108440213384382,
+  "ex": [
+   -0.2288888888888889,
+   -0.32888888888888884,
+   -0.13777777777777783
+  ],
+  "fin": [
+   -0.0511111111111111,
+   -0.10666666666666666,
+   0.002222222222222228
+  ],
+  "bad": [
+   -0.20666666666666658,
+   -0.3133333333333333,
+   -0.10444444444444445
+  ]
+ },
+ {
+  "family": "OpenAI",
+  "model": "gpt-5-mini",
+  "domain": "telecom",
+  "S1": 0.7733333333333333,
+  "M1": 0.66,
+  "gain": -0.11333333333333334,
+  "gain_ci": [
+   -0.18666666666666665,
+   -0.04000000000000001
+  ],
+  "util_median": 0.7030327790823125,
+  "exhausted": 0.18,
+  "tok_S1": 26164.666666666668,
+  "tok_M1": 88869,
+  "cost_S1": [
+   8.531245099999998,
+   8.408408050000002
+  ],
+  "cost_M1": [
+   28.768812899999997,
+   5.685456700000001
+  ],
+  "better": 5,
+  "same": 25,
+  "worse": 20,
+  "gain_by_task": {
+   "[mobile_data_issue]airplane_mode_on|data_mode_off[PERSONA:None]": 0.0,
+   "[mobile_data_issue]airplane_mode_on|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]": -0.33333333333333337,
+   "[mobile_data_issue]data_saver_mode_on|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.0,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.0,
+   "[mobile_data_issue]bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]": -0.33333333333333337,
+   "[mobile_data_issue]data_saver_mode_on|data_usage_exceeded[PERSONA:Easy]": 0.33333333333333337,
+   "[mobile_data_issue]bad_network_preference|data_saver_mode_on|data_usage_exceeded[PERSONA:Hard]": -0.33333333333333337,
+   "[mobile_data_issue]data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Hard]": 0.0,
+   "[mobile_data_issue]bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]": -0.33333333333333337,
+   "[mobile_data_issue]data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.0,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]": 0.33333333333333337,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:Easy]": 0.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]": -0.33333333333333337,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]": 0.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on[PERSONA:Hard]": 0.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.0,
+   "[service_issue]airplane_mode_on|overdue_bill_suspension[PERSONA:None]": 0.0,
+   "[service_issue]break_apn_settings|lock_sim_card_pin[PERSONA:None]": 0.0,
+   "[service_issue]contract_end_suspension|unseat_sim_card[PERSONA:Hard]": 0.0,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.0,
+   "[service_issue]airplane_mode_on|break_apn_settings[PERSONA:Hard]": 0.0,
+   "[service_issue]contract_end_suspension|lock_sim_card_pin[PERSONA:Hard]": -0.33333333333333337,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:Hard]": -0.33333333333333337,
+   "[service_issue]airplane_mode_on|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -0.33333333333333337,
+   "[service_issue]airplane_mode_on|break_apn_settings|contract_end_suspension|lock_sim_card_pin[PERSONA:None]": 0.0,
+   "[service_issue]airplane_mode_on|break_apn_settings|lock_sim_card_pin|unseat_sim_card[PERSONA:None]": 0.0,
+   "[service_issue]break_apn_settings|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -0.33333333333333337,
+   "[service_issue]airplane_mode_on|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": 0.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded[PERSONA:None]": -0.6666666666666667,
+   "[mms_issue]bad_network_preference|break_app_both_permissions[PERSONA:Easy]": 0.0,
+   "[mms_issue]break_app_storage_permission|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]": -0.33333333333333337,
+   "[mms_issue]break_app_both_permissions|data_usage_exceeded[PERSONA:Hard]": -0.33333333333333337,
+   "[mms_issue]bad_wifi_calling|break_apn_mms_setting|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.33333333333333337,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_mode_off|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.33333333333333337,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|data_usage_exceeded[PERSONA:Hard]": -0.6666666666666667,
+   "[mms_issue]bad_wifi_calling|break_apn_mms_setting|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:None]": 0.0,
+   "[mms_issue]break_app_sms_permission|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]": -0.3333333333333333,
+   "[mms_issue]bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:Hard]": 0.3333333333333333,
+   "[mms_issue]bad_network_preference|break_app_sms_permission|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]": 0.6666666666666666,
+   "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:None]": 0.33333333333333337,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]": 0.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]": 0.0,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:None]": -0.3333333333333333,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]": 0,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]": 0.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:None]": -0.6666666666666666,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]": -0.3333333333333333
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 20,
+    "pass_M1": 0.1,
+    "pass_S1_same_tasks": 0.5000000000000001,
+    "contribution": -0.05333333333333334,
+    "ci": [
+     -0.08444444444444446,
+     -0.024444444444444442
+    ]
+   },
+   "EX_OK": {
+    "n": 7,
+    "pass_M1": 0.0,
+    "pass_S1_same_tasks": 0.7142857142857143,
+    "contribution": -0.03333333333333333,
+    "ci": [
+     -0.06888888888888889,
+     -0.006666666666666666
+    ]
+   },
+   "FIN_BAD": {
+    "n": 97,
+    "pass_M1": 0.8041237113402062,
+    "pass_S1_same_tasks": 0.8075601374570446,
+    "contribution": -0.00222222222222222,
+    "ci": [
+     -0.062222222222222213,
+     0.05555555555555555
+    ]
+   },
+   "FIN_OK": {
+    "n": 26,
+    "pass_M1": 0.7307692307692307,
+    "pass_S1_same_tasks": 0.8717948717948718,
+    "contribution": -0.024444444444444446,
+    "ci": [
+     -0.04888888888888889,
+     -0.004444444444444443
+    ]
+   }
+  },
+  "tok_ratio": 3.3965271230922105,
+  "ex": [
+   -0.08666666666666666,
+   -0.1288888888888889,
+   -0.048888888888888885
+  ],
+  "fin": [
+   -0.02666666666666666,
+   -0.08888888888888889,
+   0.035555555555555556
+  ],
+  "bad": [
+   -0.05555555555555555,
+   -0.12,
+   0.011111111111111118
+  ]
+ },
+ {
+  "family": "Google",
+  "model": "gemini-3.1-flash-lite",
+  "domain": "airline",
+  "S1": 0.7866666666666666,
+  "M1": 0.6266666666666667,
+  "gain": -0.16,
+  "gain_ci": [
+   -0.24,
+   -0.08000000000000002
+  ],
+  "util_median": 0.7135492774801104,
+  "exhausted": 0.30666666666666664,
+  "tok_S1": 4997.126666666667,
+  "tok_M1": 17383.626666666667,
+  "cost_S1": [
+   2.760788,
+   1.773030000000001
+  ],
+  "cost_M1": [
+   6.3922243750000005,
+   1.7078204499999998
+  ],
+  "better": 0,
+  "same": 36,
+  "worse": 14,
+  "gain_by_task": {
+   "0": 0.0,
+   "3": 0.0,
+   "1": 0.0,
+   "5": 0.0,
+   "2": 0.0,
+   "4": 0.0,
+   "9": -0.33333333333333337,
+   "8": 0.0,
+   "7": 0,
+   "11": -0.3333333333333333,
+   "13": 0.0,
+   "10": 0.0,
+   "12": -0.6666666666666667,
+   "6": 0.0,
+   "15": -0.33333333333333337,
+   "16": -0.33333333333333337,
+   "14": 0,
+   "17": -1.0,
+   "19": 0.0,
+   "18": -1.0,
+   "20": -0.6666666666666667,
+   "21": -0.6666666666666666,
+   "22": -1.0,
+   "25": -0.6666666666666667,
+   "26": 0.0,
+   "24": -0.3333333333333333,
+   "23": 0,
+   "28": 0.0,
+   "27": 0.0,
+   "29": 0,
+   "30": 0.0,
+   "31": 0.0,
+   "32": 0,
+   "33": -0.3333333333333333,
+   "36": 0.0,
+   "34": 0.0,
+   "37": 0.0,
+   "38": 0.0,
+   "40": 0.0,
+   "35": 0,
+   "41": 0.0,
+   "39": 0,
+   "43": 0.0,
+   "45": 0.0,
+   "46": 0.0,
+   "42": -0.3333333333333333,
+   "44": 0,
+   "49": 0.0,
+   "47": 0.0,
+   "48": 0.0
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 31,
+    "pass_M1": 0.03225806451612903,
+    "pass_S1_same_tasks": 0.5806451612903225,
+    "contribution": -0.11333333333333333,
+    "ci": [
+     -0.1777777777777778,
+     -0.05333333333333333
+    ]
+   },
+   "EX_OK": {
+    "n": 15,
+    "pass_M1": 0.3333333333333333,
+    "pass_S1_same_tasks": 0.3777777777777777,
+    "contribution": -0.0044444444444444444,
+    "ci": [
+     -0.013333333333333332,
+     0.0
+    ]
+   },
+   "FIN_BAD": {
+    "n": 28,
+    "pass_M1": 0.75,
+    "pass_S1_same_tasks": 0.9404761904761906,
+    "contribution": -0.035555555555555556,
+    "ci": [
+     -0.07555555555555556,
+     -0.006666666666666666
+    ]
+   },
+   "FIN_OK": {
+    "n": 76,
+    "pass_M1": 0.881578947368421,
+    "pass_S1_same_tasks": 0.8947368421052632,
+    "contribution": -0.006666666666666666,
+    "ci": [
+     -0.024444444444444442,
+     0.0044444444444444444
+    ]
+   }
+  },
+  "tok_ratio": 3.478724440311699,
+  "ex": [
+   -0.11777777777777777,
+   -0.18222222222222226,
+   -0.05555555555555555
+  ],
+  "fin": [
+   -0.042222222222222223,
+   -0.0911111111111111,
+   -0.006666666666666666
+  ],
+  "bad": [
+   -0.1488888888888889,
+   -0.22666666666666666,
+   -0.07333333333333333
+  ]
+ },
+ {
+  "family": "Google",
+  "model": "gemini-3.1-flash-lite",
+  "domain": "retail",
+  "S1": 0.7733333333333333,
+  "M1": 0.41333333333333333,
+  "gain": -0.36,
+  "gain_ci": [
+   -0.4733333333333334,
+   -0.24
+  ],
+  "util_median": 0.9997611084567606,
+  "exhausted": 0.58,
+  "tok_S1": 3464.22,
+  "tok_M1": 14923.593333333334,
+  "cost_S1": [
+   2.612430825,
+   1.5998905999999995
+  ],
+  "cost_M1": [
+   5.9756890500000015,
+   1.3969627000000004
+  ],
+  "better": 3,
+  "same": 20,
+  "worse": 27,
+  "gain_by_task": {
+   "6": -1.0,
+   "1": 0.0,
+   "3": 0.3333333333333333,
+   "8": -1.0,
+   "17": 0.0,
+   "9": 0.0,
+   "13": -0.6666666666666667,
+   "16": -0.6666666666666667,
+   "18": -0.6666666666666667,
+   "19": 0.0,
+   "23": -1.0,
+   "21": -1.0,
+   "24": 0.0,
+   "26": -0.6666666666666667,
+   "31": -0.3333333333333333,
+   "38": 0,
+   "30": -1.0,
+   "36": -0.6666666666666666,
+   "39": -0.6666666666666667,
+   "41": 0,
+   "44": -0.6666666666666667,
+   "47": -1.0,
+   "51": 0.0,
+   "53": -0.33333333333333337,
+   "54": -1.0,
+   "59": -0.33333333333333337,
+   "60": 0.33333333333333337,
+   "56": 0.0,
+   "64": 0,
+   "63": -1.0,
+   "68": 0.0,
+   "65": 0.0,
+   "69": 0.0,
+   "74": -1.0,
+   "75": -0.33333333333333337,
+   "80": 0.0,
+   "84": -0.33333333333333337,
+   "87": -1.0,
+   "82": 0.0,
+   "89": -0.6666666666666667,
+   "93": 0,
+   "91": -0.6666666666666666,
+   "92": 0.0,
+   "94": 0.33333333333333337,
+   "106": 0.0,
+   "101": -0.3333333333333333,
+   "108": 0.0,
+   "104": -0.6666666666666666,
+   "109": -0.3333333333333333,
+   "112": 0
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 23,
+    "pass_M1": 0.13043478260869565,
+    "pass_S1_same_tasks": 0.753623188405797,
+    "contribution": -0.09555555555555553,
+    "ci": [
+     -0.1422222222222222,
+     -0.05333333333333334
+    ]
+   },
+   "EX_OK": {
+    "n": 64,
+    "pass_M1": 0.1875,
+    "pass_S1_same_tasks": 0.71875,
+    "contribution": -0.22666666666666666,
+    "ci": [
+     -0.31777777777777777,
+     -0.13777777777777778
+    ]
+   },
+   "FIN_BAD": {
+    "n": 10,
+    "pass_M1": 0.7,
+    "pass_S1_same_tasks": 0.8666666666666668,
+    "contribution": -0.011111111111111112,
+    "ci": [
+     -0.03777777777777777,
+     0.013333333333333332
+    ]
+   },
+   "FIN_OK": {
+    "n": 53,
+    "pass_M1": 0.7547169811320755,
+    "pass_S1_same_tasks": 0.8301886792452831,
+    "contribution": -0.02666666666666666,
+    "ci": [
+     -0.07333333333333332,
+     0.011111111111111112
+    ]
+   }
+  },
+  "tok_ratio": 4.307923091874458,
+  "ex": [
+   -0.3222222222222223,
+   -0.42666666666666664,
+   -0.22000000000000003
+  ],
+  "fin": [
+   -0.03777777777777777,
+   -0.08666666666666666,
+   0.008888888888888887
+  ],
+  "bad": [
+   -0.10666666666666665,
+   -0.15777777777777774,
+   -0.057777777777777775
+  ]
+ },
+ {
+  "family": "Google",
+  "model": "gemini-3.1-flash-lite",
+  "domain": "telecom",
+  "S1": 0.33999999999999997,
+  "M1": 0.12,
+  "gain": -0.22,
+  "gain_ci": [
+   -0.3066666666666667,
+   -0.12666666666666668
+  ],
+  "util_median": 0.9634985259020076,
+  "exhausted": 0.44666666666666666,
+  "tok_S1": 5271.713333333333,
+  "tok_M1": 22518.9,
+  "cost_S1": [
+   3.239282475000001,
+   2.28775155
+  ],
+  "cost_M1": [
+   8.257755624999998,
+   1.2703736499999998
+  ],
+  "better": 4,
+  "same": 23,
+  "worse": 23,
+  "gain_by_task": {
+   "[mobile_data_issue]data_saver_mode_on|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[mobile_data_issue]airplane_mode_on|data_mode_off[PERSONA:None]": 0.3333333333333333,
+   "[mobile_data_issue]data_saver_mode_on|data_usage_exceeded[PERSONA:Easy]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]": -0.6666666666666666,
+   "[mobile_data_issue]data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.6666666666666667,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[mobile_data_issue]bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]": -0.3333333333333333,
+   "[mobile_data_issue]bad_network_preference|data_saver_mode_on|data_usage_exceeded[PERSONA:Hard]": -0.3333333333333333,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on[PERSONA:Hard]": 0.3333333333333333,
+   "[mobile_data_issue]bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]": -0.6666666666666666,
+   "[mobile_data_issue]data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Hard]": -0.3333333333333333,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:Easy]": -0.3333333333333333,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]": -0.6666666666666666,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:Hard]": 0,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]": -0.6666666666666666,
+   "[service_issue]airplane_mode_on|break_apn_settings[PERSONA:Hard]": 0,
+   "[service_issue]contract_end_suspension|unseat_sim_card[PERSONA:Hard]": -0.33333333333333337,
+   "[service_issue]airplane_mode_on|overdue_bill_suspension[PERSONA:None]": -0.6666666666666667,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.3333333333333333,
+   "[service_issue]break_apn_settings|lock_sim_card_pin[PERSONA:None]": -0.6666666666666667,
+   "[service_issue]contract_end_suspension|lock_sim_card_pin[PERSONA:Hard]": -0.6666666666666667,
+   "[service_issue]airplane_mode_on|break_apn_settings|lock_sim_card_pin|unseat_sim_card[PERSONA:None]": -1.0,
+   "[service_issue]airplane_mode_on|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -0.6666666666666667,
+   "[service_issue]airplane_mode_on|break_apn_settings|contract_end_suspension|lock_sim_card_pin[PERSONA:None]": 0.33333333333333337,
+   "[service_issue]airplane_mode_on|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": 0,
+   "[mms_issue]bad_network_preference|break_app_both_permissions[PERSONA:Easy]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded[PERSONA:None]": -0.6666666666666666,
+   "[service_issue]break_apn_settings|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": 0.0,
+   "[mms_issue]break_app_both_permissions|data_usage_exceeded[PERSONA:Hard]": 0,
+   "[mms_issue]break_app_sms_permission|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]": 0,
+   "[mms_issue]break_app_storage_permission|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|data_usage_exceeded[PERSONA:Hard]": 0,
+   "[mms_issue]bad_wifi_calling|break_apn_mms_setting|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_mode_off|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.3333333333333333,
+   "[mms_issue]bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:Hard]": 0,
+   "[mms_issue]bad_network_preference|break_app_sms_permission|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]": 0,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]": 0,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:None]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]": 0,
+   "[mms_issue]bad_wifi_calling|break_apn_mms_setting|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:None]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]": 0,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0,
+   "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:None]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:None]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]": 0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Easy]": -0.3333333333333333
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 50,
+    "pass_M1": 0.02,
+    "pass_S1_same_tasks": 0.3466666666666666,
+    "contribution": -0.10888888888888891,
+    "ci": [
+     -0.1711111111111111,
+     -0.05333333333333333
+    ]
+   },
+   "EX_OK": {
+    "n": 17,
+    "pass_M1": 0.0,
+    "pass_S1_same_tasks": 0.19607843137254902,
+    "contribution": -0.022222222222222223,
+    "ci": [
+     -0.044444444444444446,
+     -0.0044444444444444444
+    ]
+   },
+   "FIN_BAD": {
+    "n": 27,
+    "pass_M1": 0.2222222222222222,
+    "pass_S1_same_tasks": 0.2962962962962963,
+    "contribution": -0.013333333333333334,
+    "ci": [
+     -0.042222222222222223,
+     0.017777777777777778
+    ]
+   },
+   "FIN_OK": {
+    "n": 56,
+    "pass_M1": 0.19642857142857142,
+    "pass_S1_same_tasks": 0.3988095238095237,
+    "contribution": -0.07555555555555556,
+    "ci": [
+     -0.12222222222222225,
+     -0.028888888888888884
+    ]
+   }
+  },
+  "tok_ratio": 4.271647294933842,
+  "ex": [
+   -0.13111111111111112,
+   -0.2044444444444444,
+   -0.06888888888888889
+  ],
+  "fin": [
+   -0.08888888888888888,
+   -0.1511111111111111,
+   -0.02666666666666666
+  ],
+  "bad": [
+   -0.12222222222222225,
+   -0.19111111111111112,
+   -0.06
+  ]
+ },
+ {
+  "family": "Google",
+  "model": "gemini-3-flash",
+  "domain": "airline",
+  "S1": 0.8066666666666666,
+  "M1": 0.5533333333333333,
+  "gain": -0.25333333333333335,
+  "gain_ci": [
+   -0.36666666666666664,
+   -0.13999999999999999
+  ],
+  "util_median": 0.9954848621103117,
+  "exhausted": 0.5066666666666667,
+  "tok_S1": 5686.833333333333,
+  "tok_M1": 23212.88,
+  "cost_S1": [
+   6.8481182500000015,
+   1.6669008999999992
+  ],
+  "cost_M1": [
+   17.88232089999999,
+   1.5476499500000003
+  ],
+  "better": 2,
+  "same": 30,
+  "worse": 18,
+  "gain_by_task": {
+   "8": -0.6666666666666667,
+   "5": 0.0,
+   "1": 0.0,
+   "9": 0.0,
+   "3": 0.33333333333333337,
+   "4": 0.0,
+   "13": 0.0,
+   "7": 0,
+   "0": 0.0,
+   "11": -0.6666666666666667,
+   "12": -0.6666666666666667,
+   "16": -1.0,
+   "14": 0,
+   "6": 0.0,
+   "15": -1.0,
+   "20": -0.3333333333333333,
+   "19": -1.0,
+   "2": 0.0,
+   "17": -1.0,
+   "22": -1.0,
+   "25": -0.6666666666666667,
+   "18": -1.0,
+   "21": -1.0,
+   "28": 0.0,
+   "24": -1.0,
+   "26": 0.0,
+   "30": -0.6666666666666667,
+   "27": 0.0,
+   "23": 0,
+   "36": 0.0,
+   "10": 0.0,
+   "29": -0.3333333333333333,
+   "34": 0.0,
+   "33": -0.3333333333333333,
+   "40": 0.0,
+   "35": -0.6666666666666666,
+   "37": -0.6666666666666666,
+   "38": 0.0,
+   "32": 0,
+   "46": 0.0,
+   "42": 0.0,
+   "43": 0.0,
+   "39": 0,
+   "41": 0.0,
+   "45": 0.0,
+   "48": 0.0,
+   "49": 0.0,
+   "47": 0.0,
+   "31": 0.6666666666666667,
+   "44": 0
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 16,
+    "pass_M1": 0.25,
+    "pass_S1_same_tasks": 0.8541666666666666,
+    "contribution": -0.06444444444444446,
+    "ci": [
+     -0.1111111111111111,
+     -0.024444444444444446
+    ]
+   },
+   "EX_OK": {
+    "n": 60,
+    "pass_M1": 0.4,
+    "pass_S1_same_tasks": 0.6777777777777777,
+    "contribution": -0.1111111111111111,
+    "ci": [
+     -0.19777777777777775,
+     -0.03555555555555554
+    ]
+   },
+   "FIN_BAD": {
+    "n": 24,
+    "pass_M1": 0.6666666666666666,
+    "pass_S1_same_tasks": 0.875,
+    "contribution": -0.03333333333333334,
+    "ci": [
+     -0.06888888888888889,
+     -0.0022222222222222222
+    ]
+   },
+   "FIN_OK": {
+    "n": 50,
+    "pass_M1": 0.78,
+    "pass_S1_same_tasks": 0.9133333333333334,
+    "contribution": -0.04444444444444444,
+    "ci": [
+     -0.08444444444444446,
+     -0.011111111111111112
+    ]
+   }
+  },
+  "tok_ratio": 4.081863954749275,
+  "ex": [
+   -0.17555555555555555,
+   -0.26888888888888884,
+   -0.08444444444444445
+  ],
+  "fin": [
+   -0.07777777777777778,
+   -0.13333333333333333,
+   -0.02666666666666667
+  ],
+  "bad": [
+   -0.09777777777777777,
+   -0.16444444444444448,
+   -0.04
+  ]
+ },
+ {
+  "family": "Google",
+  "model": "gemini-3-flash",
+  "domain": "retail",
+  "S1": 0.8,
+  "M1": 0.25333333333333335,
+  "gain": -0.5466666666666666,
+  "gain_ci": [
+   -0.66,
+   -0.44000000000000006
+  ],
+  "util_median": 0.9997596731554914,
+  "exhausted": 0.6733333333333333,
+  "tok_S1": 3470.84,
+  "tok_M1": 15815.633333333333,
+  "cost_S1": [
+   4.781360449999999,
+   1.5737455999999992
+  ],
+  "cost_M1": [
+   12.84115155,
+   1.1714860500000004
+  ],
+  "better": 0,
+  "same": 15,
+  "worse": 35,
+  "gain_by_task": {
+   "1": -0.3333333333333333,
+   "8": -0.6666666666666667,
+   "3": -0.6666666666666666,
+   "6": -1.0,
+   "17": 0.0,
+   "16": -0.6666666666666667,
+   "13": 0.0,
+   "9": -1.0,
+   "18": 0,
+   "21": -0.6666666666666666,
+   "23": -1.0,
+   "24": 0.0,
+   "19": -0.6666666666666666,
+   "26": 0.0,
+   "30": -0.6666666666666666,
+   "31": -0.3333333333333333,
+   "38": 0,
+   "36": -1.0,
+   "39": -1.0,
+   "44": -0.6666666666666667,
+   "41": 0,
+   "47": -0.6666666666666666,
+   "51": 0.0,
+   "56": -1.0,
+   "53": -0.33333333333333337,
+   "59": -0.6666666666666667,
+   "54": -1.0,
+   "60": 0,
+   "64": 0,
+   "63": -1.0,
+   "65": 0.0,
+   "68": -0.6666666666666667,
+   "69": 0.0,
+   "75": 0.0,
+   "74": -1.0,
+   "80": -1.0,
+   "84": -0.6666666666666667,
+   "87": -1.0,
+   "82": -0.3333333333333333,
+   "89": -0.3333333333333333,
+   "91": -1.0,
+   "92": -0.6666666666666667,
+   "93": -1.0,
+   "94": 0.0,
+   "101": -1.0,
+   "108": -0.6666666666666667,
+   "106": -1.0,
+   "104": -1.0,
+   "109": -1.0,
+   "112": 0
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 7,
+    "pass_M1": 0.0,
+    "pass_S1_same_tasks": 0.761904761904762,
+    "contribution": -0.03555555555555555,
+    "ci": [
+     -0.06666666666666667,
+     -0.008888888888888889
+    ]
+   },
+   "EX_OK": {
+    "n": 94,
+    "pass_M1": 0.07446808510638298,
+    "pass_S1_same_tasks": 0.7943262411347517,
+    "contribution": -0.451111111111111,
+    "ci": [
+     -0.5555555555555556,
+     -0.34444444444444444
+    ]
+   },
+   "FIN_BAD": {
+    "n": 5,
+    "pass_M1": 0.8,
+    "pass_S1_same_tasks": 0.9333333333333332,
+    "contribution": -0.0044444444444444444,
+    "ci": [
+     -0.013333333333333332,
+     0.0
+    ]
+   },
+   "FIN_OK": {
+    "n": 44,
+    "pass_M1": 0.6136363636363636,
+    "pass_S1_same_tasks": 0.8030303030303031,
+    "contribution": -0.05555555555555555,
+    "ci": [
+     -0.10222222222222221,
+     -0.013333333333333334
+    ]
+   }
+  },
+  "tok_ratio": 4.5567163376396875,
+  "ex": [
+   -0.48666666666666664,
+   -0.5933333333333334,
+   -0.37999999999999995
+  ],
+  "fin": [
+   -0.06000000000000001,
+   -0.10444444444444442,
+   -0.019999999999999997
+  ],
+  "bad": [
+   -0.039999999999999994,
+   -0.07111111111111112,
+   -0.013333333333333332
+  ]
+ },
+ {
+  "family": "Google",
+  "model": "gemini-3-flash",
+  "domain": "telecom",
+  "S1": 0.9133333333333333,
+  "M1": 0.10666666666666667,
+  "gain": -0.8066666666666666,
+  "gain_ci": [
+   -0.8733333333333333,
+   -0.7333333333333334
+  ],
+  "util_median": 0.9994415903506813,
+  "exhausted": 0.68,
+  "tok_S1": 7241.953333333333,
+  "tok_M1": 33576.306666666664,
+  "cost_S1": [
+   9.467735499999996,
+   4.821479600000002
+  ],
+  "cost_M1": [
+   27.533931099999997,
+   1.9318292
+  ],
+  "better": 0,
+  "same": 1,
+  "worse": 49,
+  "gain_by_task": {
+   "[mobile_data_issue]airplane_mode_on|data_mode_off[PERSONA:None]": -0.33333333333333337,
+   "[mobile_data_issue]data_saver_mode_on|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.6666666666666667,
+   "[mobile_data_issue]data_saver_mode_on|data_usage_exceeded[PERSONA:Easy]": -0.6666666666666667,
+   "[mobile_data_issue]data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]": -1.0,
+   "[mobile_data_issue]bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]": 0.0,
+   "[mobile_data_issue]data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Hard]": -1.0,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.6666666666666666,
+   "[mobile_data_issue]bad_network_preference|data_saver_mode_on|data_usage_exceeded[PERSONA:Hard]": -0.6666666666666667,
+   "[mobile_data_issue]bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]": -1.0,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on[PERSONA:Hard]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:Easy]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:Hard]": -0.6666666666666667,
+   "[service_issue]airplane_mode_on|overdue_bill_suspension[PERSONA:None]": -0.3333333333333333,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": -1.0,
+   "[service_issue]airplane_mode_on|break_apn_settings[PERSONA:Hard]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": -1.0,
+   "[service_issue]contract_end_suspension|unseat_sim_card[PERSONA:Hard]": -0.6666666666666667,
+   "[service_issue]contract_end_suspension|lock_sim_card_pin[PERSONA:Hard]": -0.33333333333333337,
+   "[service_issue]airplane_mode_on|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -1.0,
+   "[service_issue]airplane_mode_on|break_apn_settings|lock_sim_card_pin|unseat_sim_card[PERSONA:None]": -0.6666666666666666,
+   "[service_issue]break_apn_settings|lock_sim_card_pin[PERSONA:None]": -1.0,
+   "[service_issue]airplane_mode_on|break_apn_settings|contract_end_suspension|lock_sim_card_pin[PERSONA:None]": -0.6666666666666667,
+   "[service_issue]airplane_mode_on|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -1.0,
+   "[mms_issue]break_app_both_permissions|data_usage_exceeded[PERSONA:Hard]": -1.0,
+   "[service_issue]break_apn_settings|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -1.0,
+   "[mms_issue]bad_network_preference|break_app_both_permissions[PERSONA:Easy]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded[PERSONA:None]": -0.6666666666666667,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|data_usage_exceeded[PERSONA:Hard]": -0.6666666666666666,
+   "[mms_issue]break_app_storage_permission|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]": -1.0,
+   "[mms_issue]bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:Hard]": -0.6666666666666666,
+   "[mms_issue]break_app_sms_permission|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_mode_off|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.6666666666666667,
+   "[mms_issue]bad_wifi_calling|break_apn_mms_setting|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:None]": -1.0,
+   "[mms_issue]bad_wifi_calling|break_apn_mms_setting|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]": -1.0,
+   "[mms_issue]bad_network_preference|break_app_sms_permission|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]": -1.0,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]": -0.6666666666666666,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]": -0.6666666666666666,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:None]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:None]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]": -1.0,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.6666666666666666,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]": -0.3333333333333333,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]": -0.6666666666666666,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Easy]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:None]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]": -0.3333333333333333
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 62,
+    "pass_M1": 0.0,
+    "pass_S1_same_tasks": 0.9086021505376344,
+    "contribution": -0.3755555555555554,
+    "ci": [
+     -0.46888888888888886,
+     -0.2866666666666667
+    ]
+   },
+   "EX_OK": {
+    "n": 40,
+    "pass_M1": 0.0,
+    "pass_S1_same_tasks": 0.8666666666666666,
+    "contribution": -0.23111111111111107,
+    "ci": [
+     -0.308888888888889,
+     -0.15777777777777774
+    ]
+   },
+   "FIN_BAD": {
+    "n": 20,
+    "pass_M1": 0.4,
+    "pass_S1_same_tasks": 0.9666666666666666,
+    "contribution": -0.07555555555555556,
+    "ci": [
+     -0.11777777777777775,
+     -0.03777777777777778
+    ]
+   },
+   "FIN_OK": {
+    "n": 28,
+    "pass_M1": 0.2857142857142857,
+    "pass_S1_same_tasks": 0.9523809523809524,
+    "contribution": -0.12444444444444443,
+    "ci": [
+     -0.17777777777777776,
+     -0.08
+    ]
+   }
+  },
+  "tok_ratio": 4.636360539927994,
+  "ex": [
+   -0.6066666666666667,
+   -0.6888888888888887,
+   -0.5222222222222223
+  ],
+  "fin": [
+   -0.2,
+   -0.2622222222222223,
+   -0.13999999999999999
+  ],
+  "bad": [
+   -0.4511111111111111,
+   -0.5488888888888888,
+   -0.35333333333333333
+  ]
+ },
+ {
+  "family": "Qwen",
+  "model": "qwen3.5-4b",
+  "domain": "telecom",
+  "S1": 0.9466666666666667,
+  "M1": 0.23333333333333334,
+  "gain": -0.7133333333333334,
+  "gain_ci": [
+   -0.8,
+   -0.6266666666666666
+  ],
+  "util_median": 0.9988898756660746,
+  "exhausted": 0.6266666666666667,
+  "tok_S1": 4335.1,
+  "tok_M1": 19664.573333333334,
+  "cost_S1": [
+   0,
+   5.086777499999998
+  ],
+  "cost_M1": [
+   0,
+   4.160430050000001
+  ],
+  "better": 0,
+  "same": 4,
+  "worse": 46,
+  "gain_by_task": {
+   "[mobile_data_issue]airplane_mode_on|data_mode_off[PERSONA:None]": -0.33333333333333337,
+   "[mobile_data_issue]data_saver_mode_on|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.0,
+   "[mobile_data_issue]data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": -1.0,
+   "[mobile_data_issue]data_saver_mode_on|data_usage_exceeded[PERSONA:Easy]": -0.6666666666666667,
+   "[mobile_data_issue]airplane_mode_on|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]": -0.33333333333333337,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|user_abroad_roaming_enabled_off[PERSONA:Easy]": 0.0,
+   "[mobile_data_issue]bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]": -0.33333333333333337,
+   "[mobile_data_issue]data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Hard]": -1.0,
+   "[mobile_data_issue]bad_network_preference|data_saver_mode_on|data_usage_exceeded[PERSONA:Hard]": -0.6666666666666667,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on[PERSONA:Hard]": 0.0,
+   "[mobile_data_issue]bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]": -1.0,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:Easy]": -0.6666666666666667,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]": -0.6666666666666667,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:Hard]": -0.6666666666666667,
+   "[mobile_data_issue]bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.6666666666666667,
+   "[service_issue]airplane_mode_on|break_apn_settings[PERSONA:Hard]": -0.33333333333333337,
+   "[service_issue]airplane_mode_on|overdue_bill_suspension[PERSONA:None]": -1.0,
+   "[service_issue]contract_end_suspension|unseat_sim_card[PERSONA:Hard]": -0.6666666666666666,
+   "[service_issue]break_apn_settings|lock_sim_card_pin[PERSONA:None]": -1.0,
+   "[service_issue]contract_end_suspension|lock_sim_card_pin[PERSONA:Hard]": 0.0,
+   "[service_issue]airplane_mode_on|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -1.0,
+   "[service_issue]airplane_mode_on|break_apn_settings|lock_sim_card_pin|unseat_sim_card[PERSONA:None]": -1.0,
+   "[service_issue]airplane_mode_on|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -0.3333333333333333,
+   "[service_issue]airplane_mode_on|break_apn_settings|contract_end_suspension|lock_sim_card_pin[PERSONA:None]": -1.0,
+   "[service_issue]break_apn_settings|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]": -0.6666666666666666,
+   "[mms_issue]break_app_both_permissions|data_usage_exceeded[PERSONA:Hard]": -0.6666666666666667,
+   "[mms_issue]bad_network_preference|break_app_both_permissions[PERSONA:Easy]": -0.33333333333333337,
+   "[mms_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded[PERSONA:None]": -0.6666666666666667,
+   "[mms_issue]break_app_storage_permission|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]": -0.33333333333333337,
+   "[mms_issue]break_app_sms_permission|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]": -0.6666666666666666,
+   "[mms_issue]bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:Hard]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|data_usage_exceeded[PERSONA:Hard]": -0.6666666666666666,
+   "[mms_issue]bad_wifi_calling|break_apn_mms_setting|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.6666666666666667,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_mode_off|user_abroad_roaming_enabled_off[PERSONA:Easy]": -0.33333333333333337,
+   "[mms_issue]bad_wifi_calling|break_apn_mms_setting|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:None]": -1.0,
+   "[mms_issue]bad_network_preference|break_app_sms_permission|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]": -1.0,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]": -0.6666666666666667,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:None]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:None]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]": -0.6666666666666666,
+   "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Easy]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:None]": -1.0,
+   "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]": -1.0,
+   "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]": -1.0
+  },
+  "cls": {
+   "EX_BAD": {
+    "n": 26,
+    "pass_M1": 0.038461538461538464,
+    "pass_S1_same_tasks": 0.935897435897436,
+    "contribution": -0.15555555555555553,
+    "ci": [
+     -0.2111111111111111,
+     -0.10444444444444442
+    ]
+   },
+   "EX_OK": {
+    "n": 68,
+    "pass_M1": 0.058823529411764705,
+    "pass_S1_same_tasks": 0.9558823529411763,
+    "contribution": -0.40666666666666673,
+    "ci": [
+     -0.491111111111111,
+     -0.32666666666666666
+    ]
+   },
+   "FIN_BAD": {
+    "n": 13,
+    "pass_M1": 0.46153846153846156,
+    "pass_S1_same_tasks": 0.9487179487179487,
+    "contribution": -0.042222222222222223,
+    "ci": [
+     -0.07777777777777778,
+     -0.013333333333333332
+    ]
+   },
+   "FIN_OK": {
+    "n": 43,
+    "pass_M1": 0.5581395348837209,
+    "pass_S1_same_tasks": 0.9379844961240309,
+    "contribution": -0.10888888888888887,
+    "ci": [
+     -0.1733333333333333,
+     -0.05333333333333333
+    ]
+   }
+  },
+  "tok_ratio": 4.536129116590928,
+  "ex": [
+   -0.5622222222222223,
+   -0.6555555555555554,
+   -0.47555555555555545
+  ],
+  "fin": [
+   -0.15111111111111108,
+   -0.2177777777777778,
+   -0.08666666666666668
+  ],
+  "bad": [
+   -0.19777777777777783,
+   -0.25555555555555554,
+   -0.14666666666666664
+  ]
+ }
+]

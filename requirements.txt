@@ -1,0 +1,10 @@
+# Analysis-only dependencies (the runners and agents execute inside tau2-bench's own
+# uv environment, which already provides litellm, pydantic, numpy, scipy, pandas,
+# matplotlib and python-dotenv; see setup.sh).
+numpy>=1.24
+scipy>=1.10
+pandas>=2.2
+matplotlib>=3.8
+statsmodels>=0.14
+pytest>=8
+python-dotenv>=1.0

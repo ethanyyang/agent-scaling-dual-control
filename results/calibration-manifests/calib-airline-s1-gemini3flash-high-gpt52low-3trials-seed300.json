@@ -1,0 +1,32 @@
+{
+  "cell": {
+    "family": "google",
+    "model": "gemini-3-flash",
+    "tier": "mid",
+    "domain": "airline"
+  },
+  "snapshot": "gemini-3-flash-preview",
+  "litellm_model": "gemini/gemini-3-flash-preview",
+  "agent": "llm_agent",
+  "agent_llm_args": {
+    "reasoning_effort": "high"
+  },
+  "user_llm": "gpt-5.2 (alias; provider-reported gpt-5.2-2025-12-11)",
+  "user_llm_args": {
+    "reasoning_effort": "low"
+  },
+  "seed": 300,
+  "num_trials": 3,
+  "max_steps": 200,
+  "task_ids_sha256": null,
+  "tau2_commit": "c339866",
+  "command": "(gate run, 2026-08-27; admitted per ANALYSIS.md CHANGELOG 2026-09-19)",
+  "budget": "uncapped (S1 calibration, ANALYSIS.md \u00a74.2)",
+  "started_utc": "2026-08-27T10:08:31Z",
+  "finished_utc": "2026-08-27T10:29:00Z",
+  "wall_seconds": 1229,
+  "return_code": 0,
+  "results_path": "tau2-bench/data/simulations/gate-airline-sas-gemini3flash-high-gpt52low-3trials-seed300/results.json",
+  "results_sha256": "e188ae2d1c160822a42cedfdac430c013ac3e3bff998e9d856c98613a0e38278",
+  "admitted_gate_run": true
+}

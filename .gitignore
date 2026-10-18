@@ -1,0 +1,20 @@
+# Upstream repositories cloned by setup.sh (pinned commits; not redistributed here)
+/tau2-bench/
+/agent-scaling/
+
+# Secrets
+.env
+**/.env
+
+# Downloaded trajectories (fetched by data/download.sh; keep the inventory and checksums)
+/data/archives/
+/data/simulations/*
+!/data/simulations/.gitkeep
+
+# Local environments, caches, OS files
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+*.pyc
+PROVENANCE.txt

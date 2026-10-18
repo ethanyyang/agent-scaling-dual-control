@@ -1,0 +1,411 @@
+{
+  "spec": "ANALYSIS.md section 1 (H4a WW half, H4b); see module docstring",
+  "no_write_tasks_per_domain": {
+    "airline": 24,
+    "retail": 3,
+    "telecom": 16
+  },
+  "H4a_ww": {
+    "n_cells": 12,
+    "dof": 7,
+    "slope": -0.14963335378558604,
+    "ci": [
+      -0.636754377754945,
+      0.337487670183773
+    ],
+    "perm_p_two_sided": 0.7844215578442156,
+    "perm_p_one_sided_negative": 0.39086091390860916,
+    "supported": false,
+    "pooled_rate_by_domain": {
+      "airline": 0.1891891891891892,
+      "retail": 0.006756756756756757,
+      "telecom": 0.06072874493927125
+    },
+    "cells": {
+      "airline x gemini-3-flash": {
+        "x": 0.8566666666666667,
+        "ww": 2,
+        "failures": 29,
+        "rate": 0.06896551724137931
+      },
+      "retail x gemini-3-flash": {
+        "x": 0.86,
+        "ww": 0,
+        "failures": 30,
+        "rate": 0.0
+      },
+      "telecom x gemini-3-flash": {
+        "x": 0.8033333333333333,
+        "ww": 2,
+        "failures": 13,
+        "rate": 0.15384615384615385
+      },
+      "airline x gemini-3.1-flash-lite": {
+        "x": 0.5566666666666666,
+        "ww": 0,
+        "failures": 32,
+        "rate": 0.0
+      },
+      "retail x gemini-3.1-flash-lite": {
+        "x": 0.5633333333333334,
+        "ww": 1,
+        "failures": 34,
+        "rate": 0.029411764705882353
+      },
+      "telecom x gemini-3.1-flash-lite": {
+        "x": 0.78,
+        "ww": 0,
+        "failures": 99,
+        "rate": 0.0
+      },
+      "airline x gpt-5-mini": {
+        "x": 0.7666666666666666,
+        "ww": 5,
+        "failures": 38,
+        "rate": 0.13157894736842105
+      },
+      "retail x gpt-5-mini": {
+        "x": 0.76,
+        "ww": 0,
+        "failures": 36,
+        "rate": 0.0
+      },
+      "telecom x gpt-5-mini": {
+        "x": 0.7533333333333334,
+        "ww": 1,
+        "failures": 34,
+        "rate": 0.029411764705882353
+      },
+      "airline x gpt-5-nano": {
+        "x": 0.5033333333333334,
+        "ww": 28,
+        "failures": 86,
+        "rate": 0.32558139534883723
+      },
+      "retail x gpt-5-nano": {
+        "x": 0.3766666666666667,
+        "ww": 0,
+        "failures": 48,
+        "rate": 0.0
+      },
+      "telecom x gpt-5-nano": {
+        "x": 0.5533333333333333,
+        "ww": 12,
+        "failures": 101,
+        "rate": 0.1188118811881188
+      }
+    }
+  },
+  "H4a_fp": "pending: needs the NL-assertion judge pass; FP is defined on airline only (telecom tasks carry no NL assertions; retail's are inside the official score)",
+  "H4b": {
+    "n_cells": 13,
+    "episodes_per_condition": 1950,
+    "changes": {
+      "WW": {
+        "pooled_change_per_episode": -0.006153846153846154,
+        "ci": [
+          -0.026153846153846153,
+          0.011794871794871795
+        ],
+        "s1_total": 55,
+        "m1_total": 43,
+        "cells_down": 5,
+        "cells_up": 5
+      },
+      "IN": {
+        "pooled_change_per_episode": 0.07282051282051281,
+        "ci": [
+          0.03691025641025643,
+          0.11846153846153847
+        ],
+        "s1_total": 126,
+        "m1_total": 268,
+        "cells_down": 1,
+        "cells_up": 10
+      },
+      "BX": {
+        "pooled_change_per_episode": 0.3415384615384615,
+        "ci": [
+          0.24461538461538462,
+          0.44256410256410256
+        ],
+        "s1_total": 0,
+        "m1_total": 666,
+        "cells_down": 0,
+        "cells_up": 13
+      },
+      "IN_incl_BX": {
+        "pooled_change_per_episode": 0.27897435897435896,
+        "ci": [
+          0.20256410256410257,
+          0.36512820512820515
+        ],
+        "s1_total": 126,
+        "m1_total": 670,
+        "cells_down": 0,
+        "cells_up": 13
+      },
+      "OTHER": {
+        "pooled_change_per_episode": -0.10358974358974359,
+        "ci": [
+          -0.17025641025641025,
+          -0.043076923076923075
+        ],
+        "s1_total": 407,
+        "m1_total": 205,
+        "cells_down": 10,
+        "cells_up": 3
+      },
+      "PASS": {
+        "pooled_change_per_episode": -0.3046153846153846,
+        "ci": [
+          -0.4359102564102564,
+          -0.18615384615384614
+        ],
+        "s1_total": 1362,
+        "m1_total": 768,
+        "cells_down": 12,
+        "cells_up": 1
+      }
+    },
+    "reading": "WW unchanged: the architecture did not act on the failures it targets",
+    "supported": false,
+    "fp": "pending (judge pass; airline only)"
+  },
+  "cells": {
+    "airline x gemini-3-flash": {
+      "S1": {
+        "PASS": 121,
+        "WW": 2,
+        "BX": 0,
+        "IN": 11,
+        "OTHER": 16,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 83,
+        "WW": 0,
+        "BX": 48,
+        "IN": 17,
+        "OTHER": 2,
+        "N": 150
+      }
+    },
+    "retail x gemini-3-flash": {
+      "S1": {
+        "PASS": 120,
+        "WW": 0,
+        "BX": 0,
+        "IN": 8,
+        "OTHER": 22,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 38,
+        "WW": 0,
+        "BX": 94,
+        "IN": 16,
+        "OTHER": 2,
+        "N": 150
+      }
+    },
+    "telecom x gemini-3-flash": {
+      "S1": {
+        "PASS": 137,
+        "WW": 2,
+        "BX": 0,
+        "IN": 2,
+        "OTHER": 9,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 16,
+        "WW": 11,
+        "BX": 95,
+        "IN": 17,
+        "OTHER": 11,
+        "N": 150
+      }
+    },
+    "airline x gemini-3.1-flash-lite": {
+      "S1": {
+        "PASS": 118,
+        "WW": 0,
+        "BX": 0,
+        "IN": 13,
+        "OTHER": 19,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 94,
+        "WW": 1,
+        "BX": 39,
+        "IN": 12,
+        "OTHER": 4,
+        "N": 150
+      }
+    },
+    "retail x gemini-3.1-flash-lite": {
+      "S1": {
+        "PASS": 116,
+        "WW": 1,
+        "BX": 0,
+        "IN": 10,
+        "OTHER": 23,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 62,
+        "WW": 0,
+        "BX": 72,
+        "IN": 10,
+        "OTHER": 6,
+        "N": 150
+      }
+    },
+    "telecom x gemini-3.1-flash-lite": {
+      "S1": {
+        "PASS": 51,
+        "WW": 0,
+        "BX": 0,
+        "IN": 18,
+        "OTHER": 81,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 18,
+        "WW": 5,
+        "BX": 62,
+        "IN": 42,
+        "OTHER": 23,
+        "N": 150
+      }
+    },
+    "airline x gpt-5-mini": {
+      "S1": {
+        "PASS": 112,
+        "WW": 5,
+        "BX": 0,
+        "IN": 12,
+        "OTHER": 21,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 87,
+        "WW": 0,
+        "BX": 31,
+        "IN": 24,
+        "OTHER": 8,
+        "N": 150
+      }
+    },
+    "retail x gpt-5-mini": {
+      "S1": {
+        "PASS": 114,
+        "WW": 0,
+        "BX": 0,
+        "IN": 8,
+        "OTHER": 28,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 72,
+        "WW": 0,
+        "BX": 51,
+        "IN": 17,
+        "OTHER": 10,
+        "N": 150
+      }
+    },
+    "telecom x gpt-5-mini": {
+      "S1": {
+        "PASS": 116,
+        "WW": 1,
+        "BX": 0,
+        "IN": 10,
+        "OTHER": 23,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 99,
+        "WW": 2,
+        "BX": 24,
+        "IN": 10,
+        "OTHER": 15,
+        "N": 150
+      }
+    },
+    "airline x gpt-5-nano": {
+      "S1": {
+        "PASS": 64,
+        "WW": 28,
+        "BX": 0,
+        "IN": 10,
+        "OTHER": 48,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 68,
+        "WW": 14,
+        "BX": 23,
+        "IN": 22,
+        "OTHER": 23,
+        "N": 150
+      }
+    },
+    "retail x gpt-5-nano": {
+      "S1": {
+        "PASS": 102,
+        "WW": 0,
+        "BX": 0,
+        "IN": 16,
+        "OTHER": 32,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 67,
+        "WW": 0,
+        "BX": 22,
+        "IN": 23,
+        "OTHER": 38,
+        "N": 150
+      }
+    },
+    "telecom x gpt-5-nano": {
+      "S1": {
+        "PASS": 49,
+        "WW": 12,
+        "BX": 0,
+        "IN": 8,
+        "OTHER": 81,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 29,
+        "WW": 5,
+        "BX": 19,
+        "IN": 51,
+        "OTHER": 46,
+        "N": 150
+      }
+    },
+    "telecom x qwen3.5-4b": {
+      "S1": {
+        "PASS": 142,
+        "WW": 4,
+        "BX": 0,
+        "IN": 0,
+        "OTHER": 4,
+        "N": 150
+      },
+      "M1": {
+        "PASS": 35,
+        "WW": 5,
+        "BX": 86,
+        "IN": 7,
+        "OTHER": 17,
+        "N": 150
+      }
+    }
+  }
+}

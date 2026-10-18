@@ -1,0 +1,17 @@
+Commit history of ANALYSIS.md in the private working repository (git log --date=iso-strict), exported 2026-10-18.
+First grid MAS episode started 2026-09-21T20:07:03Z (results/manifests/m1-airline-gemini31flashlite-high-gpt52low-b4x-capb1x-3trials-seed300.json).
+
+73bac439815f5a6687a54d05fc1427a1130b4929 2026-10-16T17:57:11-07:00 adding qwen m1 ressults
+088bf921501fdb1ca635181bc370b3fb55413017 2026-09-25T17:52:21-07:00 draft
+3ce0fe59a226a44e69b1a8c1f02f96adf707e235 2026-09-25T16:08:40-07:00 latest results
+0822b276b1e679d4c7b3b50332bbb9bcfd05a603 2026-09-24T21:39:41+00:00 Uncapped arm: strip allowance paragraph, test, §8.1 addendum, protocol line
+2ae4f0fb8b178d77cc804c76a6dad24dfd968a02 2026-09-24T14:36:13-07:00 results
+64f912406692e9f5c91227798cfcea09dfe01441 2026-09-21T23:00:26-07:00 results
+3922d53ef9ac939fe482386dea8c85afa531f9f1 2026-09-19T23:26:19-07:00 S1 results
+1b0e097edb7159ae8927c1119f08bd669b81bfd9 2026-09-18T18:50:13-07:00 change mas structure
+fd4238c96d5e8d9e3e6a3e13d16e42f4a8c68113 2026-09-03T20:56:51-07:00 Apply pre-registration review fixes to H1, H4a, R1, R2, and G1
+7afe4ce8df666967e4fe40a92fafa196248a6694 2026-09-02T22:13:35-07:00 Add pre-registered power analysis and promote H4 to confirmatory
+eebe6203d18e86d329dbd813e71a6821f00e8da9 2026-09-01T22:41:35-07:00 Pre-register completion-token budget protocol and judge-validity packet
+1d71b546d9215116a9fdeeae178cfda1e8aef494 2026-08-27T16:18:48-07:00 Add full-sample NL-assertion re-grades and outcome-measure framework
+8882fab85f845b8eb475425c3ce66d2971fdfb77 2026-08-27T11:46:31-07:00 Run reproduction gate and validity checks for airline frontier baseline
+ba209d14efb43761b012b32321e5ed5d3ffd5c11 2026-08-16T22:19:30-07:00 Initialize transfer-testing project

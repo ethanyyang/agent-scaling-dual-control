@@ -1,0 +1,35 @@
+{
+  "cell": {
+    "family": "openai-gpt5",
+    "model": "gpt-5-mini",
+    "tier": "mid",
+    "domain": "airline"
+  },
+  "snapshot": "gpt-5-mini-2025-08-07",
+  "litellm_model": "openai/responses/gpt-5-mini-2025-08-07",
+  "agent": "llm_agent",
+  "agent_llm_args": {
+    "reasoning_effort": "high"
+  },
+  "user_llm": "gpt-5.2-2025-12-11",
+  "user_llm_args": {
+    "reasoning_effort": "low"
+  },
+  "seed": 300,
+  "num_trials": 3,
+  "max_steps": 200,
+  "task_ids_sha256": null,
+  "tau2_commit": "c339866",
+  "cells_json_sha256": "e1b9da66ebdd6a0bc078b6317581ed86e8313b0349717d2dc4cd592837f8036d",
+  "base_prompt_sha256": "825bb492ecd9062046cc7de0050b31ae7887e3577b66b149883728e71a193da7",
+  "command": "uv run tau2 run --domain airline --agent llm_agent --agent-llm openai/responses/gpt-5-mini-2025-08-07 --agent-llm-args '{\"reasoning_effort\": \"high\"}' --user user_simulator --user-llm gpt-5.2-2025-12-11 --user-llm-args '{\"reasoning_effort\": \"low\"}' --num-trials 3 --seed 300 --max-steps 200 --max-errors 10 --max-concurrency 6 --auto-resume --save-to calib-airline-s1-gpt5mini-high-gpt52low-3trials-seed300",
+  "budget": "uncapped (S1 calibration, ANALYSIS.md \u00a74.2)",
+  "started_utc": "2026-09-21T03:46:06.267574+00:00",
+  "finished_utc": "2026-09-21T05:18:15.719060+00:00",
+  "wall_seconds": 5529.5,
+  "return_code": 0,
+  "episodes": 150,
+  "infrastructure_errors": 0,
+  "results_path": "tau2-bench/data/simulations/calib-airline-s1-gpt5mini-high-gpt52low-3trials-seed300/results.json",
+  "results_sha256": "0993b01c8c63b425c660aaaf78254984d0998e4da9142ebe199851878a9136bd"
+}

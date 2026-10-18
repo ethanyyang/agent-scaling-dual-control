@@ -1,0 +1,88 @@
+{
+ "1_thinking": {
+  "pass": true,
+  "thinking_field": "reasoning",
+  "thinking_chars": 24957,
+  "answer": "",
+  "expected_answer": "10",
+  "think_tag_leaked_into_answer": false,
+  "completion_tokens": 8000,
+  "thinking_tokens_counted_in_usage": true,
+  "seconds": 152.5,
+  "tokens_per_second_single": 52.5,
+  "finish_reason": "length"
+ },
+ "2_effort": {
+  "pass": null,
+  "unset": {
+   "thinking_chars": 1696,
+   "completion_tokens": 674,
+   "answer": "no"
+  },
+  "high": {
+   "thinking_chars": 3945,
+   "completion_tokens": 1396,
+   "answer": "no"
+  },
+  "none": {
+   "thinking_chars": 0,
+   "completion_tokens": 2,
+   "answer": "no"
+  }
+ },
+ "3_tools": {
+  "pass": true,
+  "n_tool_calls": 1,
+  "content_head": "",
+  "seconds": 3.2,
+  "name": "get_customer_by_phone",
+  "arguments": {
+   "phone_number": "555-123-2002"
+  },
+  "round_trip_reply_head": "I've pulled up your account, Dana.\n\nHere are the details:\n\n*   **Customer ID:** C1001\n*   **Name:** Dana Reyes\n*   **Phone Line:** L2002\n*   **Status:** Active\n",
+  "round_trip_ok": true
+ },
+ "4_context": {
+  "pass": true,
+  "prompt_tokens_reported": 53172,
+  "prompt_tokens_aimed": 39321,
+  "prompt_arrived_whole": true,
+  "word_one_found": true,
+  "word_two_found": true,
+  "answer": "PELICAN-4471 GRANITE-9038",
+  "seconds": 185.3,
+  "note": "prompt_tokens near 4096 means the 4k default is in force"
+ },
+ "5_placement": {
+  "pass": true,
+  "ollama_ps": [
+   "NAME                ID              SIZE      PROCESSOR    CONTEXT    UNTIL   ",
+   "tt-qwen3.5-4b:q4    668eab7d518c    8.5 GB    100% GPU     131072     Forever"
+  ],
+  "note": "anything other than 100% GPU means it spilled to CPU: lower PAR or CTX, or use q4"
+ },
+ "6_speed": {
+  "pass": null,
+  "parallel": 4,
+  "tokens": [
+   500,
+   500,
+   500,
+   500
+  ],
+  "wall_seconds": 57.9,
+  "aggregate_tokens_per_second": 34.5,
+  "single_stream_tokens_per_second": 52.5,
+  "hours_per_150_episodes_at_10k_tokens_each": 12.1,
+  "hours_per_150_episodes_at_30k_tokens_each": 36.2,
+  "hours_per_150_episodes_at_60k_tokens_each": 72.4,
+  "note": "generation only; prompt reading time comes on top"
+ },
+ "_summary": {
+  "model": "tt-qwen3.5-4b:q4",
+  "ctx": 131072,
+  "parallel": 4,
+  "failed": [],
+  "time_utc": "2026-09-21 17:43:42"
+ }
+}

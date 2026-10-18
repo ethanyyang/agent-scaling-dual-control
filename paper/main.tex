@@ -1,0 +1,71 @@
+\documentclass[11pt,letterpaper]{article}
+% Full version of the paper (v23, October 2026). Plain article layout; no conference style files; no statements section.
+% APA reference list (apacite, natbib-compatible).
+\usepackage[natbibapa]{apacite}
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage{seqsplit}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{caption}
+\usetikzlibrary{arrows.meta,positioning,calc,fit}
+\newtheorem{lemma}{Lemma}
+\captionsetup{font=small,labelfont=bf}
+% Let large tables share a page with text instead of forcing float pages.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{4}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+
+% Draft-only macros. Every \todo must be resolved or deleted before release.
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\pending}[1]{\textcolor{red}{[PENDING: #1]}}
+\newcommand{\Sone}{\text{\textup{SAS}}}
+\newcommand{\Mone}{\text{\textup{MAS}}}
+\newcommand{\Bx}{B_{1\times}}
+\newcommand{\passone}{pass$^{1}$}
+
+\title{Does Multi-Agent Collaboration Pay When Agents Serve Users?\\ Testing Agent Scaling in Dual-Control Settings}
+
+\author{Ethan Yang \qquad Xiangcheng Shi\\[3pt]
+University of Pennsylvania\\
+\texttt{\{eyyang, xcshi\}@seas.upenn.edu}}
+\date{October 2026}
+
+\begin{document}
+% APA 7 practice: "et al." from the first citation for three or more authors.
+\shortcites{kim2026capable,barres2025tau2,yao2024tau,tran2026single,jwalapuram2026illusion,wang2024token,kapoor2024agents,kapoor2025hal,gao2025single,yang2025debate,li2026scaling,yu2026bottleneck,seshadri2026lost,zhou2026sim2real,cuadron2025saber,kang2026policyguard,fourney2024magentic,cemri2025mast,schaeffer2023mirage,hofman2023prereg}
+
+\maketitle
+
+\input{sections/00_abstract}
+\input{sections/01_introduction}
+\input{sections/02_related}
+\input{sections/03_design}
+\input{sections/04_results}
+\input{sections/05_discussion}
+\input{sections/06_conclusion}
+
+\bibliography{references}
+\bibliographystyle{apacite}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

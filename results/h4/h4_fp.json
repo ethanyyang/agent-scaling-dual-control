@@ -1,0 +1,68 @@
+{
+  "rule_commission": "^(Check that )?Agent (does not|should not|must not|should never|never|should refuse)\\b",
+  "cells": {
+    "gpt-5-nano": {
+      "index": 0.5033333333333332,
+      "S1": {
+        "fp_commission": 10,
+        "fp_all": 20,
+        "passes": 64
+      },
+      "M1": {
+        "fp_commission": 9,
+        "fp_all": 22,
+        "passes": 68
+      }
+    },
+    "gpt-5-mini": {
+      "index": 0.7666666666666666,
+      "S1": {
+        "fp_commission": 8,
+        "fp_all": 14,
+        "passes": 112
+      },
+      "M1": {
+        "fp_commission": 6,
+        "fp_all": 17,
+        "passes": 87
+      }
+    },
+    "gemini-3.1-flash-lite": {
+      "index": 0.5566666666666666,
+      "S1": {
+        "fp_commission": 6,
+        "fp_all": 12,
+        "passes": 118
+      },
+      "M1": {
+        "fp_commission": 1,
+        "fp_all": 10,
+        "passes": 94
+      }
+    },
+    "gemini-3-flash": {
+      "index": 0.8566666666666666,
+      "S1": {
+        "fp_commission": 3,
+        "fp_all": 12,
+        "passes": 121
+      },
+      "M1": {
+        "fp_commission": 1,
+        "fp_all": 8,
+        "passes": 83
+      }
+    }
+  },
+  "missing": [],
+  "H4b_fp_commission_change_per_episode": -0.016666666666666666,
+  "H4b_fp_commission_ci": [
+    -0.028333333333333332,
+    -0.008333333333333333
+  ],
+  "H4b_fp_all_change_per_episode": -0.0016666666666666668,
+  "H4b_fp_all_ci": [
+    -0.02,
+    0.016666666666666666
+  ]
+}

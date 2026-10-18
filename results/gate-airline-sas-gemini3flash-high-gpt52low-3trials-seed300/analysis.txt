@@ -1,0 +1,66 @@
+====================================================================
+RUN METADATA
+====================================================================
+  source      : ./tau2-bench/data/simulations/gate-airline-sas-gemini3flash-high-gpt52low-3trials-seed300/results.json
+  sha256      : e188ae2d1c160822a42cedfdac430c013ac3e3bff998e9d856c98613a0e38278
+  commit      : c3398666e655
+  domain      : airline
+  agent llm   : gemini/gemini-3-flash-preview  args={'reasoning_effort': 'high'}
+  user  llm   : gpt-5.2  args={'reasoning_effort': 'low'}
+  num_trials  : 3   seed: 300
+  tasks       : 50   simulations: 150
+
+====================================================================
+PASS RATE
+====================================================================
+  trial 1:  78.0%   (39/50)
+  trial 2:  78.0%   (39/50)
+  trial 3:  86.0%   (43/50)
+  mean    :  80.7%  (std 4.6%)
+  95% CI on pooled pass^1 (Wilson, n=150 episodes): [73.6%, 86.2%]
+  pass^1   :  80.7%   (official tau2 estimator)
+  pass^2   :  76.0%   (official tau2 estimator)
+  pass^3   :  74.0%   (official tau2 estimator)
+  flaky tasks (inconsistent across trials): 7/50  -> ['3', '20', '29', '31', '33', '35', '37']
+
+====================================================================
+FAILURE STRUCTURE  (exploratory passivity-confound check)
+====================================================================
+  needs-write                pass   52/78   =  66.7%
+  no-write (refuse/inform)   pass   69/72   =  95.8%
+
+  FAILURES BY HEURISTIC TYPE (total 29):
+    wrongful write  (acted when gold has no write):    2
+    inaction        (no write when gold has write):   11
+    other/incorrect write or communication       :   16
+    wrongful-write examples: [('31', 0, 2), ('31', 1, 1)]
+    inaction examples      : [('20', 0), ('23', 0), ('35', 0), ('32', 0), ('20', 1), ('32', 1), ('37', 1), ('23', 2)]
+  Note: this is a heuristic taxonomy, not a causal failure annotation.
+
+  termination reasons: user_stop=150
+
+====================================================================
+TOKEN ACCOUNTING & COST  (per episode)
+====================================================================
+  agent input tokens :     96,026  (total 14,403,836)
+    of which cached  :     43,154  (45% hit rate)
+  agent output tokens:      5,687  (total 853,025)
+  agent LLM calls    :       11.6
+  agent cost         : $  0.04565  (total $6.85)
+  user  cost         : $  0.01111  (total $1.67)
+  TOTAL cost/episode : $  0.05677
+
+  >> Budget projection for 278 tasks x 3 trials x 4 systems
+       if MAS agent cost == SAS       : ~$  189.37
+       if MAS agent cost is 2x SAS    : ~$  303.60
+       if MAS agent cost is 3x SAS    : ~$  417.83
+     Assumes one SAS plus three MAS systems and fixed user-simulator cost.
+
+  per-episode CSV written to ./results/gate-airline-sas-gemini3flash-high-gpt52low-3trials-seed300/per_episode.csv
+
+====================================================================
+THRESHOLD POSITIONING (Kim et al. ~45% selection rule)
+====================================================================
+  SAS pass^1 = 80.7%  ->  ABOVE the ~45% saturation threshold
+  Rule predicts generic MAS gain: zero-to-negative
+  Treat this run as exploratory unless model snapshots and protocol were pre-registered.

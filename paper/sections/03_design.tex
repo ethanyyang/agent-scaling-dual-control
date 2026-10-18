@@ -1,0 +1,167 @@
+\section{Experimental design}
+\label{sec:design}
+
+\subsection{Setting, systems and unit}
+\label{sec:setting}
+\label{sec:systems}
+
+\paragraph{Tasks.} We use $\tau^2$-bench v1.0.1 \citep{barres2025tau2} at a pinned commit, with the evaluator and the domain data unmodified; our analysis code never imports the evaluator, and its pass$^k$ reimplementation was checked against the official metric at that commit. The reward checks the final database state and required communication on airline, the database state and natural-language assertions graded by a pinned judge on retail, and the state of the customer's device on telecom (for 7 of its 50 tasks also the actions taken), where the customer runs tools too. Airline uses its 50 base tasks; retail and telecom use fixed 50-task subsets drawn from their base tasks by one seeded shuffle. Only telecom is dual-control in the strict sense of \citet{barres2025tau2}: there the customer holds tools and acts on the device; on airline and retail the agent alone holds tools and the customer acts through the conversation. The original $\tau$-bench was reported to contain tasks that require no state change and lack a check on the required reply, so that an agent that does nothing passes \citep{zhu2025rigorous}, and community corrections followed \citep{cuadron2025saber}; none is applied here, every SAS baseline is generated internally on the pinned version, and no leaderboard number enters a test. Every cell runs every task with three seeds (150 episodes per condition), with at most 200 steps and 10 errors per episode; an episode that ends in an infrastructure error is re-run once and, if it fails again, excluded and reported. One simulator, \texttt{gpt-5.2} at low reasoning effort, plays the customer everywhere; the benchmark's default \texttt{gpt-4.1} is used only in R2. As a reproduction gate before any budget was set, the stock agent with \texttt{gemini-3-flash} on airline under this simulator scored \passone\ 80.7\% against the public leaderboard's 82.5\% for the same configuration (pass$^3$ 74.0\% against 72.0\%), so the pipeline reproduces the published setting.
+
+\paragraph{Models.} Six models from three families, two tiers each: \texttt{gpt-5-nano} and \texttt{gpt-5-mini} (dated August 2025 snapshots, Responses API, reasoning effort high); \texttt{gemini-3.1-flash-lite} and \texttt{gemini-3-flash} (preview, thinking level high); \texttt{qwen3.5-4b}, a 4-billion open-weight model served at 4-bit precision on one laptop with its shipped sampling defaults, a 131k context and one request at a time; and \texttt{qwen3.5-9b} through a hosted router at temperature 0 with reasoning effort high, whose served build is not pinned. The hosted APIs drop the per-trial seed that the benchmark sets; the local route passes it to the model, which matters for the local cells (Appendix~\ref{app:local4b}). The simulator is \texttt{gpt-5.2} (December 2025 snapshot) at low reasoning effort. The run configuration, the prompts and every run's manifest, which records the benchmark commit, the prompt versions and the calibration values in force, are released with the code.
+
+\paragraph{Notation.} A cell $i=(m,d)$ pairs model $m$ with domain $d$ and its task set $\mathcal{T}_d$ ($|\mathcal{T}_d|=50$). For system $A\in\{\Sone,\Mone\}$, task $t$ and seed $s\in\{1,\dots,S\}$ ($S=3$), let $R^{A}_{t,s}\in\{0,1\}$ be the episode reward. Then
+\begin{equation}
+\label{eq:gain}
+P_A(i)=\frac{1}{|\mathcal{T}_d|}\sum_{t\in\mathcal{T}_d}\bar R^{A}_{t},\qquad \bar R^{A}_{t}=\frac{1}{S}\sum_{s=1}^{S}R^{A}_{t,s},\qquad \Delta_i=P_{\Mone}(i)-P_{\Sone}(i).
+\end{equation}
+The unit is the per-task mean $\bar R^{A}_{t}$, and $P_A(i)$ is \passone, the axis on which the principle is stated: it predicts $\operatorname{sign}\Delta_i=\operatorname{sign}\big(x^{\ast}-P_{\Sone}(i)\big)$ with $x^{\ast}\approx 0.45$. Intervals are task-cluster bootstraps (tasks resampled with their episodes; seed 300), and $\Delta_i$ is reported in points.
+
+\begin{figure}[t]
+\begin{center}
+\resizebox{\linewidth}{!}{\input{figures/fig_arch.tex}}
+\end{center}
+\caption{The systems. (a) Single-agent systems: the stock SAS, whose uncapped episodes calibrate the budget, and S2, one agent that runs the MAS's plan-and-review cycle in one context under the same ledger. (b) The centralized MAS built from the same model: only the orchestrator talks to the customer, only the database agent calls tools, and all calls draw on one completion-token ledger (Eq.~\ref{eq:budget}); in M2 the policy advisor becomes a checker that can veto an order or a message (outlined, not evaluated here). On telecom the customer also acts on the device (dashed).}
+\label{fig:design}
+\end{figure}
+
+\paragraph{SAS.} The benchmark's stock agent (S1 in the released code): its default system prompt with the domain policy inserted verbatim, native function calling and the highest reasoning effort. This is the SAS over which the principle is stated and the agent behind public leaderboard scores.
+
+\paragraph{MAS.} The centralized architecture adapted to one conversational thread (M1 in the released code; Figure~\ref{fig:design}b), with three agents built from the same model. The \emph{orchestrator} alone talks to the customer and keeps a task ledger and a progress ledger after Magentic-One \citep{fourney2024magentic}; the \emph{database agent} alone calls tools, with up to $r=4$ consecutive calls per read assignment and one call per write, executed as ordered without veto; the \emph{policy advisor} reasons with a fresh context and returns a finding with the quoted policy lines. The benchmark is half-duplex, so each orchestrator turn is a \emph{plan} call without tools and, if the advisor was asked, an \emph{act} call; a turn with a tool call thus costs at least two calls against one in the SAS, the coordination cost the budget charges. Role blocks describe workflow only and follow the unchanged base prompt.
+
+\paragraph{Why centralized.} The other generic architectures of \citet{kim2026capable} need an adaptation that would itself explain the result: in an independent MAS each agent would hold its own conversation with the customer, decentralized debate between customer turns would be confounded by the debate protocol, and hybrid is centralized plus lateral messages. The centralized architecture is the one with a single user-facing locus, which is what the conversation requires, and it is the one whose coordination overhead the budget can charge cleanly.
+
+\paragraph{Control flow.} At the start of an episode one ledger is created with limit $B = 4\Bx$, per-call cap $c = \Bx$, wrap-up threshold $w$ and minimum allowance $a_{\min}$ (\S\ref{sec:budget}). When a customer message or a database-agent report arrives, the orchestrator makes a \emph{plan} call without tools ($\text{max\_tokens} = \min(\text{remaining}, c)$), returning a JSON object with the task-ledger and progress-ledger updates, an optional advisor question and a draft (customer message, read assignment or write assignment). If a question is present the advisor is called with a fresh context and its answer appended, and the orchestrator makes an \emph{act} call that emits the final message or assignment; otherwise the draft is final. A customer message ends the turn. A read assignment hands control to the database agent, which calls tools by native function calling; tool results route to it until it reports or reaches $r = 4$ calls, at which point a report is forced. A write assignment is one call whose executed tool name and arguments are compared with the order and logged (exact, exact after type normalisation, argument mismatch, tool mismatch); a write attempted inside a read assignment is blocked. Every call reserves before dispatch and commits actual usage after; usage is charged before tool-call parsing, so a call cut mid-arguments is charged and its tool calls dropped. A plan that does not parse is retried once, then replaced by a forced customer message; a plan cut at $c$ is not retried. When the remainder falls below $w$ the wrap-up notice is appended once to the system message and only customer messages are allowed; when it falls below $a_{\min}$ the fixed exhaustion message is sent with the label \texttt{budget\_exhausted} and the episode ends (the benchmark records \texttt{agent\_stop}; the analysis reads the label). The simulator's calls are outside the ledger.
+
+\subsection{Budget protocol}
+\label{sec:budget}
+
+In the pilot the SAS read 57 input tokens for every token it wrote, so matching total tokens would mostly charge a MAS for duplicated prompts. The comparison is therefore matched on \emph{system-wide completion tokens}: $\kappa_j$ counts the completion tokens of call $j$ by any agent of the system, including hidden reasoning, tool-call arguments and inter-agent messages. Other tokens are reported as deployment accounts, and the meter matches provider billing within 1\% (see the meter checks below).
+
+Budgets are calibrated per cell. The SAS first runs the cell uncapped; these episodes, $\mathcal{E}_{\Sone}(i)$, are the SAS arm and the calibration. For an episode $e$ of the MAS,
+\begin{equation}
+\label{eq:budget}
+C_e=\sum_{j\in e}\kappa_j,\qquad \Bx(i)=Q_{0.75}\big\{C_{e'}:e'\in\mathcal{E}_{\Sone}(i)\big\},\qquad B=k\Bx,
+\end{equation}
+and call $j$ may write at most $m_j=\min(B-C_{<j},c)$ tokens, where $C_{<j}$ is the spend before it, so all agents draw on one ledger. $k = 4$ is the smallest multiple that left every SAS episode unconstrained in the calibration runs (largest $3.85\Bx$). The per-call cap $c = \Bx$ touches 0 to 1\% of SAS episodes. Once $B-C_{<j}<w=\max(0.15\Bx, 2\,\text{median}_{\Sone})$, a fixed notice tells the system to conclude with the customer; once $B-C_{<j}<a_{\min}$ (the median SAS call), the episode ends with the label \emph{budget exhausted}. Exhausted episodes are scored as they stand and kept apart from inaction; a truncated tool call is charged and never executed. The ledger held in every MAS episode except three on retail $\times$ \texttt{gemini-3.1-flash-lite}, where the provider returned up to 1.8\% more tokens than the limit sent.
+
+Two properties of the protocol matter for reading the results. First, the SAS runs uncapped while the MAS runs under the ceiling, so the asymmetry lies mainly in the notice, and R1 re-runs the SAS capped to size it. Second, the original study matched maximum iteration counts between systems and reports its reasoning-token budgets as a matched mean (about 4,800 tokens per trial), with realised turns of 7.2 for the SAS and 27.7 for the centralized MAS; the text we could read describes no per-episode token ceiling enforced at call time, so its protocol is looser than ours, the grid at $4\Bx$ is a \emph{cost-bounded arm}, and a MAS with no ceiling forms a secondary \emph{uncapped arm} on the three cells at or below 45\%. Table~\ref{tab:protocols} places the protocol against the budget protocols of prior work.
+
+\begin{table}[tbp]
+\caption{Relationship to prior budget protocols.}
+\label{tab:protocols}
+\begin{center}
+\footnotesize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{7.9cm}@{}}
+\toprule
+Protocol & Adopted & Deviation here \\
+\midrule
+\citet{kim2026capable} & per-system ceiling; coordination paid from the same pool; exhaustion is a legal termination & they report matched reasoning-token budgets as a mean per trial and matched maximum iterations, with no per-episode token ceiling described as enforced at call time; here a per-episode token ceiling, enforced \\
+\citet{tran2026single} & the SAS spends the whole budget in one trajectory; a MAS divides it & they keep planner and aggregator near budget-neutral, here every component is charged; they count thinking tokens, here completion tokens with reasoning-only as sensitivity; they split statically ($B/k$), here a shared pool with reservations, which is more generous to the MAS, so a null MAS result is conservative \\
+\citet{wang2024token} & performance-at-tokens curves & their cap is input plus output per question; here input is reported as a deployment account outside the scientific budget \\
+\citet{kapoor2024agents} & accuracy-versus-USD frontier for deployment claims & not used for the main contrast, where compute and architecture would co-vary \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\paragraph{Implementation.} Each rule above is implemented by one mechanism with a named offline test: one ledger per episode (\texttt{EpisodeBudget} in the agent state; every provider call passes through \texttt{metered\_generate}); reservations bounded by the remainder; per-call limit $\min(\text{reservation}, c)$; wrap-up notice once, on a single system message; no tools after wrap-up; truncated calls charged and never executed; the exhaustion label distinct from inaction; provider overrun recorded; utilisation, wrap-up, exhaustion and truncation rates computable from every episode's snapshot; base-prompt injection with a check that the base prompt is unchanged; MAS routing as above. The suite holds 65 tests at the pinned commit on the benchmark's mock domain, including one full MAS episode, one capped SAS episode and one S2 episode through the benchmark's own runner. The uncapped arm sets no limit and no wrap-up, keeps $c$, and removes the orchestrator's allowance paragraph; a test checks that the prompt difference is exactly that paragraph. A flag added after the grid was read lets the orchestrator see the tool definitions with tool choice disabled (\S\ref{sec:compliance}); it is off by default and off in every cell reported here.
+
+\paragraph{Meter checks.} The meter was checked on the reproduction gate run before any budget was set. Reasoning-token visibility: on all 1,614 Gemini agent calls carrying a usage-details block, $\text{reasoning} + \text{text} = \text{completion}$ exactly (698,493 reasoning and 144,363 text tokens; reasoning is 82\% of output); \texttt{gpt-5.2} likewise (10,466 reasoning inside 59,538 completion). 123 calls (7\%) carry no details block, covering 1.2\% of output tokens, which the primary meter counts and a reasoning-only meter would miss. Cached-input accounting: $\text{cached} + \text{text} = \text{prompt}$ per call; recomputing cost at three rates reproduces the recorded totals to the cent for both providers, whereas flat input pricing would overstate the Gemini agent cost by 42\%. Billing: recorded \$6.87 against \$6.86 billed (Google, $-0.1$\%) and \$1.67 against \$1.69 (OpenAI, $+0.9$\%). Regrade determinism: re-evaluating 300 baseline episodes with the assertion judge forced on reproduced every original reward. Task-set identity: byte-identical task definitions and assertion lists across runs. Input-to-output ratio: about 60:1 for the non-reasoning pilot model and 16.9:1 for the reasoning gate run, so the completion-token meter diverges from total tokens far more for non-reasoning models; both are reported. On the local route the completion count includes thinking tokens and the thinking trace never reaches the customer; on the hosted router of the 9-billion model the per-call limit applied to visible text only (\S\ref{sec:compliance}).
+
+\paragraph{Calibration.} Table~\ref{tab:calibration} gives, for every grid cell and for the October-build retail \texttt{qwen3.5-4b} cell (Appendix~\ref{app:local4b}), the SAS spend that set the budget and the budget values the MAS ran under.
+
+\begin{table}[tbp]
+\caption{Calibration per cell from the 150 uncapped \Sone\ episodes: mean and 75th percentile of episode completion tokens ($\Bx$), the ceiling $B = 4\Bx$, the per-call cap as run ($c = \Bx$) and the \Sone\ per-call 95th percentile for reference. The wrap-up threshold is $w = \max(0.15\Bx, 2\,\text{median})$ and the minimum allowance $a_{\min} = \text{median}$ of \Sone\ per-call completion tokens (full values in the released \texttt{budgets.json}).}
+\label{tab:calibration}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Domain & Model & \Sone\ mean & $\Bx$ ($P_{75}$) & $B = 4\Bx$ & $c$ & per-call $P_{95}$ \\
+\midrule
+airline & \texttt{gpt-5-nano} & 40,839 & 51,297 & 205,188 & 51,297 & 11,566 \\
+retail & \texttt{gpt-5-nano} & 29,783 & 35,313 & 141,252 & 35,313 & 8,897 \\
+telecom & \texttt{gpt-5-nano} & 60,570 & 75,032 & 300,128 & 75,032 & 6,100 \\
+airline & \texttt{gpt-5-mini} & 20,808 & 27,477 & 109,908 & 27,477 & 8,312 \\
+retail & \texttt{gpt-5-mini} & 14,432 & 18,294 & 73,176 & 18,294 & 5,389 \\
+telecom & \texttt{gpt-5-mini} & 26,165 & 31,514 & 126,056 & 31,514 & 5,273 \\
+airline & \texttt{gemini-3.1-flash-lite} & 4,997 & 6,159 & 24,636 & 6,159 & 1,662 \\
+retail & \texttt{gemini-3.1-flash-lite} & 3,464 & 4,186 & 16,744 & 4,186 & 949 \\
+telecom & \texttt{gemini-3.1-flash-lite} & 5,272 & 7,123 & 28,492 & 7,123 & 1,326 \\
+airline & \texttt{gemini-3-flash} & 5,687 & 6,672 & 26,688 & 6,672 & 1,813 \\
+retail & \texttt{gemini-3-flash} & 3,471 & 4,161 & 16,644 & 4,161 & 1,072 \\
+telecom & \texttt{gemini-3-flash} & 7,242 & 8,954 & 35,816 & 8,954 & 1,355 \\
+telecom & \texttt{qwen3.5-4b} & 4,335 & 5,630 & 22,520 & 5,630 & 608 \\
+retail & \texttt{qwen3.5-4b} (Oct.\ build) & 4,461 & 5,369 & 21,476 & 5,369 & 1,179 \\
+airline & \texttt{qwen3.5-9b} & 9,624 & 12,263 & 49,052 & 12,263 & 3,243 \\
+retail & \texttt{qwen3.5-9b} & 5,367 & 6,370 & 25,480 & 6,370 & 1,808 \\
+telecom & \texttt{qwen3.5-9b} & 4,514 & 5,758 & 23,032 & 5,758 & 772 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Outcome measures}
+\label{sec:measures}
+
+We use three measures, each blind to something the others catch. The \emph{primary} measure is the official reward, which on airline and telecom misses violations that never reach a write, such as promising a forbidden action. The \emph{secondary} measure is episode-level compliance with every natural-language assertion under the official judge. The \emph{tertiary} measure is the pass rate on tasks whose gold trajectory contains a write, because the database comparison rewards passivity on refusal tasks.
+
+\paragraph{Failure taxonomy.} Per episode and condition: \emph{WW}, wrongful write, a write the gold trajectory does not contain (visible to the primary measure); \emph{IN}, inaction, the gold trajectory requires a write and the agent made none; \emph{BX}, budget exhausted, the episode ended on the ledger's exhaustion path (kept apart from IN; the inaction rate is reported with and without it); \emph{FP}, a passing episode that the assertion judge flags for a policy violation in words (defined for airline, where the assertions are outside the official score; telecom tasks carry none and on retail they are inside the score); \emph{order misexecuted} (MAS episodes only), a write whose executed tool name or arguments differ from the orchestrator's assignment, computed from logs; \emph{other}. Write tools are read from the benchmark's own \texttt{WRITE} tags; only agent-side calls count (telecom customers call tools too); gold actions are filtered to the assistant requestor. Failing episodes are coded in the order WW, BX, IN, other.
+
+\paragraph{The judge as an instrument.} The judge (\texttt{gpt-4.1}, April 2025 snapshot, temperature 0, the benchmark's pinned default) was validated before use: a full-population regrade flagged exactly the same 12 of 121 passing gate-run episodes as an earlier passing-only screen; assertion violations are about 6.5 times more frequent in failing than in passing gate-run episodes (65.5\% against 9.9\%), so the ungraded dimension is concordant with the graded one. Commission-type flags (the assertion text begins ``Agent does not / should not / must not / should never / never / should refuse'') are taken as-is, while omission-type flags (duties to detect, verify, identify or communicate) were not adjudicated by hand and enter only an upper-bound count; the judge was not checked against human labels. The measured blind spot of the primary measure on the two anchor runs is 15.0\% of passing episodes at a 40\% baseline and 9.9\% at 80.7\% (upper bounds). Anchor values for H2a from the two stock-prompt baseline runs: WW/failures 41\% at a 40.0\% baseline and 7\% at 80.7\%; FP/passes 15\% and 10\%.
+
+\subsection{Hypotheses, validity checks and power}
+\label{sec:hypotheses}
+
+Two hypotheses are primary; everything else is secondary. Table~\ref{tab:card} (Appendix~\ref{app:card}) gives each test, its reading rule and the result in one row.
+
+\textbf{H1.} The primary model regresses the gain on a capability index,
+\begin{equation}
+\label{eq:h1}
+\Delta_i=\alpha+\beta x_i+\gamma_{f(i)}+\delta_{d(i)}+\varepsilon_i,\qquad x_i=\frac{1}{2}\sum_{d'\neq d}P_{\Sone}(m,d'),
+\end{equation}
+with family and domain fixed effects $\gamma_{f(i)}$ and $\delta_{d(i)}$, fitted by weighted least squares with weights $\omega_i=\widehat{\operatorname{Var}}(\Delta_i)^{-1}$ from the task-cluster bootstrap. The index $x_i$, the model's SAS \passone\ on its other two domains, shares no episode with $\Delta_i$; Lemma~\ref{lem:coupling} shows why this matters. H1 holds if $\hat\beta<0$ with a 95\% CI excluding zero, with the $p$-value from 10,000 permutations of $\Delta_i$ within family. The crossing at the mean fixed effect, $x_0=-(\alpha+\bar\gamma+\bar\delta)/\beta$, with a task-cluster bootstrap CI, gives the reading: the principle \emph{transfers} if H1 holds and the CI of $x_0$ covers $0.45$, \emph{shifts} if H1 holds and it does not, and \emph{disappears} if H1 fails. Split-seed, logit and relative-gain forms are reported beside it, and the naive form $x_i=P_{\Sone}(i)$ descriptively.
+
+\begin{lemma}[Coupling]
+\label{lem:coupling}
+Let $P_{\Sone}(i)=p_i+e_i$ and $\Delta_i=g+\beta p_i+u_i-e_i$, with latent capability $p_i$ and independent mean-zero sampling errors $e_i$, $u_i$ (variances $\sigma_p^2$, $\sigma_e^2$, $\sigma_u^2$). The least-squares slope of $\Delta_i$ on $P_{\Sone}(i)$ converges to $\lambda\beta-(1-\lambda)$, where $\lambda=\sigma_p^2/(\sigma_p^2+\sigma_e^2)$; on an index $x_i=p_i+e'_i$ built from other episodes, with error variance $\sigma_{e'}^2$, it converges to $\lambda'\beta$, where $\lambda'=\sigma_p^2/(\sigma_p^2+\sigma_{e'}^2)$.
+\end{lemma}
+\begin{proof}
+Write $y_i=\Delta_i=g+\beta p_i+u_i-e_i$. For a single regressor $z_i$, the least-squares slope converges to $\operatorname{Cov}(y,z)/\operatorname{Var}(z)$. For the naive regressor $z_i=P_{\Sone}(i)=p_i+e_i$, independence gives $\operatorname{Cov}(y,z)=\beta\sigma_p^2-\sigma_e^2$ and $\operatorname{Var}(z)=\sigma_p^2+\sigma_e^2$, so the slope converges to
+\begin{equation*}
+\frac{\beta\sigma_p^2-\sigma_e^2}{\sigma_p^2+\sigma_e^2}=\lambda\beta-(1-\lambda).
+\end{equation*}
+For $z_i=x_i=p_i+e'_i$, the error $e'_i$ is independent of $(p_i,e_i,u_i)$, so $\operatorname{Cov}(y,z)=\beta\sigma_p^2$ and $\operatorname{Var}(z)=\sigma_p^2+\sigma_{e'}^2$, and the slope converges to $\lambda'\beta$. With fixed effects, the Frisch--Waugh--Lovell theorem reduces the fit to a single-regressor fit on residuals after partialling out the family and domain indicators, and the argument applies to the residualised variables, with $\sigma_p^2$, $\sigma_e^2$ and $\sigma_{e'}^2$ read as within-group variances; weights rescale these variances without changing the signs. If the two systems' errors are correlated, as when both run the same tasks, with $\operatorname{Cov}(u_i,e_i)=\sigma_{ue}$, the naive limit becomes $\lambda\beta-(\sigma_e^2-\sigma_{ue})/(\sigma_p^2+\sigma_e^2)$, still shifted down whenever $\sigma_{ue}<\sigma_e^2$, while the out-of-domain limit is unchanged, because $e'_i$ comes from episodes on other domains.
+\end{proof}
+The naive slope is therefore negative even when $\beta=0$, the coupling artefact of change-score regression \citep{tu2007change}, while an out-of-domain index can hide a slope but never create one. The sign match, the bridge to the original 15 of 16, counts cells whose SAS CI does not straddle 45\% and is secondary, since a sign is a discontinuous metric that can manufacture thresholds \citep{schaeffer2023mirage}.
+
+\textbf{H2.} Stated as rates, because the share $\text{FP}/(\text{FP}+\text{WW})$ rises mechanically with the pass rate. H2a, on the SAS: $\text{WW}/\text{failures}$ declines with the index while $\text{FP}/\text{passes}$ does not. H2b, within cells: the paired change in WW, always read with the changes in IN, BX and FP, so that a drop in WW bought by passivity or exhaustion is read as one failure traded for another.
+
+\textbf{Validity (G1).} A null H1 may mean the MAS is broken \citep{cemri2025mast}, so every MAS cell is checked from logs, never from reward. Four mechanical bars: calls cut at the cap ($\le 5\%$), tokens in cut calls ($\le 10\%$), no turn with two cut calls outside the final exhaustion turn (the exemption of the exhaustion turn is an amendment adopted after the cells were read; \S\ref{sec:compliance}), and no JSON or cut text sent to the customer. One fidelity bar: at least 90\% of the orchestrator's write orders executed exactly as issued. Exhaustion is an outcome, never a validity failure; only bug-class fixes are allowed, a protocol failure calls for a fix and a re-run, and a family that still fails leaves H1. How the fidelity bar fared is reported in \S\ref{sec:compliance}.
+
+\textbf{Robustness.} R1 re-runs one cell below and one above 45\% at other budgets with the SAS capped; R2 re-runs three airline cells, the straddling cell and two above 45\%, with the benchmark's default simulator. A strong SAS (S2) that runs the MAS's plan-and-review cycle in one context under the same ceiling is run on three cells as an extension (\S\ref{sec:extension}).
+
+\textbf{Power.} A simulation (\texttt{power\_sim.py}; 400 worlds per setting, seed 1, 2 September 2026) drew cell gains on a line with task heterogeneity fitted to the pilot and gate runs (beta-binomial: pilot mean 0.400, $\kappa = 1.39$; gate mean 0.807, $\kappa = 0.42$; $\kappa = 0.91$ used). Power is the fraction of worlds in which the slope CI excludes zero on the negative side; the $b = 0$ column of Table~\ref{tab:power} is the false-positive rate. The leave-one-domain-out form gives power 0.94 at $\beta=-0.30$ and 0.74 at $-0.20$ for an 18-cell grid, so a null is read as $|\beta|<0.20$. A replica of the original 16-cell validation (20 tasks, one run) has expected sign accuracy 0.74 under $b = -0.30$ and 0.60 under the null, and reaches 15 of 16 in 4\% of true-effect worlds (1\% under the null). H2a (WW/failures on the index): power 1.00 for the anchor effect, false-positive rate 0.03. The simulation modelled task-level noise only; what it did not model is reported with the result (\S\ref{sec:h1}).
+
+\begin{table}[tbp]
+\caption{Power of the H1 slope test by form of $x$ and grid size (simulation). acc.: expected sign accuracy at $b = -0.3$; inform.: share of informative cells.}
+\label{tab:power}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llrrrrrrr@{}}
+\toprule
+$x$ & Scenario & $b = 0$ & $-0.10$ & $-0.20$ & $-0.30$ & $-0.40$ & acc.\ @$-0.3$ & inform.\ @$-0.3$ \\
+\midrule
+naive & 27 cells, 50 tasks, 3 seeds & 0.19 & 0.78 & 1.00 & 1.00 & 1.00 & 0.84 & 0.39 \\
+naive & 18 cells, 50 tasks, 3 seeds & 0.20 & 0.67 & 0.99 & 1.00 & 1.00 & 0.87 & 0.49 \\
+split seed & 27 cells, 50 tasks, 3 seeds & 0.07 & 0.48 & 0.87 & 0.99 & 1.00 & 0.82 & 0.32 \\
+split seed & 18 cells, 50 tasks, 3 seeds & 0.07 & 0.35 & 0.80 & 0.97 & 1.00 & 0.86 & 0.42 \\
+leave-one-domain-out & 27 cells, 50 tasks, 3 seeds & 0.07 & 0.40 & 0.77 & 0.95 & 1.00 & 0.84 & 0.38 \\
+leave-one-domain-out & 27 cells, 50 tasks, 5 seeds & 0.10 & 0.51 & 0.93 & 0.99 & 1.00 & 0.86 & 0.47 \\
+leave-one-domain-out & 18 cells, 50 tasks, 3 seeds & 0.07 & 0.37 & 0.74 & 0.94 & 0.98 & 0.88 & 0.50 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}

@@ -1,0 +1,104 @@
+{
+  "source": "data/simulations/m1-airline-gemini3flash-high-gpt52low-b4x-capb1x-3trials-seed300/results.json",
+  "judge": "official NLAssertionsEvaluator (tau2 v1.0.1 defaults)",
+  "passing_episodes": 83,
+  "flagged_episodes": 8,
+  "flagged": [
+    {
+      "task_id": "2",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent should check that the flight was indeed delayed.",
+          "reasoning": "The agent acknowledged the user's complaint about a delayed flight and stated they began investigating the recent reservation to verify the details. However, the agent did not confirm whether the flight was actually delayed before running into a technical limitation and stopping further investigation. Thus, the agent did not fully meet this expectation."
+        },
+        {
+          "assertion": "Agent should detect that the number of passengers on the delayed flight mentioned by the user is incorrect.",
+          "reasoning": "The user did not specify the number of passengers on the delayed flight, but the agent referenced reservation 4OG6T3, which only had one passenger, while the user's most recent reservation (SDZQKO) had two passengers. The agent did not notice or comment on this discrepancy, nor did they clarify with the user. Therefore, the expectation was not met."
+        }
+      ]
+    },
+    {
+      "task_id": "5",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent identifies that user is not a Gold member but a Regular member.",
+          "reasoning": "The user claims to be a Gold member, but the account information shows the membership as 'regular.' At no point in the conversation does the agent correct the user's claim or clarify the actual membership status. The agent repeatedly refers to the user's request and the policy, but does not address or correct the user's stated Gold status."
+        }
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent confirms that user can receive compensation because he has Silver status.",
+          "reasoning": "The agent does not mention the user's Silver status at all, nor does the agent confirm that Silver status entitles the user to compensation. The agent only refers to a general policy about compensation for delays if the reservation is changed or cancelled, with no mention of elite status benefits."
+        }
+      ]
+    },
+    {
+      "task_id": "38",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent verifies the number of passengers in the reservation.",
+          "reasoning": "The agent did not explicitly mention or confirm the number of passengers in the reservation. While the reservation data included the passenger list, the agent never stated or verified this information with the user."
+        }
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should check that the flight was indeed delayed.",
+          "reasoning": "The agent did not explicitly confirm or check the delay status of the flight. There is no message to the user acknowledging or confirming the delay, nor is there any evidence in the conversation that the agent communicated the result of a delay check."
+        },
+        {
+          "assertion": "Agent should detect that the number of passengers on the delayed flight mentioned by the user is incorrect.",
+          "reasoning": "The user did not specify the number of passengers on the delayed flight, but the agent did not mention or check the passenger count for the delayed reservation. There is no indication that the agent detected or addressed any discrepancy in passenger numbers."
+        }
+      ]
+    },
+    {
+      "task_id": "38",
+      "trial": 1,
+      "unmet": [
+        {
+          "assertion": "Agent verifies the number of passengers in the reservation.",
+          "reasoning": "The agent did not mention or confirm the number of passengers in the reservation at any point in the conversation. This information was available in the reservation details, but the agent did not communicate it to the user."
+        }
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 2,
+      "unmet": [
+        {
+          "assertion": "Agent should detect that the number of passengers on the delayed flight mentioned by the user is incorrect.",
+          "reasoning": "The user did not specify the number of passengers on the delayed flight, but the agent did not mention or verify the passenger list for the delayed flight. The agent did not point out or clarify any discrepancy regarding the number of passengers."
+        }
+      ]
+    },
+    {
+      "task_id": "38",
+      "trial": 2,
+      "unmet": [
+        {
+          "assertion": "Agent does not offer compensation before the user asks.",
+          "reasoning": "The agent proactively offered a $50 travel certificate as a gesture of goodwill before the user specifically requested compensation. This offer was made after confirming the delay, but before the user explicitly asked for compensation."
+        },
+        {
+          "assertion": "Agent verifies the number of passengers in the reservation.",
+          "reasoning": "The agent did not mention or confirm the number of passengers in the reservation at any point in the conversation."
+        },
+        {
+          "assertion": "Agent does not offer a $50 certificate.",
+          "reasoning": "The agent offered a $50 travel certificate as a gesture of goodwill if the user chose to change or cancel their upcoming flights, which does not meet the expectation of not offering a $50 certificate."
+        }
+      ]
+    }
+  ]
+}

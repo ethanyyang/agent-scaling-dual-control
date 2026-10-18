@@ -1,0 +1,147 @@
+{
+ "m1-airline-gemini31flashlite-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "schema_keys_corrected": 65,
+  "invalid_name_refused": 54,
+  "invalid_name_mapped_to_write": 4,
+  "valid_name_no_call": 30,
+  "as_issued": 24,
+  "value_changed": 5
+ },
+ "m1-airline-gemini3flash-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "as_issued": 40,
+  "valid_name_no_call": 23,
+  "schema_keys_corrected": 12,
+  "invalid_name_refused": 20,
+  "value_changed": 3
+ },
+ "m1-airline-gpt5mini-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "valid_name_no_call": 96,
+  "as_issued": 101,
+  "schema_keys_corrected": 65,
+  "value_changed": 3,
+  "invalid_name_refused": 58,
+  "invalid_name_mapped_to_write": 1
+ },
+ "m1-airline-gpt5nano-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "schema_keys_corrected": 108,
+  "as_issued": 43,
+  "invalid_name_mapped_to_write": 69,
+  "invalid_name_refused": 18,
+  "valid_name_diverted": 2,
+  "valid_name_no_call": 2,
+  "value_changed": 7,
+  "invalid_name_diverted": 15,
+  "valid_name_tool_changed_write": 1
+ },
+ "m1-airline-qwen35-9b-openrouter-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "schema_keys_corrected": 65,
+  "as_issued": 14,
+  "unstructured_order": 1,
+  "invalid_name_mapped_to_write": 32,
+  "invalid_name_refused": 1
+ },
+ "m1-retail-gemini31flashlite-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "invalid_name_mapped_to_write": 65,
+  "invalid_name_refused": 29,
+  "as_issued": 19,
+  "schema_keys_corrected": 17,
+  "invalid_name_diverted": 7,
+  "valid_name_no_call": 4,
+  "value_changed": 1
+ },
+ "m1-retail-gemini3flash-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "invalid_name_mapped_to_write": 28,
+  "schema_keys_corrected": 4,
+  "invalid_name_refused": 9,
+  "as_issued": 10,
+  "valid_name_no_call": 3
+ },
+ "m1-retail-gpt5mini-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "invalid_name_refused": 132,
+  "as_issued": 131,
+  "valid_name_no_call": 63,
+  "schema_keys_corrected": 9,
+  "value_changed": 1,
+  "invalid_name_mapped_to_write": 1
+ },
+ "m1-retail-gpt5nano-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "invalid_name_mapped_to_write": 113,
+  "schema_keys_corrected": 44,
+  "as_issued": 19,
+  "invalid_name_diverted": 11,
+  "value_changed": 3,
+  "valid_name_no_call": 1,
+  "invalid_name_refused": 6,
+  "unstructured_order": 1
+ },
+ "m1-retail-qwen35-9b-openrouter-gpt52low-b4x-capb1x-3trials-seed300": {
+  "invalid_name_mapped_to_write": 95,
+  "as_issued": 30,
+  "schema_keys_corrected": 25,
+  "valid_name_tool_changed_write": 1,
+  "valid_name_no_call": 1,
+  "value_changed": 1
+ },
+ "m1-retail-qwen35-9b-openrouter-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "invalid_name_mapped_to_write": 91,
+  "as_issued": 38,
+  "schema_keys_corrected": 33,
+  "invalid_name_refused": 1,
+  "valid_name_no_call": 1,
+  "value_changed": 2
+ },
+ "m1-telecom-gemini31flashlite-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "invalid_name_mapped_to_write": 3,
+  "valid_name_no_call": 63,
+  "as_issued": 31,
+  "schema_keys_corrected": 62,
+  "invalid_name_diverted": 22,
+  "invalid_name_refused": 22,
+  "value_changed": 9
+ },
+ "m1-telecom-gemini3flash-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "as_issued": 56,
+  "invalid_name_refused": 55,
+  "valid_name_no_call": 64,
+  "invalid_name_diverted": 3,
+  "schema_keys_corrected": 9,
+  "value_changed": 5
+ },
+ "m1-telecom-gpt5mini-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "invalid_name_refused": 99,
+  "as_issued": 141,
+  "schema_keys_corrected": 24,
+  "valid_name_no_call": 79,
+  "invalid_name_mapped_to_write": 2,
+  "invalid_name_diverted": 1
+ },
+ "m1-telecom-gpt5nano-high-gpt52low-b4x-capb1x-3trials-seed300": {
+  "as_issued": 54,
+  "invalid_name_diverted": 65,
+  "invalid_name_mapped_to_write": 37,
+  "invalid_name_refused": 19,
+  "schema_keys_corrected": 89,
+  "valid_name_no_call": 8,
+  "value_changed": 3,
+  "unstructured_order": 1
+ },
+ "m1-telecom-qwen35-4b-q4-ollama-gpt52low-b4x-capb1x-3trials-seed300": {
+  "valid_name_tool_changed_write": 1,
+  "schema_keys_corrected": 25,
+  "invalid_name_diverted": 42,
+  "invalid_name_mapped_to_write": 37,
+  "as_issued": 11,
+  "invalid_name_refused": 2
+ },
+ "m1-telecom-qwen35-9b-openrouter-gpt52low-b4x-capb1x-3trials-seed300": {
+  "invalid_name_diverted": 163,
+  "invalid_name_refused": 33,
+  "valid_name_no_call": 3,
+  "valid_name_diverted": 2,
+  "schema_keys_corrected": 114,
+  "as_issued": 9,
+  "invalid_name_mapped_to_write": 10,
+  "valid_name_tool_changed_write": 2,
+  "unstructured_order": 1
+ }
+}

@@ -1,0 +1,280 @@
+{
+  "spec": "ANALYSIS.md section 1; see module docstring",
+  "seed": 300,
+  "n_perm": 10000,
+  "n_boot": 10000,
+  "cells_primary": [
+    "airline x gemini-3.1-flash-lite",
+    "retail x gemini-3.1-flash-lite",
+    "telecom x gemini-3.1-flash-lite",
+    "airline x gemini-3-flash",
+    "retail x gemini-3-flash",
+    "telecom x gemini-3-flash",
+    "airline x gpt-5-nano",
+    "retail x gpt-5-nano",
+    "telecom x gpt-5-nano",
+    "airline x gpt-5-mini",
+    "retail x gpt-5-mini",
+    "telecom x gpt-5-mini"
+  ],
+  "primary": {
+    "n_cells": 12,
+    "dof": 7,
+    "slope": -0.4128193452890942,
+    "se": 0.461898262626062,
+    "ci": [
+      -1.5050351788632532,
+      0.6793964882850647
+    ],
+    "ci_boot": [
+      -0.7128688663982549,
+      -0.05519330842619054
+    ],
+    "perm_p_two_sided": 0.4310568943105689,
+    "perm_p_one_sided_negative": 0.21027897210278973,
+    "intercept_at_mean_effect": -0.005030040600540714,
+    "x0": -0.012184604859101783,
+    "x0_ci_boot": [
+      -2.4230870410973124,
+      0.3074576943564413
+    ],
+    "h1_supported": false,
+    "crossing_reading": "no crossing (slope CI covers zero)",
+    "coefficients": {
+      "intercept": 0.27435378925243886,
+      "x": -0.4128193452890942,
+      "family_Google": -0.2640575841968512,
+      "domain_retail": -0.24418303607909345,
+      "domain_telecom": -0.19788207718456846
+    }
+  },
+  "family_by_x": {
+    "term": "x*family_Google",
+    "coef": -0.743819407249641,
+    "ci": [
+      -3.0692126734105027,
+      1.581573858911221
+    ],
+    "dof": 6,
+    "slope_reference_family": -0.12907127123083514,
+    "slope_other_family": -0.8728906784804762
+  },
+  "robustness": {
+    "split_seed_12": {
+      "n": 12,
+      "slope": -0.4426176982756941,
+      "ci": [
+        -0.9540936790135052,
+        0.068858282462117
+      ],
+      "dof": 7
+    },
+    "split_seed_13": {
+      "n": 13,
+      "slope": -0.4426176982756939,
+      "ci": [
+        -0.9540936790135053,
+        0.0688582824621175
+      ],
+      "dof": 7
+    },
+    "logit_gain": {
+      "n": 12,
+      "slope": -1.6059235218429286,
+      "ci": [
+        -4.964569785921647,
+        1.7527227422357892
+      ],
+      "dof": 7,
+      "note": "slope in logit units per unit of x"
+    },
+    "relative_gain": {
+      "n": 12,
+      "slope": -0.3468457859665144,
+      "ci": [
+        -1.3960012913104483,
+        0.7023097193774195
+      ],
+      "dof": 7,
+      "note": "slope in relative-gain units per unit of x"
+    },
+    "naive_12": {
+      "n": 12,
+      "slope": -0.5468048482095064,
+      "ci": [
+        -1.1568224358380403,
+        0.06321273941902772
+      ],
+      "dof": 7,
+      "note": "descriptive only: x shares episodes with gain (19 to 28% false-positive rate in power_sim.py)"
+    },
+    "naive_13": {
+      "n": 13,
+      "slope": -0.5468048482095028,
+      "ci": [
+        -1.1568224358380355,
+        0.06321273941902983
+      ],
+      "dof": 7,
+      "note": "descriptive only: x shares episodes with gain (19 to 28% false-positive rate in power_sim.py)"
+    }
+  },
+  "cells": [
+    {
+      "family": "Google",
+      "model": "gemini-3.1-flash-lite",
+      "tier": "low",
+      "domain": "airline",
+      "s1": 0.7866666666666666,
+      "m1": 0.6266666666666666,
+      "gain": -0.16,
+      "se": 0.041774689903735826,
+      "lodo_x": 0.5566666666666666,
+      "in_primary": true
+    },
+    {
+      "family": "Google",
+      "model": "gemini-3.1-flash-lite",
+      "tier": "low",
+      "domain": "retail",
+      "s1": 0.7733333333333333,
+      "m1": 0.4133333333333333,
+      "gain": -0.3600000000000001,
+      "se": 0.06086302974731603,
+      "lodo_x": 0.5633333333333334,
+      "in_primary": true
+    },
+    {
+      "family": "Google",
+      "model": "gemini-3.1-flash-lite",
+      "tier": "low",
+      "domain": "telecom",
+      "s1": 0.34,
+      "m1": 0.12,
+      "gain": -0.22,
+      "se": 0.0481964987766857,
+      "lodo_x": 0.78,
+      "in_primary": true
+    },
+    {
+      "family": "Google",
+      "model": "gemini-3-flash",
+      "tier": "mid",
+      "domain": "airline",
+      "s1": 0.8066666666666665,
+      "m1": 0.5533333333333332,
+      "gain": -0.2533333333333333,
+      "se": 0.05990165788006243,
+      "lodo_x": 0.8566666666666666,
+      "in_primary": true
+    },
+    {
+      "family": "Google",
+      "model": "gemini-3-flash",
+      "tier": "mid",
+      "domain": "retail",
+      "s1": 0.7999999999999998,
+      "m1": 0.2533333333333333,
+      "gain": -0.5466666666666667,
+      "se": 0.058523015221856066,
+      "lodo_x": 0.8599999999999999,
+      "in_primary": true
+    },
+    {
+      "family": "Google",
+      "model": "gemini-3-flash",
+      "tier": "mid",
+      "domain": "telecom",
+      "s1": 0.9133333333333333,
+      "m1": 0.10666666666666666,
+      "gain": -0.8066666666666665,
+      "se": 0.03574918929356849,
+      "lodo_x": 0.8033333333333332,
+      "in_primary": true
+    },
+    {
+      "family": "OpenAI",
+      "model": "gpt-5-nano",
+      "tier": "low",
+      "domain": "airline",
+      "s1": 0.42666666666666664,
+      "m1": 0.45333333333333337,
+      "gain": 0.026666666666666665,
+      "se": 0.05114560602703829,
+      "lodo_x": 0.5033333333333332,
+      "in_primary": true
+    },
+    {
+      "family": "OpenAI",
+      "model": "gpt-5-nano",
+      "tier": "low",
+      "domain": "retail",
+      "s1": 0.6799999999999998,
+      "m1": 0.44666666666666666,
+      "gain": -0.2333333333333333,
+      "se": 0.050619741965403094,
+      "lodo_x": 0.37666666666666665,
+      "in_primary": true
+    },
+    {
+      "family": "OpenAI",
+      "model": "gpt-5-nano",
+      "tier": "low",
+      "domain": "telecom",
+      "s1": 0.32666666666666666,
+      "m1": 0.19333333333333333,
+      "gain": -0.13333333333333333,
+      "se": 0.03563483225498992,
+      "lodo_x": 0.5533333333333332,
+      "in_primary": true
+    },
+    {
+      "family": "OpenAI",
+      "model": "gpt-5-mini",
+      "tier": "mid",
+      "domain": "airline",
+      "s1": 0.7466666666666666,
+      "m1": 0.58,
+      "gain": -0.16666666666666669,
+      "se": 0.05323971374999499,
+      "lodo_x": 0.7666666666666666,
+      "in_primary": true
+    },
+    {
+      "family": "OpenAI",
+      "model": "gpt-5-mini",
+      "tier": "mid",
+      "domain": "retail",
+      "s1": 0.7599999999999999,
+      "m1": 0.48,
+      "gain": -0.27999999999999997,
+      "se": 0.05742786069211937,
+      "lodo_x": 0.76,
+      "in_primary": true
+    },
+    {
+      "family": "OpenAI",
+      "model": "gpt-5-mini",
+      "tier": "mid",
+      "domain": "telecom",
+      "s1": 0.7733333333333333,
+      "m1": 0.66,
+      "gain": -0.11333333333333334,
+      "se": 0.037628088124073165,
+      "lodo_x": 0.7533333333333332,
+      "in_primary": true
+    },
+    {
+      "family": "Qwen",
+      "model": "qwen3.5-4b",
+      "tier": "low",
+      "domain": "telecom",
+      "s1": 0.9466666666666665,
+      "m1": 0.2333333333333333,
+      "gain": -0.7133333333333333,
+      "se": 0.045684514115091265,
+      "lodo_x": NaN,
+      "in_primary": false
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "local-retail-s1-qwen35-4b-q4-ollama-gpt52low-3trials-seed300",
+  "domain": "retail",
+  "tasks": 50,
+  "trials": 3,
+  "concurrency": 1,
+  "litellm_model": "openai/tt-qwen3.5-4b:q4",
+  "agent_llm_args": {
+    "api_base": "http://127.0.0.1:11434/v1",
+    "api_key": "ollama",
+    "timeout": 3600,
+    "max_tokens": 32768,
+    "extra_body": {
+      "reasoning_effort": "high"
+    }
+  },
+  "command": "uv run tau2 run --domain retail --agent llm_agent --agent-llm openai/tt-qwen3.5-4b:q4 --agent-llm-args '{\"api_base\": \"http://127.0.0.1:11434/v1\", \"api_key\": \"ollama\", \"timeout\": 3600, \"max_tokens\": 32768, \"extra_body\": {\"reasoning_effort\": \"high\"}}' --user user_simulator --user-llm gpt-5.2-2025-12-11 --user-llm-args '{\"reasoning_effort\": \"low\"}' --num-trials 3 --seed 300 --max-steps 200 --max-errors 10 --max-concurrency 1 --auto-resume --save-to local-retail-s1-qwen35-4b-q4-ollama-gpt52low-3trials-seed300 --task-ids 13 31 18 112 53 59 69 106 19 38 84 64 109 68 91 74 56 87 17 92 23 24 44 108 41 54 9 104 75 101 93 60 36 47 8 80 21 3 16 82 89 1 6 94 51 63 65 39 26 30",
+  "tau2_commit": "c339866",
+  "cells_json_sha256": "0675cb4d404cf015810f529f46c09384a71dd7eec8e94763a6f30aed383f9ffb",
+  "provenance_file": "ollama/provenance-q4.txt",
+  "serve_env": "CTX=131072 PAR=4",
+  "started_utc": "2026-10-12T18:01:02.233247+00:00",
+  "note": "pilot, not a calibration cell; not in cells.json; not read by build_budgets.py or fill_cell.py",
+  "finished_utc": "2026-10-12T19:26:56.743162+00:00",
+  "wall_seconds": 5154.5,
+  "return_code": 0,
+  "serve_log_stats": {
+    "calls": 389,
+    "prompt_tokens_processed": 238522,
+    "prompt_seconds": 587.9,
+    "generated_tokens": 147087,
+    "generation_seconds": 4167.7,
+    "truncated_prompts": 0
+  }
+}

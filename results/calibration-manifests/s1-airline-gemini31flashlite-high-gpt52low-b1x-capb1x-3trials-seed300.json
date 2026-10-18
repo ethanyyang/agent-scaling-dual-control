@@ -1,0 +1,59 @@
+{
+  "cell": {
+    "family": "google",
+    "model": "gemini-3.1-flash-lite",
+    "tier": "low",
+    "domain": "airline"
+  },
+  "condition": "s1",
+  "budget": {
+    "limit": 6159,
+    "per_call_cap": 6159,
+    "wrapup_threshold": 924,
+    "min_call_allowance": 309,
+    "exhausted_message_sha256": "f550c541217dd85534417b4d8262b66ab29ae723c289c9ce9009e1ecdc1e7089"
+  },
+  "budget_multiplier": 1.0,
+  "arm": "cost-bounded",
+  "calibration_source": {
+    "results_sha256": "3fc369bc175940029e51faa1c42c601d0b80f92e1d6e0a38f043b76ce98afeef",
+    "B_1x": 6159,
+    "c": 1662,
+    "per_call_median": 309
+  },
+  "read_call_limit": null,
+  "orchestrator_cap_mult": null,
+  "cap_rule": "b1x",
+  "smoke": null,
+  "task_ids_used": 50,
+  "snapshot": "gemini-3.1-flash-lite",
+  "litellm_model": "gemini/gemini-3.1-flash-lite",
+  "agent": "s1_gemini31flashlite_high_airline_b1x_capb1x",
+  "agent_llm_args": {
+    "reasoning_effort": "high"
+  },
+  "user_llm": "gpt-5.2-2025-12-11",
+  "user_llm_args": {
+    "reasoning_effort": "low"
+  },
+  "seed": 300,
+  "num_trials": 3,
+  "max_steps": 200,
+  "task_ids_sha256": null,
+  "tau2_commit": "c339866",
+  "base_prompt_sha256": "825bb492ecd9062046cc7de0050b31ae7887e3577b66b149883728e71a193da7",
+  "role_block_sha256": {
+    "m1_advisor": "a350bd2cec205373fcf25403ed7606eb54b9a877b35bb0f9ebcfc3641dc06186",
+    "m1_orchestrator": "1a26e997efe8928865330dd5ecc5409964402842aeac666239108e04b545e000",
+    "m1_database_agent": "367b9355faf9a0063ddaee28303e4e951ff1a032261556d5b379d2f1a76fffc8",
+    "s2_single_agent": "70767c2d83804441acdbed3e08999164f26853f2b26a06b7dcebec0fe0839924"
+  },
+  "started_utc": "2026-09-25T23:36:07.750356+00:00",
+  "finished_utc": "2026-09-26T00:03:17.391439+00:00",
+  "wall_seconds": 1629.6,
+  "return_code": 0,
+  "episodes": 150,
+  "infrastructure_errors": 0,
+  "results_path": "tau2-bench/data/simulations/s1-airline-gemini31flashlite-high-gpt52low-b1x-capb1x-3trials-seed300/results.json",
+  "results_sha256": "7d991117b470cb027285eda09bae17c41c26a595da5e23c11ffaa53f8feaeb62"
+}

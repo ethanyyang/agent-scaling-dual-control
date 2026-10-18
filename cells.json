@@ -1,0 +1,296 @@
+{
+  "_comment": "S1 calibration grid config (ANALYSIS.md \u00a73, \u00a74.2). S1 = tau2 default agent (llm_agent), uncapped. Frozen with ANALYSIS.md; edits only via CHANGELOG after the freeze.",
+  "seed": 300,
+  "num_trials": 3,
+  "max_steps": 200,
+  "max_errors": 10,
+  "agent": "llm_agent",
+  "user": {
+    "implementation": "user_simulator",
+    "llm": "gpt-5.2-2025-12-11",
+    "llm_args": {
+      "reasoning_effort": "low"
+    },
+    "short": "gpt52low"
+  },
+  "user_alternatives": {
+    "_comment": "R2 only (ANALYSIS.md \u00a71 R2, \u00a73; CHANGELOG 2026-09-17, 2026-09-25): the tau2-bench default user simulator (tau2 config DEFAULT_LLM_USER, DEFAULT_LLM_ARGS_USER at c339866). Selected with --user-sim gpt41 in run_calibration.py and run_m1.py.",
+    "gpt41": {
+      "implementation": "user_simulator",
+      "llm": "gpt-4.1-2025-04-14",
+      "llm_args": {
+        "temperature": 0.0
+      },
+      "short": "gpt41"
+    }
+  },
+  "temperature_note": "temperature 0.0 is sent only where the provider accepts it; reasoning models (all nine agents, gpt-5.2 simulator) run at the provider default because reasoning_effort/thinking settings and temperature are mutually exclusive on these APIs. Same convention as the 2026-08-27 gate run.",
+  "domains": {
+    "airline": {
+      "task_ids": null,
+      "note": "full base split (50)"
+    },
+    "retail": {
+      "task_ids": [
+        "13",
+        "31",
+        "18",
+        "112",
+        "53",
+        "59",
+        "69",
+        "106",
+        "19",
+        "38",
+        "84",
+        "64",
+        "109",
+        "68",
+        "91",
+        "74",
+        "56",
+        "87",
+        "17",
+        "92",
+        "23",
+        "24",
+        "44",
+        "108",
+        "41",
+        "54",
+        "9",
+        "104",
+        "75",
+        "101",
+        "93",
+        "60",
+        "36",
+        "47",
+        "8",
+        "80",
+        "21",
+        "3",
+        "16",
+        "82",
+        "89",
+        "1",
+        "6",
+        "94",
+        "51",
+        "63",
+        "65",
+        "39",
+        "26",
+        "30"
+      ],
+      "sha256": "5047ad30fdc1fda10416047a19473c72b43e3c42cfd56d5076354d27c6207b64"
+    },
+    "telecom": {
+      "task_ids": [
+        "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]",
+        "[mms_issue]bad_wifi_calling|break_apn_mms_setting|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+        "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_mode_off|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+        "[service_issue]contract_end_suspension|lock_sim_card_pin[PERSONA:Hard]",
+        "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on[PERSONA:Hard]",
+        "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+        "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "[service_issue]airplane_mode_on|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]",
+        "[mms_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded[PERSONA:None]",
+        "[mms_issue]bad_network_preference|break_app_both_permissions[PERSONA:Easy]",
+        "[mobile_data_issue]bad_network_preference|data_saver_mode_on|data_usage_exceeded[PERSONA:Hard]",
+        "[mobile_data_issue]bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "[service_issue]break_apn_settings|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]",
+        "[service_issue]airplane_mode_on|break_apn_settings|contract_end_suspension|lock_sim_card_pin[PERSONA:None]",
+        "[mobile_data_issue]data_saver_mode_on|data_usage_exceeded[PERSONA:Easy]",
+        "[service_issue]airplane_mode_on|break_apn_settings|lock_sim_card_pin|unseat_sim_card[PERSONA:None]",
+        "[mobile_data_issue]airplane_mode_on|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]",
+        "[mobile_data_issue]bad_vpn|data_saver_mode_on|user_abroad_roaming_disabled_on[PERSONA:None]",
+        "[mms_issue]airplane_mode_on|bad_network_preference|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]",
+        "[mobile_data_issue]data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+        "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]",
+        "[mms_issue]bad_network_preference|break_app_sms_permission|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]",
+        "[mms_issue]break_app_sms_permission|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]",
+        "[service_issue]contract_end_suspension|unseat_sim_card[PERSONA:Hard]",
+        "[mms_issue]break_app_both_permissions|data_usage_exceeded[PERSONA:Hard]",
+        "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+        "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:None]",
+        "[service_issue]airplane_mode_on|lock_sim_card_pin|overdue_bill_suspension|unseat_sim_card[PERSONA:Easy]",
+        "[mobile_data_issue]airplane_mode_on|data_mode_off[PERSONA:None]",
+        "[service_issue]break_apn_settings|lock_sim_card_pin[PERSONA:None]",
+        "[service_issue]airplane_mode_on|break_apn_settings[PERSONA:Hard]",
+        "[mobile_data_issue]bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+        "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_sms_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+        "[mms_issue]break_app_storage_permission|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+        "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:Hard]",
+        "[mobile_data_issue]bad_network_preference|bad_vpn|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+        "[mms_issue]bad_network_preference|bad_wifi_calling|break_app_both_permissions|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]",
+        "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting|data_usage_exceeded[PERSONA:Hard]",
+        "[mobile_data_issue]bad_network_preference|bad_vpn|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+        "[mobile_data_issue]data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+        "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Hard]",
+        "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_storage_permission|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+        "[service_issue]airplane_mode_on|overdue_bill_suspension[PERSONA:None]",
+        "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+        "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]",
+        "[mobile_data_issue]data_saver_mode_on|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+        "[mms_issue]bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:Hard]",
+        "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_enabled_off[PERSONA:None]",
+        "[mms_issue]bad_wifi_calling|break_apn_mms_setting|data_mode_off|data_usage_exceeded|unseat_sim_card[PERSONA:None]"
+      ],
+      "sha256": "f9c34039b7c81f91a58f5ad7cc63f4af74d1922fe69e0b13a05af61891418f1e"
+    }
+  },
+  "families": {
+    "google": {
+      "max_concurrency": 4,
+      "models": [
+        {
+          "name": "gemini-3.1-flash-lite",
+          "tier": "low",
+          "litellm": "gemini/gemini-3.1-flash-lite",
+          "snapshot": "gemini-3.1-flash-lite",
+          "llm_args": {
+            "reasoning_effort": "high"
+          },
+          "short": "gemini31flashlite-high"
+        },
+        {
+          "name": "gemini-3-flash",
+          "tier": "mid",
+          "litellm": "gemini/gemini-3-flash-preview",
+          "snapshot": "gemini-3-flash-preview",
+          "llm_args": {
+            "reasoning_effort": "high"
+          },
+          "short": "gemini3flash-high"
+        }
+      ],
+      "_note": "Grid reduced to two tiers 2026-09-22 (ANALYSIS.md section 3, CHANGELOG): high rung gemini-3.1-pro removed from the grid; its S1 calibration results, manifest and budgets.json entry are kept outside the grid; no M1 cell is run for it. Removed entry: litellm gemini/gemini-3.1-pro-preview, snapshot gemini-3.1-pro-preview, llm_args {\"reasoning_effort\": \"high\"}, short gemini31pro-high."
+    },
+    "openai": {
+      "max_concurrency": 6,
+      "models": [
+        {
+          "name": "gpt-5.4-nano",
+          "tier": "low",
+          "litellm": "openai/responses/gpt-5.4-nano-2026-03-17",
+          "snapshot": "gpt-5.4-nano-2026-03-17",
+          "llm_args": {
+            "reasoning_effort": "high"
+          },
+          "short": "gpt54nano-high",
+          "route": "OpenAI Responses API (litellm chat->responses bridge, model prefix openai/responses/). Chat Completions rejects tools + reasoning_effort for gpt-5.4 models (2026-09-20). seed is not a Responses API parameter and is dropped on this route."
+        },
+        {
+          "name": "gpt-5.4-mini",
+          "tier": "mid",
+          "litellm": "openai/responses/gpt-5.4-mini-2026-03-17",
+          "snapshot": "gpt-5.4-mini-2026-03-17",
+          "llm_args": {
+            "reasoning_effort": "high"
+          },
+          "short": "gpt54mini-high",
+          "route": "OpenAI Responses API (litellm chat->responses bridge, model prefix openai/responses/). Chat Completions rejects tools + reasoning_effort for gpt-5.4 models (2026-09-20). seed is not a Responses API parameter and is dropped on this route."
+        },
+        {
+          "name": "gpt-5.4",
+          "tier": "high",
+          "litellm": "openai/responses/gpt-5.4-2026-03-05",
+          "snapshot": "gpt-5.4-2026-03-05",
+          "llm_args": {
+            "reasoning_effort": "high"
+          },
+          "short": "gpt54-high",
+          "route": "OpenAI Responses API (litellm chat->responses bridge, model prefix openai/responses/). Chat Completions rejects tools + reasoning_effort for gpt-5.4 models (2026-09-20). seed is not a Responses API parameter and is dropped on this route."
+        }
+      ],
+      "_route_note": "All OpenAI cells run through /v1/responses; see ANALYSIS.md CHANGELOG 2026-09-20."
+    },
+    "qwen": {
+      "max_concurrency": 1,
+      "_note": "Qwen ladder changed 2026-09-22 (ANALYSIS.md section 3, CHANGELOG): two dense rungs, qwen3.5-4b (local Ollama, Q4_K_M) and qwen3.5-9b (OpenRouter, teammate). No high rung. Replaced the MoE ladder qwen3.5-35b-a3b, qwen3.5-122b-a10b, qwen3.5-397b-a17b on Alibaba Cloud Model Studio (no cell was run). max_concurrency 1 is the local Ollama limit (one request at a time); the teammate ran the 9b at 4.",
+      "models": [
+        {
+          "name": "qwen3.5-4b",
+          "tier": "low",
+          "litellm": "openai/tt-qwen3.5-4b:q4",
+          "snapshot": "qwen3.5:4b Q4_K_M, Ollama digest 2a654d98e6fb; pinned name tt-qwen3.5-4b:q4 (668eab7d518c), num_ctx 131072",
+          "llm_args": {
+            "api_base": "http://127.0.0.1:11434/v1",
+            "api_key": "ollama",
+            "timeout": 3600,
+            "max_tokens": 32768,
+            "extra_body": {
+              "reasoning_effort": "high"
+            }
+          },
+          "short": "qwen35-4b-q4-ollama",
+          "route": "Ollama OpenAI-compatible endpoint on localhost via litellm openai/ prefix; thinking on by default, reasoning_effort high sent on every call; sampling at the model's shipped defaults (temperature 1, top_p 0.95, top_k 20, presence_penalty 1.5)."
+        },
+        {
+          "name": "qwen3.5-9b",
+          "tier": "mid",
+          "litellm": "openrouter/qwen/qwen3.5-9b",
+          "snapshot": "qwen/qwen3.5-9b (OpenRouter model id; served provider, build and precision not pinned)",
+          "llm_args": {
+            "temperature": 0.0,
+            "reasoning": {
+              "effort": "high"
+            }
+          },
+          "short": "qwen35-9b-openrouter",
+          "run_by": "teammate",
+          "route": "OpenRouter. S1 calibration run by a teammate on a separate machine through BudgetedS1Agent in uncapped mode (same prompt, loop and tools as llm_agent), max_concurrency 4, temperature 0.0 on agent and simulator; files under results/teammate-qwen9b/. See ANALYSIS.md section 4.2 and CHANGELOG 2026-09-22."
+        },
+        {
+          "name": "qwen3.5-4b-oct26",
+          "tier": "low",
+          "litellm": "openai/tt-qwen3.5-4b:q4",
+          "snapshot": "qwen3.5:4b Q4_K_M, October 2026 Ollama build: digest d8b0f5e9760c (text weights a9d0a3e1d8c9 plus vision projector e56a899b1540); pinned name tt-qwen3.5-4b:q4 (c0535b43ca6b), num_ctx 131072. Not the registered qwen3.5-4b (2a654d98e6fb / 668eab7d518c).",
+          "llm_args": {
+            "api_base": "http://127.0.0.1:11434/v1",
+            "api_key": "ollama",
+            "timeout": 3600,
+            "max_tokens": 32768,
+            "extra_body": {
+              "reasoning_effort": "high"
+            }
+          },
+          "short": "qwen35-4b-q4-oct26-ollama",
+          "route": "Ollama OpenAI-compatible endpoint on localhost via litellm openai/ prefix; thinking on by default, reasoning_effort high sent on every call; sampling at the model's shipped defaults (temperature 1, top_p 0.95, top_k 20, presence_penalty 1.5).",
+          "_note": "Added 2026-10-12 (ANALYSIS.md CHANGELOG): retail only. S1 is local-retail-s1-qwen35-4b-q4-ollama-gpt52low-3trials-seed300 (run through ollama/run_local_s1.py, not run_calibration.py); its budget entry in budgets.json is written by hand from the 145 evaluated episodes. Route and arguments identical to qwen3.5-4b."
+        }
+      ]
+    },
+    "openai-gpt5": {
+      "max_concurrency": 6,
+      "_pilot_note": "PILOT, added 2026-09-20. Not part of the registered 27-cell grid. GPT-5 (Aug 2025) ladder, the OpenAI models used by Kim et al.; S1 calibration cells are run so the OpenAI ladder can be decided from measured S1. OpenAI shuts these snapshots down on 2026-12-11. See ANALYSIS.md CHANGELOG 2026-09-20.",
+      "models": [
+        {
+          "name": "gpt-5-nano",
+          "tier": "low",
+          "litellm": "openai/responses/gpt-5-nano-2025-08-07",
+          "snapshot": "gpt-5-nano-2025-08-07",
+          "llm_args": {
+            "reasoning_effort": "high"
+          },
+          "short": "gpt5nano-high",
+          "route": "OpenAI Responses API (litellm chat->responses bridge, model prefix openai/responses/), the same route as the gpt-5.4 rows. seed is not a Responses API parameter and is dropped on this route."
+        },
+        {
+          "name": "gpt-5-mini",
+          "tier": "mid",
+          "litellm": "openai/responses/gpt-5-mini-2025-08-07",
+          "snapshot": "gpt-5-mini-2025-08-07",
+          "llm_args": {
+            "reasoning_effort": "high"
+          },
+          "short": "gpt5mini-high",
+          "route": "OpenAI Responses API (litellm chat->responses bridge, model prefix openai/responses/), the same route as the gpt-5.4 rows. seed is not a Responses API parameter and is dropped on this route."
+        }
+      ],
+      "_note": "Grid reduced to two tiers 2026-09-22 (ANALYSIS.md section 3, CHANGELOG): high rung gpt-5 removed from the grid; its S1 calibration results, manifest and budgets.json entry are kept outside the grid; no M1 cell is run for it. Removed entry: litellm openai/responses/gpt-5-2025-08-07, snapshot gpt-5-2025-08-07, llm_args {\"reasoning_effort\": \"high\"}, short gpt5-high."
+    }
+  }
+}

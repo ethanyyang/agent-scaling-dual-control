@@ -1,0 +1,355 @@
+2026-09-25 18:27:26.669 | INFO     | tau2.utils.utils:<module>:28 - Using data directory from source: ./tau2-bench/data
+2026-09-25 18:27:27.680 | INFO     | tau2.utils.llm_utils:<module>:102 - LiteLLM: Cache is disabled
+2026-09-25 18:27:27.758 | DEBUG    | tau2.registry:<module>:281 - Registering default components...
+2026-09-25 18:27:27.760 | DEBUG    | tau2.registry:<module>:292 - Voice dependencies not installed, skipping voice user registration
+2026-09-25 18:27:27.760 | DEBUG    | tau2.registry:<module>:350 - Default components registered successfully. Registry info: {
+  "domains": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ],
+  "agents": [
+    "llm_agent",
+    "llm_agent_gt",
+    "llm_agent_solo",
+    "discrete_time_audio_native_agent"
+  ],
+  "users": [
+    "user_simulator",
+    "dummy_user"
+  ],
+  "task_sets": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom_full",
+    "telecom_small",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ]
+}
+83 passing episodes to screen
+FLAG task 2 trial 0: 2 unmet
+FLAG task 5 trial 0: 1 unmet
+FLAG task 27 trial 0: 1 unmet
+FLAG task 38 trial 0: 1 unmet
+FLAG task 2 trial 1: 2 unmet
+FLAG task 38 trial 1: 1 unmet
+FLAG task 2 trial 2: 1 unmet
+FLAG task 38 trial 2: 3 unmet
+8/83 passing episodes flagged -> ../results/h4/nl_screen/m1-airline-gemini3flash-high-gpt52low-b4x-capb1x-3trials-seed300.json
+2026-09-25 18:28:29.402 | INFO     | tau2.utils.utils:<module>:28 - Using data directory from source: ./tau2-bench/data
+2026-09-25 18:28:30.377 | INFO     | tau2.utils.llm_utils:<module>:102 - LiteLLM: Cache is disabled
+2026-09-25 18:28:30.458 | DEBUG    | tau2.registry:<module>:281 - Registering default components...
+2026-09-25 18:28:30.460 | DEBUG    | tau2.registry:<module>:292 - Voice dependencies not installed, skipping voice user registration
+2026-09-25 18:28:30.460 | DEBUG    | tau2.registry:<module>:350 - Default components registered successfully. Registry info: {
+  "domains": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ],
+  "agents": [
+    "llm_agent",
+    "llm_agent_gt",
+    "llm_agent_solo",
+    "discrete_time_audio_native_agent"
+  ],
+  "users": [
+    "user_simulator",
+    "dummy_user"
+  ],
+  "task_sets": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom_full",
+    "telecom_small",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ]
+}
+64 passing episodes to screen
+FLAG task 3 trial 0: 1 unmet
+FLAG task 5 trial 0: 1 unmet
+FLAG task 4 trial 0: 2 unmet
+FLAG task 13 trial 0: 1 unmet
+FLAG task 26 trial 0: 1 unmet
+FLAG task 27 trial 0: 1 unmet
+FLAG task 48 trial 0: 1 unmet
+FLAG task 3 trial 1: 2 unmet
+FLAG task 4 trial 1: 2 unmet
+FLAG task 2 trial 1: 1 unmet
+FLAG task 28 trial 1: 1 unmet
+FLAG task 27 trial 1: 2 unmet
+FLAG task 0 trial 2: 1 unmet
+FLAG task 3 trial 2: 2 unmet
+FLAG task 4 trial 2: 2 unmet
+FLAG task 5 trial 2: 1 unmet
+FLAG task 8 trial 2: 1 unmet
+FLAG task 13 trial 2: 1 unmet
+FLAG task 26 trial 2: 1 unmet
+FLAG task 38 trial 2: 1 unmet
+20/64 passing episodes flagged -> ../results/h4/nl_screen/calib-airline-s1-gpt5nano-high-gpt52low-3trials-seed300.json
+2026-09-25 18:29:25.920 | INFO     | tau2.utils.utils:<module>:28 - Using data directory from source: ./tau2-bench/data
+2026-09-25 18:29:26.852 | INFO     | tau2.utils.llm_utils:<module>:102 - LiteLLM: Cache is disabled
+2026-09-25 18:29:26.924 | DEBUG    | tau2.registry:<module>:281 - Registering default components...
+2026-09-25 18:29:26.926 | DEBUG    | tau2.registry:<module>:292 - Voice dependencies not installed, skipping voice user registration
+2026-09-25 18:29:26.926 | DEBUG    | tau2.registry:<module>:350 - Default components registered successfully. Registry info: {
+  "domains": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ],
+  "agents": [
+    "llm_agent",
+    "llm_agent_gt",
+    "llm_agent_solo",
+    "discrete_time_audio_native_agent"
+  ],
+  "users": [
+    "user_simulator",
+    "dummy_user"
+  ],
+  "task_sets": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom_full",
+    "telecom_small",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ]
+}
+68 passing episodes to screen
+FLAG task 5 trial 0: 2 unmet
+FLAG task 2 trial 0: 2 unmet
+FLAG task 13 trial 0: 1 unmet
+FLAG task 27 trial 0: 1 unmet
+FLAG task 46 trial 0: 1 unmet
+FLAG task 2 trial 1: 1 unmet
+FLAG task 4 trial 1: 1 unmet
+FLAG task 5 trial 1: 2 unmet
+FLAG task 13 trial 1: 1 unmet
+FLAG task 19 trial 1: 1 unmet
+FLAG task 27 trial 1: 2 unmet
+FLAG task 43 trial 1: 1 unmet
+FLAG task 46 trial 1: 1 unmet
+FLAG task 0 trial 2: 1 unmet
+FLAG task 4 trial 2: 1 unmet
+FLAG task 6 trial 2: 1 unmet
+FLAG task 2 trial 2: 1 unmet
+FLAG task 5 trial 2: 1 unmet
+FLAG task 13 trial 2: 1 unmet
+FLAG task 27 trial 2: 1 unmet
+FLAG task 38 trial 2: 1 unmet
+FLAG task 46 trial 2: 1 unmet
+22/68 passing episodes flagged -> ../results/h4/nl_screen/m1-airline-gpt5nano-high-gpt52low-b4x-capb1x-3trials-seed300.json
+2026-09-25 18:30:17.342 | INFO     | tau2.utils.utils:<module>:28 - Using data directory from source: ./tau2-bench/data
+2026-09-25 18:30:18.200 | INFO     | tau2.utils.llm_utils:<module>:102 - LiteLLM: Cache is disabled
+2026-09-25 18:30:18.271 | DEBUG    | tau2.registry:<module>:281 - Registering default components...
+2026-09-25 18:30:18.273 | DEBUG    | tau2.registry:<module>:292 - Voice dependencies not installed, skipping voice user registration
+2026-09-25 18:30:18.273 | DEBUG    | tau2.registry:<module>:350 - Default components registered successfully. Registry info: {
+  "domains": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ],
+  "agents": [
+    "llm_agent",
+    "llm_agent_gt",
+    "llm_agent_solo",
+    "discrete_time_audio_native_agent"
+  ],
+  "users": [
+    "user_simulator",
+    "dummy_user"
+  ],
+  "task_sets": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom_full",
+    "telecom_small",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ]
+}
+112 passing episodes to screen
+FLAG task 4 trial 0: 2 unmet
+FLAG task 9 trial 0: 1 unmet
+FLAG task 26 trial 0: 1 unmet
+FLAG task 27 trial 0: 2 unmet
+FLAG task 38 trial 0: 2 unmet
+FLAG task 4 trial 1: 2 unmet
+FLAG task 9 trial 1: 3 unmet
+FLAG task 26 trial 1: 1 unmet
+FLAG task 27 trial 1: 1 unmet
+FLAG task 38 trial 1: 1 unmet
+FLAG task 46 trial 1: 1 unmet
+FLAG task 0 trial 2: 1 unmet
+FLAG task 3 trial 2: 1 unmet
+FLAG task 27 trial 2: 2 unmet
+14/112 passing episodes flagged -> ../results/h4/nl_screen/calib-airline-s1-gpt5mini-high-gpt52low-3trials-seed300.json
+2026-09-25 18:31:51.826 | INFO     | tau2.utils.utils:<module>:28 - Using data directory from source: ./tau2-bench/data
+2026-09-25 18:31:52.750 | INFO     | tau2.utils.llm_utils:<module>:102 - LiteLLM: Cache is disabled
+2026-09-25 18:31:52.821 | DEBUG    | tau2.registry:<module>:281 - Registering default components...
+2026-09-25 18:31:52.823 | DEBUG    | tau2.registry:<module>:292 - Voice dependencies not installed, skipping voice user registration
+2026-09-25 18:31:52.823 | DEBUG    | tau2.registry:<module>:350 - Default components registered successfully. Registry info: {
+  "domains": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ],
+  "agents": [
+    "llm_agent",
+    "llm_agent_gt",
+    "llm_agent_solo",
+    "discrete_time_audio_native_agent"
+  ],
+  "users": [
+    "user_simulator",
+    "dummy_user"
+  ],
+  "task_sets": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom_full",
+    "telecom_small",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ]
+}
+87 passing episodes to screen
+FLAG task 0 trial 0: 1 unmet
+FLAG task 3 trial 0: 1 unmet
+FLAG task 2 trial 0: 1 unmet
+FLAG task 5 trial 0: 2 unmet
+FLAG task 13 trial 0: 1 unmet
+FLAG task 26 trial 0: 1 unmet
+FLAG task 27 trial 0: 1 unmet
+FLAG task 46 trial 0: 1 unmet
+FLAG task 9 trial 1: 1 unmet
+FLAG task 13 trial 1: 1 unmet
+FLAG task 26 trial 1: 1 unmet
+FLAG task 27 trial 1: 1 unmet
+FLAG task 38 trial 1: 2 unmet
+FLAG task 2 trial 2: 1 unmet
+FLAG task 9 trial 2: 1 unmet
+FLAG task 26 trial 2: 1 unmet
+FLAG task 27 trial 2: 1 unmet
+17/87 passing episodes flagged -> ../results/h4/nl_screen/m1-airline-gpt5mini-high-gpt52low-b4x-capb1x-3trials-seed300.json
+2026-09-25 18:33:00.299 | INFO     | tau2.utils.utils:<module>:28 - Using data directory from source: ./tau2-bench/data
+2026-09-25 18:33:01.163 | INFO     | tau2.utils.llm_utils:<module>:102 - LiteLLM: Cache is disabled
+2026-09-25 18:33:01.233 | DEBUG    | tau2.registry:<module>:281 - Registering default components...
+2026-09-25 18:33:01.235 | DEBUG    | tau2.registry:<module>:292 - Voice dependencies not installed, skipping voice user registration
+2026-09-25 18:33:01.235 | DEBUG    | tau2.registry:<module>:350 - Default components registered successfully. Registry info: {
+  "domains": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ],
+  "agents": [
+    "llm_agent",
+    "llm_agent_gt",
+    "llm_agent_solo",
+    "discrete_time_audio_native_agent"
+  ],
+  "users": [
+    "user_simulator",
+    "dummy_user"
+  ],
+  "task_sets": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom_full",
+    "telecom_small",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ]
+}
+118 passing episodes to screen
+FLAG task 5 trial 0: 1 unmet
+FLAG task 2 trial 0: 2 unmet
+FLAG task 13 trial 0: 1 unmet
+FLAG task 10 trial 0: 1 unmet
+FLAG task 27 trial 0: 1 unmet
+FLAG task 0 trial 1: 1 unmet
+FLAG task 2 trial 1: 1 unmet
+FLAG task 8 trial 1: 1 unmet
+FLAG task 27 trial 1: 1 unmet
+FLAG task 0 trial 2: 1 unmet
+FLAG task 27 trial 2: 1 unmet
+FLAG task 38 trial 2: 2 unmet
+12/118 passing episodes flagged -> ../results/h4/nl_screen/calib-airline-s1-gemini31flashlite-high-gpt52low-3trials-seed300.json
+2026-09-25 18:34:32.096 | INFO     | tau2.utils.utils:<module>:28 - Using data directory from source: ./tau2-bench/data
+2026-09-25 18:34:32.995 | INFO     | tau2.utils.llm_utils:<module>:102 - LiteLLM: Cache is disabled
+2026-09-25 18:34:33.070 | DEBUG    | tau2.registry:<module>:281 - Registering default components...
+2026-09-25 18:34:33.071 | DEBUG    | tau2.registry:<module>:292 - Voice dependencies not installed, skipping voice user registration
+2026-09-25 18:34:33.071 | DEBUG    | tau2.registry:<module>:350 - Default components registered successfully. Registry info: {
+  "domains": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ],
+  "agents": [
+    "llm_agent",
+    "llm_agent_gt",
+    "llm_agent_solo",
+    "discrete_time_audio_native_agent"
+  ],
+  "users": [
+    "user_simulator",
+    "dummy_user"
+  ],
+  "task_sets": [
+    "mock",
+    "airline",
+    "retail",
+    "telecom_full",
+    "telecom_small",
+    "telecom",
+    "telecom-workflow",
+    "banking_knowledge"
+  ]
+}
+94 passing episodes to screen
+FLAG task 2 trial 0: 2 unmet
+FLAG task 5 trial 0: 1 unmet
+FLAG task 27 trial 0: 1 unmet
+FLAG task 38 trial 0: 2 unmet
+FLAG task 2 trial 1: 1 unmet
+FLAG task 5 trial 1: 1 unmet
+FLAG task 27 trial 1: 1 unmet
+FLAG task 38 trial 1: 2 unmet
+FLAG task 2 trial 2: 1 unmet
+FLAG task 27 trial 2: 1 unmet
+10/94 passing episodes flagged -> ../results/h4/nl_screen/m1-airline-gemini31flashlite-high-gpt52low-b4x-capb1x-3trials-seed300.json

@@ -1,0 +1,17 @@
+dataset,model,sas,best_mas,delta,predicted_gain,observed_gain,match
+swebench-verified,claude-sonnet-4-20250514,0.7,0.55,-0.1499999999999999,False,False,True
+swebench-verified,claude-sonnet-4-5-20250929,0.75,0.7,-0.050000000000000044,False,False,True
+swebench-verified,gemini-2.0-flash,0.15,0.4,0.25,True,True,True
+swebench-verified,gemini-2.5-flash,0.5,0.45,-0.04999999999999999,False,False,True
+swebench-verified,gemini-2.5-pro,0.7,0.6,-0.09999999999999998,False,False,True
+swebench-verified,gpt-5,0.65,0.7,0.04999999999999993,False,True,False
+swebench-verified,gpt-5-mini,0.4,0.5,0.09999999999999998,True,True,True
+swebench-verified,gpt-5-nano,0.05,0.35,0.3,True,True,True
+terminalbench,claude-sonnet-4-20250514,0.25,0.35,0.09999999999999998,True,True,True
+terminalbench,claude-sonnet-4-5-20250929,0.6,0.5,-0.09999999999999998,False,False,True
+terminalbench,gemini-2.0-flash,0.15,0.2,0.05000000000000002,True,True,True
+terminalbench,gemini-2.5-flash,0.2,0.25,0.04999999999999999,True,True,True
+terminalbench,gemini-2.5-pro,0.45,0.3,-0.15000000000000002,False,False,True
+terminalbench,gpt-5,0.3,0.5,0.2,True,True,True
+terminalbench,gpt-5-mini,0.3,0.45,0.15000000000000002,True,True,True
+terminalbench,gpt-5-nano,0.25,0.3,0.04999999999999999,True,True,True

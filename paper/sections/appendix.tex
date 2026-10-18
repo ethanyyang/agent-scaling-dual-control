@@ -1,0 +1,108 @@
+\section{Tests and results card}
+\label{app:card}
+
+Table~\ref{tab:card} collects every test in the paper with the rule used to read it and its result, so that each claim in the main text can be traced to one row.
+
+\begin{table}[H]
+\caption{Tests and results. Each row gives a test, the rule used to read it and the result.}
+\label{tab:card}
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{5.3cm}@{}}
+\toprule
+Row & Unit; contrast; test & Reading rule & Result \\
+\midrule
+H1 slope (primary) & cells meeting the mechanical bars; gain on leave-one-domain-out index, family and domain effects, inverse-variance weights; permutation $p$ & supported if slope $< 0$ with CI excluding zero; null read as $|b| < 0.20$ & $-0.41$ $[-1.51, +0.68]$, $p = 0.43$; not supported; CI far wider than the minimum detectable slope of 0.20 \\
+H1 crossing & same fit; $x_0 = -\text{intercept}/\text{slope}$; bootstrap CI & transfers if CI covers 45\%; shifts if not; no crossing if slope CI covers zero & no crossing (fitted gain $< 0$ over the whole index range) \\
+Sign match & cells not straddling 45\%; predicted vs observed sign; binomial vs 0.5 & $X/N$ beside 15/16; informative and within-noise cells apart & 10 of 12 informative ($p = 0.039$); right on all 10 above 45\%, wrong on both below \\
+H2a (primary) & \Sone\ cells; WW/failures and FP/passes on the index & WW/failures slope $< 0$, FP/passes slope not $< 0$ & WW half: $-0.15$ $[-0.64, +0.34]$, $p = 0.78$; not supported; FP half (airline, 4 cells, descriptive): commission flags per pass fall from 15.6 to 2.5\% \\
+H2b (primary) & paired \Mone{}$-$\Sone\ WW, pooled, cluster CI & grid over WW, IN, BX, FP & WW $-0.6$ pts $[-2.6, +1.2]$: no detectable change; BX $+34$, IN $+7$ pts; FP commission 6.5 to 5.1\% of passes \\
+R1 & 2 cells, gain across budget levels & dependence only if its CI excludes zero & $\text{gain}_{4\times} - \text{gain}_{1\times}$ $+5.3$ $[-2.7, +14.0]$ and $+8.0$ $[-1.3, +18.0]$: not claimed \\
+R2 & 3 airline cells, 2 simulators & simulator effect if the change in gain excludes zero & not detected: change $+7.3$ $[-3.3, +18.0]$ (\texttt{gpt-5-nano}, whose gain is $+10.0$ $[+1.3, +19.3]$ under \texttt{gpt-4.1}), $-3.3$ $[-11.3, +6.0]$ (\texttt{gemini-3.1-flash-lite}) and $-4.0$ $[-10.7, +2.7]$ (\texttt{gemini-3-flash}) \\
+G1 & every MAS cell; four mechanical bars and one fidelity bar ($\ge 90\%$ of write orders executed as issued) & all bars met, or protocol failure (fix and re-run) & mechanical bars: 13 of 16 met; three \texttt{qwen3.5-9b} cells fail. Fidelity bar: fails in every cell (9 to 41\% per cell, 25\% pooled, stricter audit); fix built and smoke-tested (25\% to 72\%), grid not re-run; MAS reported as built, labelled deviation \\
+Local-route seed check & retail $\times$ \texttt{qwen3.5-4b} (Oct.\ build); 6 cut tasks, 4 controls; trial-2 and trial-1 first plan prompts replayed under seed 361454, seed 373753 and no seed; 120 calls & seed explanation supported if trial-2 prompts cut $\ge 4$ of 6 under 361454 and $\le 1$ of 6 unseeded & 5 of 6 under 361454; 0 of 6 unseeded; 0 of 6 under 373753; trial-1 prompts 1 of 6 under 361454; controls never cut: supported. Cells reported per trial, no trial excluded \\
+Local 4B cells & telecom (registered build, in grid); retail (Oct.\ build, outside fits); pooled and per trial & reported as built & telecom $-71.3$ $[-80.0, -62.7]$ (trials 0+1 $-69.0$; trial 2 $-76.0$); retail $-50.7$ $[-60.7, -40.7]$ (trials 0+1 $-46.0$; trial 2 $-61.2$); retail fails two mechanical bars \\
+Airline $\times$ \texttt{qwen3.5-4b} (sens.) & collaborator's MAS on the registered build paired post hoc with the collaborator's September SAS on another stack & sensitivity only; not in any grid, fit or claim & MAS 56.0\%; gain $+16.3$ $[+4.7, +27.7]$ with the SAS's 69 crashed episodes scored 0, $-7.0$ $[-20.2, +5.3]$ with them excluded; sign depends on the treatment \\
+Cell coverage & \Sone\ CI vs 45\% & $\ge 3$ below and $\ge 3$ above for a balanced test & 2 below, 1 straddling, 13 above \\
+Uncapped arm (sec.) & 3 cells, no ceiling & (1) ceiling hid a benefit; (2) it did not & (2) met \\
+S2 (ext.) & 3 cells (telecom $\times$ \texttt{gemini-3.1-flash-lite}; telecom $\times$ \texttt{gpt-5-nano}; airline $\times$ \texttt{gpt-5-nano}); strong SAS at $4\times$ against the SAS and the MAS & (1) $\text{S2}-\Sone$ CI $<0$: scaffolding loses too; (2) $\text{S2}-\Sone$ covers zero or above and $\Mone-\text{S2}<0$: loss from the division; (3) mixed & telecom $\times$ \texttt{gemini-3.1-flash-lite}, (2): $\text{S2}-\Sone$ $+2.0$ $[-7.3, +12.0]$; $\Mone-\text{S2}$ $-24.0$ $[-33.3, -15.3]$. Telecom $\times$ \texttt{gpt-5-nano}, (2): $\text{S2}-\Sone$ $-5.3$ $[-12.7, +1.3]$; $\Mone-\text{S2}$ $-8.0$ $[-14.7, -1.3]$. Airline $\times$ \texttt{gpt-5-nano}, (3): $\text{S2}-\Sone$ $+2.7$ $[-5.3, +11.3]$; $\Mone-\text{S2}$ $0.0$ $[-8.7, +8.7]$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{The local 4-billion model: builds, per-trial results and the seed check}
+\label{app:local4b}
+
+\paragraph{Builds.} The registered 4-billion model is \texttt{qwen3.5:4b} at Q4\_K\_M as served by Ollama in September 2026, pinned under a local name; the telecom SAS and MAS ran on it. Before the retail cell could run, the model library replaced the build (a 4.2-billion-parameter weight file with a separate vision projector in place of one 4.7-billion-parameter file) and the registered build could no longer be pulled; the pinned local name was rebuilt on the new build. The digests of both builds are recorded in the released provenance files. The retail SAS calibration and the retail MAS were run on the October build with every other setting as registered (context 131,072, shipped sampling defaults, one request at a time). Because the model differs from the one in the grid, the cell is labelled, kept out of every fit and secondary analysis, and reported here; its SAS does not enter the capability index.
+
+\paragraph{Retail $\times$ \texttt{qwen3.5-4b}, October build.} The SAS ran 150 episodes; five ended in empty model replies after one re-run and are excluded, leaving 145, with \passone\ 74.0\% (task mean; 109 of 145 episodes) and the calibration of Table~\ref{tab:calibration} ($\Bx = 5{,}369$, $B = 21{,}476$). The MAS ran 150 episodes with no infrastructure error: \passone\ 23.3\% $[17.3, 30.7]$, a paired gain of $-50.7$ $[-60.7, -40.7]$ (task-cluster bootstrap, the SAS restricted to its evaluated episodes); 74 of 150 episodes exhausted the ledger (49\%), median utilisation 0.98, finished episodes passed 33 of 76 and exhausted ones 2 of 74; median completion tokens per episode 21,080 against 3,845 (5.5 times); simulator cost \$2.27 against \$2.10. The cell fails two mechanical bars as well as the fidelity bar (Table~\ref{tab:validity}): 15.6\% of tokens fell in cut calls and five ordinary turns carried two cut calls; 3.6\% of calls were cut, no JSON or cut text reached the customer, 347 of 1,630 plan calls did not parse, 80 customer messages were the holding line, and 13 of 79 write orders were executed as issued. The pattern matches the telecom cell of the same model on the registered build: a large loss at a high SAS level, carried by exhaustion.
+
+\paragraph{Per trial.} Each cell runs three trials on the same 50 tasks. On the local route the benchmark writes the trial's seed into the model call (trial 0: 626729; trial 1: 373753; trial 2: 361454); the hosted APIs of the closed models drop the seed. Table~\ref{tab:pertrial} shows that trial 2 exhausts the ledger far more often than trials 0 and 1 in all three local MAS cells, including the collaborator's airline run on the registered build. The pooled gain of each cell is the registered statistic and stands; the per-trial split is reported beside it, and no trial is excluded. Removing trial 2 would move the telecom gain from $-71.3$ to $-69.0$ and the retail gain from $-50.7$ to $-46.0$, with no change of sign or of any interval's side of zero; on airline the pass rate hardly moves across trials, because airline tasks that need no database change pass under exhaustion. The retail cell's pooled pass rate was seen by us before the replay below was designed; this is recorded in the change log, and the reporting rule (pooled with the per-trial split, no exclusion) was fixed before the replay ran.
+
+\begin{table}[H]
+\caption{The three local 4-billion MAS cells per trial: MAS passes and exhausted episodes out of 50, SAS passes out of the evaluated episodes of the same trial, and the paired gain (points, task-cluster bootstrap CI) pooled, on trials 0 and 1, and on trial 2. The airline SAS on the registered build does not exist beyond 10 episodes, so that row has no gain.}
+\label{tab:pertrial}
+\begin{center}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}llccclll@{}}
+\toprule
+Cell & Build & \multicolumn{3}{c}{MAS pass / exhausted (trial 0, 1, 2)} & Gain, pooled & Trials 0 and 1 & Trial 2 \\
+\cmidrule{3-5}
+ & & 0 & 1 & 2 & & & \\
+\midrule
+telecom (grid) & registered & 15 / 26 & 11 / 27 & 9 / 41 & $-71.3$ $[-80.0, -62.7]$ & $-69.0$ $[-78.0, -59.0]$ & $-76.0$ $[-88.0, -62.0]$ \\
+ & SAS passes & 48 of 50 & 47 of 50 & 47 of 50 & & & \\
+retail (appendix) & October & 16 / 19 & 14 / 12 & 5 / 43 & $-50.7$ $[-60.7, -40.7]$ & $-46.0$ $[-58.0, -34.0]$ & $-61.2$ $[-73.5, -46.9]$ \\
+ & SAS passes & 40 of 48 & 34 of 48 & 35 of 49 & & & \\
+airline (collaborator) & registered & 28 / 15 & 30 / 14 & 26 / 42 & -- & -- & -- \\
+\bottomrule
+\end{tabular}}
+\end{center}
+\end{table}
+
+\paragraph{Seed replay.} To separate the seed from the trial-2 prompts, the first MAS plan prompt of trial 2 and of trial 1 for ten retail tasks (the six tasks whose trial-2 episodes were exhausted with cut plan calls, tasks 13, 53, 54, 59, 104 and 108, and four controls, tasks 1, 75, 93 and 101) was replayed on a fresh server of the October build under three conditions, seed 361454, seed 373753 and no seed, twice each: 120 calls, with the prompt-token count matching the original run in all 120. The reading rule was fixed before any call: with $k = 6$ cut tasks, the seed explanation is supported if the trial-2 prompts are cut at the cap on at least 4 of 6 first repeats under seed 361454 and on at most 1 of 6 unseeded. Table~\ref{tab:replay} gives the result: the trial-2 prompts under seed 361454 were cut on 5 of 6 first repeats (over both repeats, median 5,369 completion tokens, the cap, with 8 of 12 cut and 7 of 12 returning no visible text), and never under seed 373753 or without a seed; the trial-1 prompts were cut once under 361454 and otherwise never; the control tasks were never cut under any condition (medians 321 to 644 tokens). The seed explanation is supported. Determinism on the local route is high: 35 of 40 seeded repeat pairs were byte-identical and 0 of 20 unseeded pairs. The consequence for the paper is the per-trial reporting above and the limitation stated in \S\ref{sec:discussion}; no registered result changes.
+
+\begin{table}[H]
+\caption{Seed replay on the October build (17 October 2026; 120 calls, 86 minutes of model time, no errors). For each condition: trial-2 or trial-1 first plan prompt of the six cut tasks; first-repeat cuts at the cap; and over both repeats the number of calls, median completion tokens, calls cut at the cap and calls with no visible text.}
+\label{tab:replay}
+\begin{center}
+\scriptsize
+\begin{tabular}{@{}llcrrrr@{}}
+\toprule
+Prompt & Seed & Cut on first repeat & Calls & Median tokens & Cut & Empty \\
+\midrule
+trial 2 & 361454 (trial 2's) & 5 of 6 & 12 & 5,369 & 8 & 7 \\
+trial 2 & 373753 (trial 1's) & 0 of 6 & 12 & 404 & 1 & 1 \\
+trial 2 & none & 0 of 6 & 12 & 629 & 0 & 0 \\
+trial 1 & 361454 & 1 of 6 & 12 & 2,798 & 2 & 2 \\
+trial 1 & 373753 & 0 of 6 & 12 & 371 & 0 & 0 \\
+trial 1 & none & 0 of 6 & 12 & 538 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\paragraph{Airline $\times$ \texttt{qwen3.5-4b}: a collaborator's MAS, as a sensitivity.} A collaborator ran the airline MAS of the registered build (150 episodes, 7 to 12 October 2026) under a budget of $B = 27{,}329$ and $c = 6{,}832$, calibrated on the collaborator's own September SAS of the model rather than on a SAS from our stack. It passed 84 of 150 episodes (56.0\%, $[48.0, 63.7]$; per trial 28, 30 and 26 of 50; exhausted 15, 14 and 42) and fails the mechanical bars (12.9\% of tokens in cut calls; one ordinary turn with two cut calls) as well as the fidelity bar (17 of 52 orders as issued). The collaborator started a SAS of the same build on our route (10 episodes, 8 evaluated, 7 passed) and stopped it before the MAS, so no SAS on the registered build exists for this cell. The only SAS of the model on airline is the collaborator's September run (150 episodes, 144 evaluated, 20 to 23 September 2026) on a different stack: route \texttt{ollama\_chat} against an unpinned tag with no digest, context 32,768, temperature 0, and a second call whenever the model returned thinking only (56 such recoveries), on the pinned benchmark commit. Of its 144 evaluated episodes 69 ended in an agent error and score zero; its \passone\ is 39.7\% (task mean; 57 of 144 episodes). After both pass rates were known, we paired the two runs (Table~\ref{tab:airline4b}). Scored as recorded, the MAS gains $+16.3$ points $[+4.7, +27.7]$; with the SAS's crashed episodes excluded (75 episodes on 38 tasks) the MAS loses $-7.0$ $[-20.2, +5.3]$. The MAS used 6.1 times the SAS's median completion tokens per episode (26,884 against 4,428). Because the sign of the gain depends on how the SAS's crashes are treated, and the two runs differ in route, pinning, context length and sampling, the pairing is a sensitivity and enters no grid, fit, secondary analysis or claim. A SAS of the registered build on our route, completed to 150 episodes, would replace it. A further collaborator file, an airline MAS of \texttt{qwen3.5-9b} at a later benchmark commit, fails the mechanical bars (35.7\% of tokens in cut calls, nine ordinary double-cut turns) and is not a cell.
+
+\begin{table}[H]
+\caption{Airline $\times$ \texttt{qwen3.5-4b} sensitivity: the collaborator's MAS (registered build, 150 episodes) paired with the collaborator's September SAS (other stack, 144 evaluated episodes). Task-mean \passone; paired gain with task-cluster bootstrap CI (seed 300, 2,000 draws); tasks on which the MAS pass rate is above, equal to or below the SAS's.}
+\label{tab:airline4b}
+\begin{center}
+\scriptsize
+\begin{tabular}{@{}lrrrlc@{}}
+\toprule
+Pairing & Tasks & MAS & SAS & Gain [95\% CI] & Tasks better / equal / worse \\
+\midrule
+SAS as recorded (crashes score 0) & 50 & 56.0\% & 39.7\% & $+16.3$ $[+4.7, +27.7]$ & 20 / 24 / 6 \\
+SAS crashed episodes excluded & 38 & 63.2\% & 70.2\% & $-7.0$ $[-20.2, +5.3]$ & 5 / 26 / 7 \\
+By trial, SAS as recorded: trial 0 & 49 & 57.1\% & 38.8\% & $+18.4$ $[+2.0, +34.7]$ & 13 / 32 / 4 \\
+\quad trial 1 & 48 & 58.3\% & 41.7\% & $+16.7$ $[0.0, +33.3]$ & 12 / 32 / 4 \\
+\quad trial 2 & 47 & 51.1\% & 38.3\% & $+12.8$ $[-2.1, +25.5]$ & 9 / 35 / 3 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}

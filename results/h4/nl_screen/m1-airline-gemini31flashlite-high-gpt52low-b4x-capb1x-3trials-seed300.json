@@ -1,0 +1,120 @@
+{
+  "source": "data/simulations/m1-airline-gemini31flashlite-high-gpt52low-b4x-capb1x-3trials-seed300/results.json",
+  "judge": "official NLAssertionsEvaluator (tau2 v1.0.1 defaults)",
+  "passing_episodes": 94,
+  "flagged_episodes": 10,
+  "flagged": [
+    {
+      "task_id": "2",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent should check that the flight was indeed delayed.",
+          "reasoning": "The agent stated that their system does not show a delay and that they have no tools to independently verify past flight status. While the agent checked their system, they did not attempt any further investigation or offer to escalate the issue, even after the user insisted the flight was delayed and asked for another way to check. This is insufficient effort to verify the delay."
+        },
+        {
+          "assertion": "Agent should detect that the number of passengers on the delayed flight mentioned by the user is incorrect.",
+          "reasoning": "The agent did not mention or acknowledge any discrepancy in the number of passengers on the delayed flight. The user said it was their most recent reservation, which had two passengers, but the agent did not point out or discuss this detail."
+        }
+      ]
+    },
+    {
+      "task_id": "5",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent identifies that user is not a Gold member but a Regular member.",
+          "reasoning": "The user claims to be a Gold member, but the account information shows the membership as 'regular.' The agent does not address or correct the user's claim about their Gold status at any point in the conversation."
+        }
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent confirms that user can receive compensation because he has Silver status.",
+          "reasoning": "The agent does not mention the user's Silver status at all, nor do they confirm that compensation is available due to this status. Instead, the agent incorrectly states that compensation is only available if the user cancels or changes the reservation, which does not address the Silver status benefit."
+        }
+      ]
+    },
+    {
+      "task_id": "38",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent verifies that the flight was delayed.",
+          "reasoning": "The agent did not explicitly verify or confirm that the flight was delayed by checking the reservation or flight status. The agent only referenced the user's report of a delay and discussed compensation policy, but did not state that they had confirmed the delay themselves."
+        },
+        {
+          "assertion": "Agent verifies the number of passengers in the reservation.",
+          "reasoning": "The agent did not mention or confirm the number of passengers in the reservation at any point in the conversation."
+        }
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should detect that the number of passengers on the delayed flight mentioned by the user is incorrect.",
+          "reasoning": "The user did not specify the number of passengers on the delayed flight; they only mentioned a delayed flight from their last reservation. The agent did not address or correct any discrepancy regarding the number of passengers, nor did they clarify or confirm the passenger list for the delayed flight. Therefore, the agent did not meet this expectation."
+        }
+      ]
+    },
+    {
+      "task_id": "5",
+      "trial": 1,
+      "unmet": [
+        {
+          "assertion": "Agent identifies that user is not a Gold member but a Regular member.",
+          "reasoning": "The user explicitly stated they are a Gold member, and at no point does the agent question or correct this status. The agent refers to the user as 'Ms. Brown' and acknowledges her Gold status in their responses, indicating they did not identify or correct any discrepancy in membership status."
+        }
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 1,
+      "unmet": [
+        {
+          "assertion": "Agent confirms that user can receive compensation because he has Silver status.",
+          "reasoning": "The agent does not mention the user's Silver status at all, nor do they confirm that compensation is available due to this status. The response only references a general policy about compensation for changes or cancellations, not elite status benefits."
+        }
+      ]
+    },
+    {
+      "task_id": "38",
+      "trial": 1,
+      "unmet": [
+        {
+          "assertion": "Agent does not offer compensation before the user asks.",
+          "reasoning": "The agent proactively offered a compensation gesture of a $50 certificate per passenger before the user explicitly requested compensation. The user only asked for compensation after the agent's initial offer."
+        },
+        {
+          "assertion": "Agent does not offer a $50 certificate.",
+          "reasoning": "The agent offered a $50 certificate per passenger as compensation for the delay, which is contrary to the expectation that no such offer should be made."
+        }
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 2,
+      "unmet": [
+        {
+          "assertion": "Agent should detect that the number of passengers on the delayed flight mentioned by the user is incorrect.",
+          "reasoning": "The user did not specify the number of passengers on the delayed flight, but the agent had access to the reservation details. The agent did not mention or clarify the number of passengers on the delayed flight, nor did they compare it to the user's current request for 3 passengers. There was no attempt to detect or address any discrepancy in passenger count."
+        }
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 2,
+      "unmet": [
+        {
+          "assertion": "Agent confirms that user can receive compensation because he has Silver status.",
+          "reasoning": "The agent repeatedly states that compensation is only available if the user cancels or changes the reservation, and does not mention or consider the user's Silver status as a reason for compensation eligibility. The agent does not confirm that the user can receive compensation due to Silver status."
+        }
+      ]
+    }
+  ]
+}

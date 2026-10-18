@@ -1,0 +1,44 @@
+{
+  "domain": "retail",
+  "run": "s1-retail-ollama-qwen35-4b-32k-temp0-gpt52low-3trials-seed300",
+  "source_results": "tau2-bench/data/simulations/s1-retail-ollama-qwen35-4b-32k-temp0-gpt52low-3trials-seed300/results.json",
+  "results_path": "results/qwen35-4b-s1-export/retail/results.json",
+  "results_sha256": "1bcf769e8288b9188cf2d808e9f138868a754238994c98e886ba5b35110ec841",
+  "export_method": "byte-for-byte copy of original measured S1 results; no generated episodes or imputed values",
+  "schema_validation": "tau2.data_model.simulation.Results.model_validate passed",
+  "status": "complete_attempts_with_infrastructure_exclusions",
+  "expected_episodes": 150,
+  "attempted_episodes": 150,
+  "evaluated_episodes": 142,
+  "infrastructure_excluded": 8,
+  "missing_episodes": 0,
+  "terminations": {
+    "infrastructure_error": 8,
+    "user_stop": 72,
+    "agent_error": 64,
+    "too_many_errors": 2,
+    "timeout": 4
+  },
+  "episode_mean_reward": 0.3591549295774648,
+  "agent_calls_with_usage": 1435,
+  "agent_completion_tokens_evaluated": 446756,
+  "agent_info": {
+    "implementation": "llm_agent",
+    "llm": "ollama_chat/qwen3.5:4b",
+    "llm_args": {
+      "api_base": "http://localhost:11434",
+      "temperature": 0.0,
+      "reasoning_effort": "high",
+      "extra_body": {
+        "think": true,
+        "options": {
+          "num_ctx": 32768,
+          "temperature": 0.0
+        }
+      }
+    },
+    "voice_settings": null
+  },
+  "registered_stack_match": false,
+  "paired_M1_validity": "not established by this export; stack/build provenance must be checked separately"
+}

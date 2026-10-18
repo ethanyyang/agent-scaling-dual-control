@@ -1,0 +1,35 @@
+{
+  "cell": {
+    "family": "openai",
+    "model": "gpt-5.4-nano",
+    "tier": "low",
+    "domain": "retail"
+  },
+  "snapshot": "gpt-5.4-nano-2026-03-17",
+  "litellm_model": "openai/responses/gpt-5.4-nano-2026-03-17",
+  "agent": "llm_agent",
+  "agent_llm_args": {
+    "reasoning_effort": "high"
+  },
+  "user_llm": "gpt-5.2-2025-12-11",
+  "user_llm_args": {
+    "reasoning_effort": "low"
+  },
+  "seed": 300,
+  "num_trials": 3,
+  "max_steps": 200,
+  "task_ids_sha256": "5047ad30fdc1fda10416047a19473c72b43e3c42cfd56d5076354d27c6207b64",
+  "tau2_commit": "c339866",
+  "cells_json_sha256": "b1eeb7cb3df3eebe83b3e2b5ba6feb53bcb7829016e99b83ecac2a43da64911b",
+  "base_prompt_sha256": "825bb492ecd9062046cc7de0050b31ae7887e3577b66b149883728e71a193da7",
+  "command": "uv run tau2 run --domain retail --agent llm_agent --agent-llm openai/responses/gpt-5.4-nano-2026-03-17 --agent-llm-args '{\"reasoning_effort\": \"high\"}' --user user_simulator --user-llm gpt-5.2-2025-12-11 --user-llm-args '{\"reasoning_effort\": \"low\"}' --num-trials 3 --seed 300 --max-steps 200 --max-errors 10 --max-concurrency 6 --auto-resume --save-to calib-retail-s1-gpt54nano-high-gpt52low-3trials-seed300 --task-ids 13 31 18 112 53 59 69 106 19 38 84 64 109 68 91 74 56 87 17 92 23 24 44 108 41 54 9 104 75 101 93 60 36 47 8 80 21 3 16 82 89 1 6 94 51 63 65 39 26 30",
+  "budget": "uncapped (S1 calibration, ANALYSIS.md \u00a74.2)",
+  "started_utc": "2026-09-20T01:16:25.577632+00:00",
+  "finished_utc": "2026-09-20T01:34:12.114701+00:00",
+  "wall_seconds": 1066.5,
+  "return_code": 0,
+  "episodes": 150,
+  "infrastructure_errors": 0,
+  "results_path": "tau2-bench/data/simulations/calib-retail-s1-gpt54nano-high-gpt52low-3trials-seed300/results.json",
+  "results_sha256": "43c4fc86650802d549885b27ce0948fea53f6fd48f63224de3509fa434fbf069"
+}

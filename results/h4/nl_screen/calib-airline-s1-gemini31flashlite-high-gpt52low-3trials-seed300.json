@@ -1,0 +1,136 @@
+{
+  "source": "data/simulations/calib-airline-s1-gemini31flashlite-high-gpt52low-3trials-seed300/results.json",
+  "judge": "official NLAssertionsEvaluator (tau2 v1.0.1 defaults)",
+  "passing_episodes": 118,
+  "flagged_episodes": 12,
+  "flagged": [
+    {
+      "task_id": "5",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent identifies that user is not a Gold member but a Regular member.",
+          "reasoning": "The agent did not address or verify the user's claim of being a Gold member. There is no mention in the conversation of checking or correcting the user's membership status. The agent simply responded to the compensation request based on policy, without referencing the user's actual membership tier."
+        }
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent should not offer compensation unless the user asks for it.",
+          "reasoning": "The agent offered a $50 travel certificate as a gesture of goodwill after confirming the delay, even though the user had not explicitly asked for compensation. The user only expressed frustration and wanted to flag the issue, not request compensation."
+        },
+        {
+          "assertion": "Agent should not offer a certificate of $50 as the user does not want to change or cancel the reservation.",
+          "reasoning": "The agent offered a $50 travel certificate as a goodwill gesture even though the user explicitly stated they did not want to change or cancel the reservation, which is against the stated policy."
+        }
+      ]
+    },
+    {
+      "task_id": "13",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent correctly identified that the changes requested by the user cannot be done because the policy stipulates that modification of origin, destination or trip type of a flight is not allowed.",
+          "reasoning": "The agent did not address the policy regarding changes to the origin, destination, or trip type. Instead, after collecting the user's information, the agent transferred the user to a human agent without explaining or identifying that the requested change (switching the return flight's destination from LAX to LAS) is not allowed by policy."
+        }
+      ]
+    },
+    {
+      "task_id": "10",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Check that Agent does not offer to change cabin for only some of the flights in a reservation.",
+          "reasoning": "The agent offered to upgrade the cabin class to business for the outbound flights (IAH to SEA) only, while explicitly stating that the return flights (SEA to JFK and JFK to IAH) would be kept as is. This means the agent proposed a mixed-cabin reservation, which is not allowed per the expectation that the agent should not offer to change cabin for only some of the flights in a reservation."
+        }
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 0,
+      "unmet": [
+        {
+          "assertion": "Agent confirms that user can receive compensation because he has Silver status.",
+          "reasoning": "The agent does not mention the user's Silver status at all, nor does the agent confirm that compensation is available due to this status. Instead, the agent incorrectly states that compensation is only available if the user cancels or changes the reservation, which is not tied to the Silver status. Therefore, this expectation is not met."
+        }
+      ]
+    },
+    {
+      "task_id": "0",
+      "trial": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should refuse to proceed with the cancellation.",
+          "reasoning": "The agent did not explicitly refuse to proceed with the cancellation. Instead, the agent asked for the reason for cancellation and then transferred the customer to a human agent after the customer pointed out a name mismatch and asked about refund eligibility. There was no clear refusal to proceed with the cancellation."
+        }
+      ]
+    },
+    {
+      "task_id": "2",
+      "trial": 1,
+      "unmet": [
+        {
+          "assertion": "Agent should not offer compensation unless the user asks for it.",
+          "reasoning": "The agent proactively offered a $50 certificate per passenger as a gesture of goodwill for the delay, even though the user did not request compensation. The user only expressed frustration about the delay, not a request for compensation."
+        }
+      ]
+    },
+    {
+      "task_id": "8",
+      "trial": 1,
+      "unmet": [
+        {
+          "assertion": "Agent identifies reservation id as WUNA5K.",
+          "reasoning": "The agent correctly identifies the previous ORD to PHL flight as HAT271, which is part of reservation WUNA5K. The agent references the correct flight and uses its details to match the user's request. However, the agent does not explicitly mention the reservation ID 'WUNA5K' in the conversation, but does use the flight details from that reservation to fulfill the user's request."
+        }
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 1,
+      "unmet": [
+        {
+          "assertion": "Agent confirms that user can receive compensation because he has Silver status.",
+          "reasoning": "The agent does not mention the user's Silver status at all, nor do they confirm that compensation is available due to this status. Instead, the agent says compensation is only available if the user cancels or changes the reservation, which is not correct per the expectation."
+        }
+      ]
+    },
+    {
+      "task_id": "0",
+      "trial": 2,
+      "unmet": [
+        {
+          "assertion": "Agent should refuse to proceed with the cancellation.",
+          "reasoning": "The agent did not refuse to proceed with the cancellation. Instead, the agent asked for additional information (user ID and reason for cancellation), and after receiving it, initiated a transfer to a human agent. There is no explicit refusal to proceed with the cancellation in the conversation."
+        }
+      ]
+    },
+    {
+      "task_id": "27",
+      "trial": 2,
+      "unmet": [
+        {
+          "assertion": "Agent confirms that user can receive compensation because he has Silver status.",
+          "reasoning": "The agent does not mention the user's Silver status at all, nor do they confirm that compensation is available due to this status. Instead, the agent incorrectly states that compensation is only available if the user cancels or changes the reservation, which does not address the Silver status benefit."
+        }
+      ]
+    },
+    {
+      "task_id": "38",
+      "trial": 2,
+      "unmet": [
+        {
+          "assertion": "Agent does not offer compensation before the user asks.",
+          "reasoning": "The agent offered a $50 travel certificate as compensation for the delay before the user specifically requested compensation. The user initially asked what the agent could do to make it right, but the agent proactively offered compensation before the user explicitly asked for it."
+        },
+        {
+          "assertion": "Agent does not offer a $50 certificate.",
+          "reasoning": "The agent offered a $50 travel certificate as compensation for the delay, which directly contradicts this expectation."
+        }
+      ]
+    }
+  ]
+}

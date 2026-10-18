@@ -1,0 +1,17 @@
+{
+  "results_file": "./tau2-bench/data/simulations/calib-telecom-s1-qwen35-9b-openrouter-gpt52low-3trials-seed300/results.json",
+  "results_sha256": "f1fbe345418fe4cf04a5b9b6a106baa94aeb0e6445b92e30fff034c605b4b3d5",
+  "episodes": 150,
+  "agent_calls": 2328,
+  "calls_with_reasoning_details": 2323,
+  "S1_mean_completion_per_episode": 4514.0,
+  "S1_P75_completion_per_episode (B_1x)": 5758,
+  "B_0.5x": 2879,
+  "B_2x": 11516,
+  "S1_max_completion_per_episode": 9732,
+  "share_of_episodes_above_B_1x": 0.253,
+  "per_call_median": 211,
+  "per_call_P95 (c)": 772,
+  "per_call_max": 2474,
+  "domain": "telecom"
+}

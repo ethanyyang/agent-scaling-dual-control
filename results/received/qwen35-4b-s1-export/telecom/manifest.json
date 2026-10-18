@@ -1,0 +1,41 @@
+{
+  "domain": "telecom",
+  "run": "s1-telecom-ollama-qwen35-4b-32k-temp0-gpt52low-3trials-seed300",
+  "source_results": "tau2-bench/data/simulations/s1-telecom-ollama-qwen35-4b-32k-temp0-gpt52low-3trials-seed300/results.json",
+  "results_path": "results/qwen35-4b-s1-export/telecom/results.json",
+  "results_sha256": "32fd8b90b31fb43cee5a95ddb3ebb793a18f1dc741371306806d1f46090d6b14",
+  "export_method": "byte-for-byte copy of original measured S1 results; no generated episodes or imputed values",
+  "schema_validation": "tau2.data_model.simulation.Results.model_validate passed",
+  "status": "partial",
+  "expected_episodes": 150,
+  "attempted_episodes": 22,
+  "evaluated_episodes": 22,
+  "infrastructure_excluded": 0,
+  "missing_episodes": 128,
+  "terminations": {
+    "user_stop": 13,
+    "agent_error": 9
+  },
+  "episode_mean_reward": 0.5909090909090909,
+  "agent_calls_with_usage": 200,
+  "agent_completion_tokens_evaluated": 50102,
+  "agent_info": {
+    "implementation": "llm_agent",
+    "llm": "ollama_chat/qwen3.5:4b",
+    "llm_args": {
+      "api_base": "http://localhost:11434",
+      "temperature": 0.0,
+      "reasoning_effort": "high",
+      "extra_body": {
+        "think": true,
+        "options": {
+          "num_ctx": 32768,
+          "temperature": 0.0
+        }
+      }
+    },
+    "voice_settings": null
+  },
+  "registered_stack_match": false,
+  "paired_M1_validity": "not established by this export; stack/build provenance must be checked separately"
+}

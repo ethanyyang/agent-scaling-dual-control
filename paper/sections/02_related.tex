@@ -1,0 +1,33 @@
+\section{Background and related work}
+\label{sec:related}
+
+\paragraph{The capability-saturation principle.} \citet{kim2026capable} compared a SAS with four generic MAS architectures (independent, centralized, decentralized, hybrid) across six autonomous benchmarks and three model families at three tiers, holding prompts, tools and a per-system reasoning-token budget constant. Their regression explains system performance, not the gain over the SAS, from standardized predictors. The SAS baseline is its strongest positive term (coefficient 0.250) and the interaction of the baseline with the number of agents is negative ($-0.236$); adding agents therefore stops paying once the baseline passes the point at which the agent-count main effect (0.040) and that interaction cancel, $P^{\ast}_{\mathrm{SA}} = -\hat\beta_{\text{agents}}/\hat\beta_{\text{interaction}}$, about 45\% after de-standardisation. The interaction does not survive the authors' cluster-robust correction, and they present the threshold as a practical selection rule rather than a universal scaling principle. Its sign validation (15 of 16 cells on SWE-bench Verified and Terminal-Bench, with the gain taken as the best of the four MAS architectures against the SAS) used 20 tasks per cell, with per-cell intervals of about 20 points. The threshold is global, with no benchmark-specific parameter, so a new setting needs only its own SAS baselines, and the $\tau$-bench family is named in that paper as untested.
+
+\paragraph{Compute-matched comparisons.} Agent evaluations rarely report cost \citep{kapoor2024agents,kapoor2025hal}, and positive results for MAS are seldom compute-matched. Under a shared token budget self-consistency often beats debate and reflection \citep{wang2024token}; under a fixed thinking budget a SAS with perfect context utilisation is in theory at least as information-efficient as any multi-agent decomposition, and in experiment it was best or tied at every budget but the smallest \citep{tran2026single}; automatically generated MAS mostly underperform a five-sample self-consistency baseline at up to ten times its cost, with HLE-Math the exception \citep{jwalapuram2026illusion}. Several results agree with the principle, with the benefit of a MAS shrinking as models improve \citep{gao2025single,yang2025debate,yu2026bottleneck}; \citet{li2026scaling} report the other side, a capability floor below which small models fail to collaborate, and diminishing returns as agents are added. These protocols hold different quantities constant, and none was built for multi-turn episodes in which a simulated user adds tokens the agent does not control and input dominates the total.
+
+\paragraph{Conversational evaluation and the simulated user.} $\tau$-bench \citep{yao2024tau} scores an agent that converses with a simulated user under a domain policy by the final database state; $\tau^2$-bench \citep{barres2025tau2} adds a telecom domain in which both parties hold tools; in its ablation, moving from a no-user setting, in which the agent controls all tools, to the default dual-control setting lowers GPT-4.1's \passone\ by about 18 points. On $\tau$-bench retail, US human participants succeeded on 45.2\% of a difficulty-balanced task subset, and on the full task set a fixed agent's success moved from 67.0\% to 75.9\% when only the simulator model was swapped \citep{seshadri2026lost}; many general-purpose LLM simulators are over-cooperative and inflate success rates above the human baseline \citep{zhou2026sim2real}. A per-cell MAS effect of the size \citet{kim2026capable} report is within what simulator choice alone can produce, so we fix one simulator and test a second (R2).
+
+\paragraph{Verification of state-changing actions.} On $\tau$-bench traces each deviation in a state-changing action cuts the odds of success by more than 90\% on airline and on retail in the fitted model, while errors in read-only actions matter little \citep{cuadron2025saber}, and dialogue-grounded verifiers add 6 to 12 points of pass$^4$ on $\tau^2$ airline \citep{kang2026policyguard}. These domain-specific designs act on the wrongful-write class that our taxonomy separates from verbal violations. Comparisons of generic architectures on $\tau$-bench-style tasks are scarce and neither compute-matched nor varied over capability \citep{langchain2025bench}; Table~\ref{tab:position} positions this study against the closest work on the properties that matter for testing an architecture-selection rule in a new setting; no prior study has all six at once.
+
+\begin{table}[tbp]
+\caption{Position against the closest prior work. No prior study has all six properties at once. ``User'' means a user takes part in the episode, with ``tools'' when the user also holds tools (dual control in the sense of \citet{barres2025tau2}). ``Rule tested'' means an existing selection rule is applied unchanged to a new setting.}
+\label{tab:position}
+\begin{center}
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.0cm}@{}}
+\toprule
+Study & Architectures & Capability varied & Compute matched (what, level) & User (tools) & Sim. & Rule \\
+\midrule
+\citet{kim2026capable} & SAS + 4 generic MAS & 3 families $\times$ 3 tiers & reasoning tokens, per system, reported as a matched mean; matched maximum iterations & no & n/a & fitted \\
+\citet{tran2026single} & SAS + 5 MAS variants & 4 models & thinking tokens, per call, split & no & n/a & no \\
+\citet{jwalapuram2026illusion} & CoT-SC vs automated MAS & several & USD, post hoc & no & n/a & no \\
+\citet{yu2026bottleneck} & SAS vs MAS & 3 scales & max.\ total steps (experiments); relay bandwidth (theory) & no & n/a & no \\
+\citet{gao2025single} & SAS vs MAS & several & cost reported & no & n/a & no \\
+\citet{langchain2025bench} & single, swarm, supervisor & 1 model & no & yes (no) & no & no \\
+\citet{kang2026policyguard} & agent vs agent + verifier & 3 models & no & yes (no) & no & no \\
+This paper & \Sone\ vs \Mone\ (centralized) & 3 families $\times$ 2 tiers & completion tokens, per episode, shared ledger & yes (telecom) & fixed; second on 3 cells & yes \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper."
+title: "Does Multi-Agent Collaboration Pay When Agents Serve Users? Testing Agent Scaling in Dual-Control Settings"
+type: software
+authors:
+  - family-names: Yang
+    given-names: Ethan
+    affiliation: University of Pennsylvania
+    email: eyyang@seas.upenn.edu
+  - family-names: Shi
+    given-names: Xiangcheng
+    affiliation: University of Pennsylvania
+    email: xcshi@seas.upenn.edu
+date-released: 2026-10-18
+version: "1.0"
+license: MIT
+repository-code: "https://github.com/ethanyyang/agent-scaling-dual-control"
+preferred-citation:
+  type: article
+  title: "Does Multi-Agent Collaboration Pay When Agents Serve Users? Testing Agent Scaling in Dual-Control Settings"
+  authors:
+    - family-names: Yang
+      given-names: Ethan
+    - family-names: Shi
+      given-names: Xiangcheng
+  year: 2026
+  notes: "Preprint. Trajectories and ledgers: Zenodo, DOI to be added."

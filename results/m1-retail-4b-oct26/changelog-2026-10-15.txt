@@ -1,0 +1,42 @@
+- 2026-10-15 (M1 as built, retail x qwen3.5-4b-oct26, cell complete): 150 of
+  150 episodes, 0 infrastructure errors, manifest return code 0. The
+  manifest records only the resumed segment (02:19 UTC 2026-10-14 to 03:04
+  UTC 2026-10-15); the first segment ran from 22:38 UTC 2026-10-12 to the
+  stop at 41 episodes. G1: calls cut at c 118/3241 (3.6%, passes); tokens
+  in cut calls 15.6% (fails); 12 turns with two cut calls, 7 on exhaustion
+  turns and 5 on normal turns (fails strictly and under amendment (b)); no
+  JSON or cut text to the customer; budget exhausted in 74 of 150
+  episodes. Write orders (orders.py): 79 unique, 13 executed as issued
+  (16%), 44 invented names mapped to a write (56%), 13 diverted (16%), 6
+  with keys corrected (8%), 2 unstructured, 1 refused, so the write-order
+  bar fails, as in every API cell (9 to 41% executed as issued). The cell
+  is invalid under G1 and stays outside every H1/H4 fit, where it already
+  sat as M1 as built on the October build. Per trial (seeds 626729,
+  373753, 361454): exhausted 19, 12 and 43 of 50; tokens in cut calls
+  6.1%, 0.7% and 34.2%; turns with two cut calls 1, 0 and 11; median plan
+  call 743, 706 and 1269 tokens; orchestrator calls with empty visible
+  output 14, 3 and 80. Trials 0 and 1 alone pass the cut-token bar; trial
+  2 carries the failure. Within trial 2, on the same tasks, the shift
+  holds for the whole trial and shrinks over it (median plan call 2762 in
+  its first 10 episodes, about 1100 in its last 28; trials 0 and 1 stay
+  near 700 on the same tasks). The first plan call of an episode is
+  barely affected at the median (719 tokens; trials 0 and 1: 713 and 380)
+  but is cut in 6 of 50 trial-2 episodes (1 and 0 in trials 0 and 1).
+  Disclosure: the validity script also prints pass^1, and it was seen
+  while reading the G1 bars, before the replay test, contrary to the plan
+  of 2026-10-14. So that this cannot steer the reading, the reporting
+  rule is fixed now: the cell is reported pooled over all three trials as
+  registered, with the per-trial view as secondary, whatever the replay
+  shows, and no trial is excluded. Three candidate explanations remain:
+  the agent's sampling seed (sent with every call), the trial-2 customer
+  messages (the user simulator receives the same trial seed), and the
+  state of the Ollama server during trial 2. Seed replay test
+  (seed_replay.py; the reading rule is in its header and was fixed before
+  any replay call): it rebuilds the first orchestrator plan call of an
+  episode with the M1 code itself and sends it on a freshly restarted
+  server, crossing prompt source (the customer's first message from trial
+  1 or trial 2, same task) with seed (361454, 373753, none), 2 repeats per
+  condition, on the 6 tasks whose trial-2 first plan call was cut and 4
+  control tasks (120 calls). Checked end to end in the container with a
+  stub model (prompts rebuilt, cap sent 5369 as in the run, resume and
+  summary work).
